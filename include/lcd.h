@@ -1,5 +1,5 @@
 /**
- * @file lcd_driver.c
+ * @file lcd.c
  * @brief LCD driver using STM32 microcontroller and I2C expander PCF8574.
  *
  * This file contains functions to initialize and control a 16x2 LCD

@@ -1,5 +1,5 @@
 /**
- * @file hcsr04.h
+ * @file hc_sr04.h
  * @brief Ultrasonic sensor HC-SR04 driver for STM32 using libopencm3.
  *
  * This file contains the functions necessary to initialize and retrieve

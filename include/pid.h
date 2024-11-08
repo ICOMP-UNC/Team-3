@@ -4,6 +4,11 @@
 #define MIN_PID_OUTPUT     0
 #define MAX_INTEGRAL_ERROR 100.0
 
+/**
+ * @brief PID controller structure.
+ *
+ * This structure contains the parameters and setpoint for the PID controller.
+ */
 typedef struct
 {
     float kp;       /**< Proportional gain */

@@ -1,5 +1,5 @@
 /**
- * @file motor_control.h
+ * @file motor_driver.h
  * @brief Motor control driver using PWM for STM32 with libopencm3.
  *
  * This file contains the functions needed to initialize and control the power output
