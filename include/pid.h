@@ -1,7 +1,7 @@
 #include <stdint.h>
 
-#define MAX_PID_OUTPUT 100
-#define MIN_PID_OUTPUT 0
+#define MAX_PID_OUTPUT     100
+#define MIN_PID_OUTPUT     0
 #define MAX_INTEGRAL_ERROR 100.0
 
 typedef struct
@@ -17,7 +17,7 @@ typedef struct
  *
  * @param pid Pointer to the PID controller structure.
  */
-void pid_init(PID_Controller *pid);
+void pid_init(PID_Controller* pid);
 
 /**
  * @brief Updates the PID controller and calculates the control output.
@@ -26,7 +26,7 @@ void pid_init(PID_Controller *pid);
  * @param measured_value The current measured value of the process variable.
  * @return The control output from (0 - 100)%.
  */
-uint8_t pid_update(PID_Controller *pid, float measured_value);
+uint8_t pid_update(PID_Controller* pid, float measured_value);
 
 /**
  * @brief Sets the desired setpoint for the PID controller.
@@ -34,4 +34,4 @@ uint8_t pid_update(PID_Controller *pid, float measured_value);
  * @param pid Pointer to the PID controller structure.
  * @param setpoint The desired setpoint.
  */
-void pid_setpoint(PID_Controller *pid, float setpoint);
+void pid_setpoint(PID_Controller* pid, float setpoint);

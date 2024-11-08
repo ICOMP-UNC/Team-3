@@ -4,12 +4,12 @@ PID_Controller pid;
 float prev_error; /**< Previous error (for derivative calculation) */
 float integral;   /**< Accumulated integral */
 
-void pid_init(PID_Controller *control)
+void pid_init(PID_Controller* control)
 {
     pid = *control;
 }
 
-uint8_t pid_update(PID_Controller *pid, float measured_value)
+uint8_t pid_update(PID_Controller* pid, float measured_value)
 {
     // Calculate error
     float error = pid->setpoint - measured_value;
@@ -48,7 +48,7 @@ uint8_t pid_update(PID_Controller *pid, float measured_value)
     return (uint8_t)output;
 }
 
-void pid_setpoint(PID_Controller *pid, float setpoint)
+void pid_setpoint(PID_Controller* pid, float setpoint)
 {
     pid->setpoint = setpoint;
 }

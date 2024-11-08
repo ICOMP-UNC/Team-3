@@ -10,17 +10,17 @@
 #include "libopencm3/stm32/i2c.h"
 #include "libopencm3/stm32/rcc.h"
 
-#define PCF8574_ADDRESS 0x27 ///< I2C address of the PCF8574.
-#define SDA_PIN GPIO7        ///< STM32 SDA pin.
-#define SCL_PIN GPIO6        ///< STM32 SCL pin.
+#define PCF8574_ADDRESS 0x27  ///< I2C address of the PCF8574.
+#define SDA_PIN         GPIO7 ///< STM32 SDA pin.
+#define SCL_PIN         GPIO6 ///< STM32 SCL pin.
 
 // LCD Commands
-#define LCD_CLEARDISPLAY 0x01   ///< Command to clear the LCD screen.
-#define LCD_RETURNHOME 0x02     ///< Command to return the cursor to the home position.
-#define LCD_ENTRYMODESET 0x04   ///< Command to set the LCD entry mode.
+#define LCD_CLEARDISPLAY   0x01 ///< Command to clear the LCD screen.
+#define LCD_RETURNHOME     0x02 ///< Command to return the cursor to the home position.
+#define LCD_ENTRYMODESET   0x04 ///< Command to set the LCD entry mode.
 #define LCD_DISPLAYCONTROL 0x08 ///< Command to control the display settings.
-#define LCD_FUNCTIONSET 0x20    ///< Command to set LCD function parameters.
-#define LCD_SETDDRAMADDR 0x80   ///< Command to set DDRAM address.
+#define LCD_FUNCTIONSET    0x20 ///< Command to set LCD function parameters.
+#define LCD_SETDDRAMADDR   0x80 ///< Command to set DDRAM address.
 
 // Flags for display entry mode
 #define LCD_ENTRYLEFT 0x02 ///< Flag for left-to-right text entry mode.
@@ -28,15 +28,15 @@
 // Flags for display control
 #define LCD_DISPLAYON 0x04 ///< Flag to turn the display on.
 #define LCD_CURSOROFF 0x00 ///< Flag to turn the cursor off.
-#define LCD_BLINKOFF 0x00  ///< Flag to disable cursor blinking.
+#define LCD_BLINKOFF  0x00 ///< Flag to disable cursor blinking.
 
 // Flags for function set
 #define LCD_4BITMODE 0x00 ///< Flag to set 4-bit data mode.
-#define LCD_2LINE 0x08    ///< Flag to set 2-line display mode.
-#define LCD_5x8DOTS 0x00  ///< Flag to set 5x8 character dot size.
+#define LCD_2LINE    0x08 ///< Flag to set 2-line display mode.
+#define LCD_5x8DOTS  0x00 ///< Flag to set 5x8 character dot size.
 
 // Flags for backlight control
-#define LCD_BACKLIGHT 0x08   ///< Flag to turn the LCD backlight on.
+#define LCD_BACKLIGHT   0x08 ///< Flag to turn the LCD backlight on.
 #define LCD_NOBACKLIGHT 0x00 ///< Flag to turn the LCD backlight off.
 
 #define LCD_EN 0B00000100 ///< Enable bit.
@@ -86,7 +86,7 @@ void lcd_print_char(char c);
  *
  * @param str Pointer to the null-terminated string to print.
  */
-void lcd_print_string(const char *str);
+void lcd_print_string(const char* str);
 
 /**
  * @brief Clears any display data

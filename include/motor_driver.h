@@ -7,11 +7,11 @@
  */
 
 #include "libopencm3/stm32/gpio.h"
-#include "libopencm3/stm32/timer.h"
 #include "libopencm3/stm32/rcc.h"
+#include "libopencm3/stm32/timer.h"
 
-#define MOTOR_PIN GPIO0               /**< GPIO pin for the motor control output */
-#define MOTOR_PERIOD_MS 50            /**< PWM period in milliseconds */
+#define MOTOR_PIN       GPIO0 /**< GPIO pin for the motor control output */
+#define MOTOR_PERIOD_MS 50    /**< PWM period in milliseconds */
 
 /**
  * @brief Initializes the motor control GPIO and timer for PWM output.
