@@ -1,0 +1,10 @@
+# .pre-commit-config.yaml
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0 # Specify the version of the pre-commit-hooks repo
+    hooks:
+      - id: trailing-whitespace # Removes trailing whitespace
+      - id: end-of-file-fixer # Ensures a newline at the end of files
+      - id: check-yaml # Checks that your YAML files are correctly formatted
+      - id: check-added-large-files # Check for large files added to Git
+      - id: check-merge-conflict # Check for files that contain merge conflict strings

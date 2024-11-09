@@ -67,7 +67,7 @@ void lcd_print_char(char c)
 }
 
 // Print a string
-void lcd_print_string(const char *str)
+void lcd_print_string(const char* str)
 {
     while (*str)
     {

@@ -15,7 +15,7 @@ void speedometer_init(void)
     // Configuro el timer 4 para captura en el canal 3 en Subida
     timer_ic_set_input(TIM4, TIM_IC3, TIM_IC_IN_TI3);
     timer_ic_set_polarity(TIM4, TIM_IC3, TIM_IC_RISING);
-    timer_ic_set_filter(TIM4, TIM_IC3, TIM_IC_CK_INT_N_4);          //Habilito el filtro
+    timer_ic_set_filter(TIM4, TIM_IC3, TIM_IC_CK_INT_N_4); // Habilito el filtro
     timer_ic_enable(TIM4, TIM_IC3);
 
     // Set timer prescaler to 1ms (assuming 72 MHz APB1 clock)
@@ -41,15 +41,16 @@ void speedometer_init(void)
 
 float speedometer_getRPM(void)
 {
-    return (60*1000)/(abs(times[1] - times[0])*4);
+    return (60 * 1000) / (abs(times[1] - times[0]) * 4);
 }
 
 uint16_t abs(uint16_t val)
 {
-    if(val < 0)
+    if (val < 0)
     {
         return -val;
-    }else
+    }
+    else
     {
         return val;
     }
