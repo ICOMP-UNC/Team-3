@@ -2,7 +2,7 @@
 
 #define MAX_PID_OUTPUT     100
 #define MIN_PID_OUTPUT     0
-#define MAX_INTEGRAL_ERROR 15000.0
+#define MAX_INTEGRAL_ERROR 30000.0
 
 typedef struct
 {
