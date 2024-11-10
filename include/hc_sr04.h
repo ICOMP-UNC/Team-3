@@ -1,5 +1,5 @@
 /**
- * @file hc_sr04.h
+ * @file hcsr04.h
  * @brief Ultrasonic sensor HC-SR04 driver for STM32 using libopencm3.
  *
  * This file contains the functions necessary to initialize and retrieve
@@ -11,8 +11,11 @@
 #include "libopencm3/stm32/rcc.h"
 #include "libopencm3/stm32/timer.h"
 
-#define TRIG_PIN GPIO1 /**< Trigger pin for the HC-SR04 */
-#define ECHO_PIN GPIO0 /**< Echo pin for the HC-SR04 */
+#define TRIG_PIN GPIO8 /**< Trigger pin for the HC-SR04 */
+#define ECHO_PIN GPIO9 /**< Echo pin for the HC-SR04 */
+
+#define HCSR04_PORT  GPIOB
+#define HCSR04_TIMER TIM4
 
 /**
  * @brief Initializes the pins and timers needed for the HC-SR04.

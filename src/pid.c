@@ -9,10 +9,10 @@ void pid_init(PID_Controller* control)
     pid = *control;
 }
 
-uint8_t pid_update(PID_Controller* pid, float measured_value)
+uint8_t pid_update(float measured_value)
 {
     // Calculate error
-    float error = pid->setpoint - measured_value;
+    float error = pid.setpoint - measured_value;
 
     // Calculate integral
     integral += error;
@@ -30,7 +30,7 @@ uint8_t pid_update(PID_Controller* pid, float measured_value)
     float derivative = error - prev_error;
 
     // Calculate output
-    float output = (pid->kp * error) + (pid->ki * integral) + (pid->kd * derivative);
+    float output = (pid.kp * error) + (pid.ki * integral) + (pid.kd * derivative);
 
     // Constrain output
     if (output > MAX_PID_OUTPUT)
@@ -48,7 +48,7 @@ uint8_t pid_update(PID_Controller* pid, float measured_value)
     return (uint8_t)output;
 }
 
-void pid_setpoint(PID_Controller* pid, float setpoint)
+void pid_setpoint(float setpoint)
 {
-    pid->setpoint = setpoint;
+    pid.setpoint = setpoint;
 }

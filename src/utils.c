@@ -20,32 +20,31 @@ char* float_to_string(float number)
             integer_part = -integer_part;
         }
 
-        // Convert integer part to string
+        // Convert integer part to string without reverse trick
+        int j = i;
         int num = integer_part;
-        int reverse_int = 0;
+        // Extract digits from right to left
+        char temp[10]; // Temporary buffer to store the digits
+        int len = 0;
         while (num != 0)
         {
-            reverse_int = reverse_int * 10 + num % 10;
+            temp[len++] = (num % 10) + '0'; // Store digits as characters
             num /= 10;
         }
 
-        while (reverse_int != 0)
+        // Copy the digits to the str buffer in the correct order
+        for (int k = len - 1; k >= 0; k--)
         {
-            str[i++] = reverse_int % 10 + '0';
-            reverse_int /= 10;
+            str[i++] = temp[k];
         }
     }
 
-    str[i++] = '.'; // Add decimal point
+    // Handle decimal point only if necessary
+    if (decimal_part != 0)
+    {
+        str[i++] = '.'; // Add decimal point
 
-    // Handle decimal part
-    if (decimal_part == 0)
-    {
-        str[i++] = '0'; // If no decimal value, just add 0
-        str[i++] = '0'; // Two decimal places
-    }
-    else
-    {
+        // Handle decimal part
         if (decimal_part < 0)
         {
             decimal_part = -decimal_part; // For negative values
@@ -56,6 +55,7 @@ char* float_to_string(float number)
         str[i++] = (decimal_part % 10) + '0';
     }
 
-    str[i] = '\0'; // Null-terminate the string
+    // Null-terminate the string
+    str[i] = '\0';
     return str;
 }

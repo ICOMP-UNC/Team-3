@@ -1,5 +1,5 @@
 /**
- * @file motor_driver.h
+ * @file motor_control.h
  * @brief Motor control driver using PWM for STM32 with libopencm3.
  *
  * This file contains the functions needed to initialize and control the power output
@@ -7,11 +7,14 @@
  */
 
 #include "libopencm3/stm32/gpio.h"
-#include "libopencm3/stm32/rcc.h"
 #include "libopencm3/stm32/timer.h"
+#include "libopencm3/stm32/rcc.h"
 
-#define MOTOR_PIN       GPIO0 /**< GPIO pin for the motor control output */
-#define MOTOR_PERIOD_MS 50    /**< PWM period in milliseconds */
+#define MOTOR_PIN GPIO0              /**< GPIO pin for the motor control output */
+#define MOTOR_PORT GPIOB
+#define MOTOR_PERIOD_MS 50            /**< PWM period in milliseconds */
+
+#define MOTOR_TIMER TIM3
 
 /**
  * @brief Initializes the motor control GPIO and timer for PWM output.
