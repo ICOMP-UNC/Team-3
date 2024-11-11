@@ -46,3 +46,5 @@ void motor_disable(void);
  * This function starts the motor by enabling the PWM output on the configured pin.
  */
 void motor_enable(void);
+
+uint8_t get_motor_state();

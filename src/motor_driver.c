@@ -48,3 +48,8 @@ void motor_enable()
     motor_state = 1;
     timer_enable_oc_output(MOTOR_TIMER, TIM_OC3);
 }
+
+uint8_t get_motor_state()
+{
+    return motor_state;
+}
