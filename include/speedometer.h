@@ -76,3 +76,6 @@ float speedometer_getRPM(void);
  * @return The current speed in radians per second (rad/s).
  */
 float speedometer_getRAD_S(void);
+
+
+uint16_t abs(int16_t num);

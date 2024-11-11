@@ -17,7 +17,6 @@ void sys_tick_handler(void)
 
     set = pot_get_value() * MAX_RPM / 100; /**< Calculate the setpoint based on potentiometer value and max RPM. */
     pid_setpoint(set);                     /**< Update the PID controller with the new setpoint. */
-
     filtered_speed = speedometer_getRPM();       /**< Retrieve the current RPM from the speedometer. */
     motor_set_power(pid_update(filtered_speed)); /**< Update motor power based on PID output with current speed. */
 

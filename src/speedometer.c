@@ -1,6 +1,6 @@
 #include "speedometer.h"
 
-static volatile uint16_t turns; /** Variable to store the number of encoder turns */
+static volatile uint16_t turns[2]; /** Variable to store the number of encoder turns */
 
 /**
  * Initialize the speedometer by configuring timers, DMA, and GPIO
@@ -38,15 +38,16 @@ void speedometer_init(void)
     dma_channel_reset(DMA1, DMA_CH);                      /** Reset DMA channel to clear previous configuration */
     dma_set_priority(DMA1, DMA_CH, DMA_CCR_PL_VERY_HIGH); /** Set high priority for DMA transfers */
     dma_set_peripheral_address(DMA1, DMA_CH, (uint32_t)&TIM2_CNT); /** Set DMA source to TIM2 counter register */
-    dma_set_memory_address(DMA1, DMA_CH, (uint32_t)&turns);        /** Set DMA destination to `turns` variable */
-    dma_set_number_of_data(DMA1, DMA_CH, 1);                       /** Transfer a single data item per request */
+    dma_set_memory_address(DMA1, DMA_CH, (uint32_t)turns);        /** Set DMA destination to `turns` variable */
+    dma_set_number_of_data(DMA1, DMA_CH, 2);                       /** Transfer a single data item per request */
     dma_set_peripheral_size(DMA1, DMA_CH, DMA_CCR_PSIZE_16BIT);    /** Set peripheral data size to 16 bits */
     dma_set_memory_size(DMA1, DMA_CH, DMA_CCR_MSIZE_16BIT);        /** Set memory data size to 16 bits */
     dma_enable_circular_mode(DMA1, DMA_CH);                        /** Enable circular mode for continuous updates */
+    dma_enable_memory_increment_mode(DMA1, DMA_CH);
 
     /** Enable transfer complete interrupt to reset TIM2 counter after each DMA transfer */
     dma_enable_transfer_complete_interrupt(DMA1, DMA_CH); /** Enable interrupt on transfer completion */
-    nvic_enable_irq(NVIC_DMA1_CHANNEL2_IRQ);              /** Enable NVIC interrupt for DMA channel 2 */
+    //nvic_enable_irq(NVIC_DMA1_CHANNEL2_IRQ);              /** Enable NVIC interrupt for DMA channel 2 */
     dma_enable_channel(DMA1, DMA_CH);                     /** Start the DMA channel */
 
     /** Enable all counters to begin measurements */
@@ -55,23 +56,11 @@ void speedometer_init(void)
 }
 
 /**
- * DMA interrupt handler to reset encoder counter after data transfer
- */
-void dma1_channel2_isr(void)
-{
-    if (dma_get_interrupt_flag(DMA1, DMA_CH, DMA_TCIF)) /** Check if transfer complete flag is set */
-    {
-        dma_clear_interrupt_flags(DMA1, DMA_CH, DMA_TCIF); /** Clear the transfer complete flag */
-        timer_set_counter(ENCODER_TIMER, 0);               /** Reset the encoder counter */
-    }
-}
-
-/**
  * Calculate and return the speed in RPM based on encoder turns
  */
 float speedometer_getRPM(void)
 {
-    return (float)(turns * CONSTANT_TO_RPM); /** Convert turns to RPM */
+    return (float)(abs(turns[1] - turns[0]) * CONSTANT_TO_RPM); /** Convert turns to RPM */
 }
 
 /**
@@ -79,5 +68,10 @@ float speedometer_getRPM(void)
  */
 float speedometer_getRAD_S(void)
 {
-    return (float)(turns * CONSTANT_TO_RAD_S); /** Convert turns to rad/s */
+    return (float)(abs(turns[1] - turns[0]) * CONSTANT_TO_RAD_S); /** Convert turns to rad/s */
+}
+
+uint16_t abs(int16_t num)
+{
+    return (num<0)?-num:num;
 }
