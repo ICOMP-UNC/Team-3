@@ -1,0 +1,11 @@
+<map id="include/hc_sr04.h" name="include/hc_sr04.h">
+<area shape="rect" id="Node000001" title="Ultrasonic sensor HC&#45;SR04 driver for STM32 using libopencm3." alt="" coords="300,5,423,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,161,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="314,35,147,78,146,73,312,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="185,80,352,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="347,35,298,73,295,68,344,30"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="376,80,536,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="380,30,430,68,426,73,377,35"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="560,80,731,107"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="412,30,582,73,580,78,410,35"/>
+</map>
