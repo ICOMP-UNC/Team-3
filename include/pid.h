@@ -11,10 +11,10 @@
 #include <stdint.h>
 
 /** Maximum output value for the PID controller. */
-#define MAX_PID_OUTPUT     100
+#define MAX_PID_OUTPUT 100
 
 /** Minimum output value for the PID controller. */
-#define MIN_PID_OUTPUT     0
+#define MIN_PID_OUTPUT 0
 
 /** Maximum allowable accumulated error for the integral term to prevent windup. */
 #define MAX_INTEGRAL_ERROR 30000.0
