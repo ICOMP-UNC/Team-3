@@ -1,10 +1,5 @@
 #include "utils.h"
 
-/**
- * Convert a floating-point number to a string with two decimal places
- * @param number The float to convert
- * @return A pointer to the static string buffer holding the result
- */
 char* float_to_string(float number)
 {
     static char str[20];            /** Static buffer to hold the string (must be large enough to hold the output) */

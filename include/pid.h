@@ -40,9 +40,9 @@ typedef struct
  * This function sets up the PID controller structure with given proportional,
  * integral, and derivative gains, as well as the initial setpoint for the control loop.
  *
- * @param pid Pointer to the PID controller structure to initialize.
+ * @param control Pointer to the PID controller structure to initialize.
  */
-void pid_init(PID_Controller* pid);
+void pid_init(PID_Controller* control);
 
 /**
  * @brief Updates the PID controller and calculates the control output.

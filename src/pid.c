@@ -4,18 +4,11 @@ PID_Controller pid;
 float prev_error; /**< Previous error (for derivative calculation) */
 float integral;   /**< Accumulated integral */
 
-/**
- * Initialize the PID controller with specified parameters
- */
 void pid_init(PID_Controller* control)
 {
     pid = *control; /** Copy the control parameters into the local PID controller */
 }
 
-/**
- * Update the PID controller with the latest measured value
- * and calculate the control output
- */
 uint8_t pid_update(float measured_value)
 {
     /** Calculate the current error as the difference between setpoint and measured value */
@@ -57,9 +50,6 @@ uint8_t pid_update(float measured_value)
     return (uint8_t)output;
 }
 
-/**
- * Set the desired setpoint for the PID controller
- */
 void pid_setpoint(float setpoint)
 {
     pid.setpoint = setpoint; /** Update the setpoint in the PID controller */
