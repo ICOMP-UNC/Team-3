@@ -1,0 +1,23 @@
+<map id="lcd_send_nibble" name="lcd_send_nibble">
+<area shape="rect" id="Node000001" title="Sends a nibble (4 bits) of data or command to the LCD." alt="" coords="470,67,585,93"/>
+<area shape="poly" id="edge14_Node000001_Node000001" title=" " alt="" coords="554,54,545,48,527,45,511,47,503,52,501,57,505,65,500,67,495,58,499,48,510,42,528,40,547,43,557,49"/>
+<area shape="rect" id="Node000002" href="$lcd_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="Initializes the LCD, pins, and I2C communication." alt="" coords="185,29,247,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="454,74,247,49,248,44,455,69"/>
+<area shape="rect" id="Node000003" href="$lcd_8c.html#a62b0ce347e78e4030bda4729362011ce" title="Sends a full byte of data or command to the LCD." alt="" coords="317,104,422,131"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="456,100,423,108,422,102,454,95"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="242,16,233,10,216,8,200,10,192,14,190,20,194,28,189,30,184,21,188,11,198,5,216,3,235,5,245,12"/>
+<area shape="poly" id="edge6_Node000003_Node000002" title=" " alt="" coords="326,99,268,70,245,59,247,54,270,66,328,94"/>
+<area shape="poly" id="edge11_Node000003_Node000003" title=" " alt="" coords="395,91,386,85,370,83,354,85,346,89,344,95,348,102,343,105,338,95,341,86,352,80,370,77,388,80,398,87"/>
+<area shape="rect" id="Node000004" href="$lcd_8c.html#ad235a86241458b1e7b8771688bfdaf9a" title="Clears the display data." alt="" coords="179,104,252,131"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="302,120,253,120,253,115,302,115"/>
+<area shape="rect" id="Node000005" href="$lcd_8c.html#afa08102a314bc83e4e9825add5dcbc44" title="Prints a single character on the LCD." alt="" coords="165,179,267,205"/>
+<area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="328,140,246,181,244,176,325,136"/>
+<area shape="rect" id="Node000007" href="$lcd_8c.html#a68e592603e66b23b0360f910f3356877" title="Sets the cursor to a specific position on the LCD." alt="" coords="163,253,269,280"/>
+<area shape="poly" id="edge12_Node000003_Node000007" title=" " alt="" coords="346,144,271,219,234,255,230,251,267,215,342,140"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="242,91,233,85,216,83,200,85,192,89,190,95,194,102,189,105,184,95,188,86,198,80,216,77,235,80,245,87"/>
+<area shape="poly" id="edge8_Node000005_Node000005" title=" " alt="" coords="242,166,233,160,216,157,200,159,192,164,190,169,194,177,189,179,184,170,188,160,198,154,216,152,235,155,245,161"/>
+<area shape="rect" id="Node000006" href="$lcd_8c.html#a0725f9cf954c41cdad7a759d7303702c" title="Prints a string on the LCD." alt="" coords="5,179,115,205"/>
+<area shape="poly" id="edge9_Node000005_Node000006" title=" " alt="" coords="149,195,115,195,115,189,149,189"/>
+<area shape="poly" id="edge10_Node000006_Node000006" title=" " alt="" coords="86,166,77,160,60,157,44,159,36,164,33,169,38,177,33,179,28,170,31,160,42,154,60,152,79,155,89,161"/>
+<area shape="poly" id="edge13_Node000007_Node000007" title=" " alt="" coords="242,240,233,234,216,232,200,234,192,238,190,244,194,252,189,254,184,245,188,235,198,229,216,227,235,229,245,236"/>
+</map>

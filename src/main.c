@@ -1,16 +1,10 @@
-#include "libopencm3/stm32/gpio.h"
-#include "libopencm3/stm32/i2c.h"
-#include "libopencm3/stm32/rcc.h"
-
-#include "../include/hc_sr04.h"
-#include "../include/lcd.h"
-#include "../include/motor_driver.h"
-#include "../include/pid.h"
-#include "../include/setpoint.h"
-#include "../include/speedometer.h"
-#include "../include/utils.h"
-
-#pragma once
+#include "hc_sr04.h"
+#include "lcd.h"
+#include "motor_driver.h"
+#include "pid.h"
+#include "setpoint.h"
+#include "speedometer.h"
+#include "utils.h"
 
 #define TRUE  1
 #define FALSE 0
@@ -58,5 +52,5 @@ int main(void)
 
 void systemInit(void)
 {
-    rcc_clock_setup_in_hse_8mhz_out_72mhz();
+    rcc_clock_setup_pll(&rcc_hse_configs[RCC_CLOCK_HSE8_72MHZ]);
 }
