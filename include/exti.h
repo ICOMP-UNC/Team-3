@@ -8,14 +8,10 @@
 #define CONTROL_BUTTON_PORT GPIOB
 #define CONTROL_BUTTON_PIN GPIO11
 
-#define HEIGHT_TRESHOLD 10
-
-void gpio_pin_setup();
+#define HEIGHT_THRESHOLD 10
 
 void exti_setup();
 
-void exti10_isr();
-
-void exti11_isr();
+void exti15_10_isr();
 
 uint8_t get_item_height();

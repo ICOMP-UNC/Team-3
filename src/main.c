@@ -5,6 +5,7 @@
 #include "setpoint.h"
 #include "speedometer.h"
 #include "utils.h"
+#include "exti.h"
 
 #define TRUE  1
 #define FALSE 0
@@ -19,8 +20,9 @@ PID_Controller c;
 int main(void)
 {
     systemInit();
+    exti_setup();
     lcd_init();
-    // hcsr04_init();
+    hcsr04_init();
     pot_init();
     motor_init();
     speedometer_init();
@@ -39,7 +41,7 @@ int main(void)
         filtered_speed = speedometer_getRPM();
         motor_set_power(pid_update(filtered_speed));
         lcd_print_string("speed:");
-        lcd_print_string(float_to_string(filtered_speed));
+        lcd_print_string(float_to_string(hcsr04_get_distance()));
         lcd_set_cursor(2, 0);
         lcd_print_string("SP:");
         lcd_print_string(float_to_string(set));
