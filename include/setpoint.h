@@ -1,21 +1,21 @@
 /**
- * @file pot.h
+ * @file setpoint.h
  * @brief Potentiometer module for ADC with DMA on STM32.
  *
  * This module initializes an ADC to read values from a potentiometer using DMA.
  * It includes functions to initialize the potentiometer ADC and retrieve the ADC value.
  */
 
-#include <libopencm3/stm32/gpio.h>
-#include <libopencm3/stm32/rcc.h>
 #include <libopencm3/stm32/adc.h>
 #include <libopencm3/stm32/dma.h>
+#include <libopencm3/stm32/gpio.h>
+#include <libopencm3/stm32/rcc.h>
 
 /** @brief Number of data samples to collect via DMA. */
 #define N_DATA 10
 
 /** @brief Conversion constant to calculate potentiometer percentage value. */
-#define CONSTANT_TO_PERCENTAGE (24.42e-3)/N_DATA
+#define CONSTANT_TO_PERCENTAGE (24.42e-3) / N_DATA
 
 /** @brief ADC sample time configuration. */
 #define SAMPLE_TIME_CYCLES ADC_SMPR_SMP_239DOT5CYC

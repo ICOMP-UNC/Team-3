@@ -1,0 +1,5 @@
+<map id="include/setpoint.h" name="include/setpoint.h">
+<area shape="rect" id="Node000001" title="Potentiometer module for ADC with DMA on STM32." alt="" coords="5,5,129,32"/>
+<area shape="rect" id="Node000002" href="$setpoint_8c_source.html" title=" " alt="" coords="17,80,117,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,48,70,80,64,80,64,48"/>
+</map>
