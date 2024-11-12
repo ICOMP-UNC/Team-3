@@ -1,7 +1,4 @@
 <map id="motor_set_power" name="motor_set_power">
 <area shape="rect" id="Node000001" title="Sets the motor power by adjusting the PWM duty cycle." alt="" coords="5,29,127,56"/>
-<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="38,30,34,21,37,11,48,5,66,3,85,5,95,12,93,16,83,10,66,8,50,10,41,15,39,20,43,28"/>
-<area shape="rect" id="Node000002" href="$motor__driver_8c.html#a149b45f994fa6dc14d9cc6948185f1b2" title="Enables the motor output by turning on the PWM signal." alt="" coords="175,29,274,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,40,159,40,159,45,127,45"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="197,30,192,21,195,11,206,5,224,3,244,5,254,12,251,16,242,10,224,8,208,10,199,15,197,20,202,28"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="44,30,41,20,43,11,52,5,66,3,81,5,89,12,86,16,79,10,66,8,54,10,48,14,46,20,49,28"/>
 </map>

@@ -113,34 +113,34 @@ $(function(){initNavTree('speedometer_8h_source.html',''); initResizable(true); 
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;libopencm3/stm32/rcc.h&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;libopencm3/stm32/timer.h&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="speedometer_8h.html#aeddca74079a114fe1cd4e6bf8c1fa07f">   19</a></span><span class="preprocessor">#define PULSES_1TURN TIM_IC_PSC_8</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="speedometer_8h.html#aaa2076a38bdb2951dcf2c8b1f5cdef15">   22</a></span><span class="preprocessor">#define SPEEDOMETER_PIN GPIO0</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="speedometer_8h.html#aa7742d6ccedf0581d0ffc8440bcab91c">   25</a></span><span class="preprocessor">#define SPEEDOMETER_PORT GPIOA</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="speedometer_8h.html#a37ca298480303cd0b8208ee2424f6d73">   28</a></span><span class="preprocessor">#define TENMS_TIMER TIM1</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="speedometer_8h.html#af0b1ece1ca505c960a07b6d092e2ae96">   31</a></span><span class="preprocessor">#define ENCODER_TIMER TIM2</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="speedometer_8h.html#aeddca74079a114fe1cd4e6bf8c1fa07f">   21</a></span><span class="preprocessor">#define PULSES_1TURN TIM_IC_PSC_8</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="speedometer_8h.html#aaa2076a38bdb2951dcf2c8b1f5cdef15">   26</a></span><span class="preprocessor">#define SPEEDOMETER_PIN GPIO0</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="speedometer_8h.html#aa7742d6ccedf0581d0ffc8440bcab91c">   31</a></span><span class="preprocessor">#define SPEEDOMETER_PORT GPIOA</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="speedometer_8h.html#a79a77e3542b7dd60992b001d1385808c">   34</a></span><span class="preprocessor">#define DMA_CH DMA_CHANNEL2</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="speedometer_8h.html#a4b449068587ae73580d6a67a8c5603a6">   37</a></span><span class="preprocessor">#define MS_PS 719</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="speedometer_8h.html#aa1b40b2b64fe05a04914d25c6103aee9">   40</a></span><span class="preprocessor">#define MS_INTERVAL 59999</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="speedometer_8h.html#a76280054d0382c2564c6e50853fafd25">   43</a></span><span class="preprocessor">#define CONSTANT_TO_RAD_S 1.309</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="speedometer_8h.html#a0b6ba6e44eb60600214e88f4b2e69c16">   46</a></span><span class="preprocessor">#define CONSTANT_TO_RPM 12.5</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="speedometer_8h.html#a37ca298480303cd0b8208ee2424f6d73">   36</a></span><span class="preprocessor">#define TENMS_TIMER TIM1</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="speedometer_8h.html#af0b1ece1ca505c960a07b6d092e2ae96">   41</a></span><span class="preprocessor">#define ENCODER_TIMER TIM2</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="speedometer_8h.html#a79a77e3542b7dd60992b001d1385808c">   46</a></span><span class="preprocessor">#define DMA_CH DMA_CHANNEL2</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keywordtype">void</span> <a class="code hl_function" href="speedometer_8h.html#a7a70891a4b191f51d77094791a647b05">speedometer_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="speedometer_8h.html#a4b449068587ae73580d6a67a8c5603a6">   51</a></span><span class="preprocessor">#define MS_PS 719</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="speedometer_8h.html#aa1b40b2b64fe05a04914d25c6103aee9">   56</a></span><span class="preprocessor">#define MS_INTERVAL 59999</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">float</span> <a class="code hl_function" href="speedometer_8h.html#aeefd790f68f5e4c91cfa4ef56e2e898e">speedometer_getRPM</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keywordtype">float</span> <a class="code hl_function" href="speedometer_8h.html#af16749f3ab099e15f86d2d3a50794176">speedometer_getRAD_S</a>(<span class="keywordtype">void</span>);</div>
-<div class="ttc" id="aspeedometer_8h_html_a7a70891a4b191f51d77094791a647b05"><div class="ttname"><a href="speedometer_8h.html#a7a70891a4b191f51d77094791a647b05">speedometer_init</a></div><div class="ttdeci">void speedometer_init(void)</div><div class="ttdoc">Initializes the speedometer module.</div><div class="ttdef"><b>Definition</b> <a href="speedometer_8c_source.html#l00008">speedometer.c:8</a></div></div>
-<div class="ttc" id="aspeedometer_8h_html_aeefd790f68f5e4c91cfa4ef56e2e898e"><div class="ttname"><a href="speedometer_8h.html#aeefd790f68f5e4c91cfa4ef56e2e898e">speedometer_getRPM</a></div><div class="ttdeci">float speedometer_getRPM(void)</div><div class="ttdoc">Gets the current speed in revolutions per minute (RPM).</div><div class="ttdef"><b>Definition</b> <a href="speedometer_8c_source.html#l00072">speedometer.c:72</a></div></div>
-<div class="ttc" id="aspeedometer_8h_html_af16749f3ab099e15f86d2d3a50794176"><div class="ttname"><a href="speedometer_8h.html#af16749f3ab099e15f86d2d3a50794176">speedometer_getRAD_S</a></div><div class="ttdeci">float speedometer_getRAD_S(void)</div><div class="ttdoc">Gets the current speed in radians per second (rad/s).</div><div class="ttdef"><b>Definition</b> <a href="speedometer_8c_source.html#l00080">speedometer.c:80</a></div></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="speedometer_8h.html#a76280054d0382c2564c6e50853fafd25">   61</a></span><span class="preprocessor">#define CONSTANT_TO_RAD_S 1.309</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="speedometer_8h.html#a0b6ba6e44eb60600214e88f4b2e69c16">   66</a></span><span class="preprocessor">#define CONSTANT_TO_RPM 12.5</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keywordtype">void</span> <a class="code hl_function" href="speedometer_8h.html#a7a70891a4b191f51d77094791a647b05">speedometer_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keywordtype">float</span> <a class="code hl_function" href="speedometer_8h.html#aeefd790f68f5e4c91cfa4ef56e2e898e">speedometer_getRPM</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keywordtype">float</span> <a class="code hl_function" href="speedometer_8h.html#af16749f3ab099e15f86d2d3a50794176">speedometer_getRAD_S</a>(<span class="keywordtype">void</span>);</div>
+<div class="ttc" id="aspeedometer_8h_html_a7a70891a4b191f51d77094791a647b05"><div class="ttname"><a href="speedometer_8h.html#a7a70891a4b191f51d77094791a647b05">speedometer_init</a></div><div class="ttdeci">void speedometer_init(void)</div><div class="ttdoc">Initializes the speedometer module.</div><div class="ttdef"><b>Definition</b> <a href="speedometer_8c_source.html#l00006">speedometer.c:6</a></div></div>
+<div class="ttc" id="aspeedometer_8h_html_aeefd790f68f5e4c91cfa4ef56e2e898e"><div class="ttname"><a href="speedometer_8h.html#aeefd790f68f5e4c91cfa4ef56e2e898e">speedometer_getRPM</a></div><div class="ttdeci">float speedometer_getRPM(void)</div><div class="ttdoc">Gets the current speed in revolutions per minute (RPM).</div><div class="ttdef"><b>Definition</b> <a href="speedometer_8c_source.html#l00056">speedometer.c:56</a></div></div>
+<div class="ttc" id="aspeedometer_8h_html_af16749f3ab099e15f86d2d3a50794176"><div class="ttname"><a href="speedometer_8h.html#af16749f3ab099e15f86d2d3a50794176">speedometer_getRAD_S</a></div><div class="ttdeci">float speedometer_getRAD_S(void)</div><div class="ttdoc">Gets the current speed in radians per second (rad/s).</div><div class="ttdef"><b>Definition</b> <a href="speedometer_8c_source.html#l00061">speedometer.c:61</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

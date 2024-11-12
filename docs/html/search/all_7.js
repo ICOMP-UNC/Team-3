@@ -1,20 +1,6 @@
 var searchData=
 [
-  ['max_5fintegral_5ferror_0',['MAX_INTEGRAL_ERROR',['../pid_8h.html#ad802f9d24b0bd2e20978730521aa95f7',1,'pid.h']]],
-  ['max_5fpid_5foutput_1',['MAX_PID_OUTPUT',['../pid_8h.html#acd7066f5bf652bcd046aec3ad8bac6ac',1,'pid.h']]],
-  ['mhz_5fdivisor_2',['MHZ_DIVISOR',['../hc__sr04_8h.html#a324a42c4c04b834b2318e0553367abdf',1,'hc_sr04.h']]],
-  ['min_5fpid_5foutput_3',['MIN_PID_OUTPUT',['../pid_8h.html#a2fbb0a998f0cd0e5376896031ab09ed3',1,'pid.h']]],
-  ['motor_5fdisable_4',['motor_disable',['../motor__driver_8h.html#a024679ab792710e4c0f1800b8cda0834',1,'motor_driver.c']]],
-  ['motor_5fdisabled_5',['MOTOR_DISABLED',['../motor__driver_8h.html#a6228bf8e7ff39aee704a16dc05c5db1c',1,'motor_driver.h']]],
-  ['motor_5fdriver_2eh_6',['motor_driver.h',['../motor__driver_8h.html',1,'']]],
-  ['motor_5fenable_7',['motor_enable',['../motor__driver_8h.html#a8d3f3c8b0807d3879f832e346e86c0c2',1,'motor_driver.c']]],
-  ['motor_5fenabled_8',['MOTOR_ENABLED',['../motor__driver_8h.html#ac2aef692f748da52739af14b08c97880',1,'motor_driver.h']]],
-  ['motor_5finit_9',['motor_init',['../motor__driver_8h.html#aa2a5af0fb9c1fa2047a5ca0af110f806',1,'motor_driver.c']]],
-  ['motor_5fperiod_5fms_10',['MOTOR_PERIOD_MS',['../motor__driver_8h.html#a814281d7d7527bdb34d92a2888a93883',1,'motor_driver.h']]],
-  ['motor_5fpin_11',['MOTOR_PIN',['../motor__driver_8h.html#a8e1ee46448a9d6fd89208aa48e0b1e58',1,'motor_driver.h']]],
-  ['motor_5fport_12',['MOTOR_PORT',['../motor__driver_8h.html#a3a2dfd2d9fbdae014f53d71a37166ef4',1,'motor_driver.h']]],
-  ['motor_5fset_5fpower_13',['motor_set_power',['../motor__driver_8h.html#a13fda465d7a5854bde53087bc1489ea0',1,'motor_driver.c']]],
-  ['motor_5ftimer_14',['MOTOR_TIMER',['../motor__driver_8h.html#a27f63a33c160ad028d7e6a36c3473781',1,'motor_driver.h']]],
-  ['ms_5finterval_15',['MS_INTERVAL',['../speedometer_8h.html#aa1b40b2b64fe05a04914d25c6103aee9',1,'speedometer.h']]],
-  ['ms_5fps_16',['MS_PS',['../speedometer_8h.html#a4b449068587ae73580d6a67a8c5603a6',1,'speedometer.h']]]
+  ['kd_0',['kd',['../structPID__Controller.html#a0b1969e9aa059699242c549384e38f89',1,'PID_Controller']]],
+  ['ki_1',['ki',['../structPID__Controller.html#a46825e324bc672616adf8108d0776c2a',1,'PID_Controller']]],
+  ['kp_2',['kp',['../structPID__Controller.html#a9608eb2661d299170269a2560dde9e2c',1,'PID_Controller']]]
 ];

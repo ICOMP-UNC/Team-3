@@ -128,9 +128,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="pid_8h__dep__incl.png" border="0" usemap="#ainclude_2pid_8hdep" alt=""/></div>
 <map name="ainclude_2pid_8hdep" id="ainclude_2pid_8hdep">
-<area shape="rect" title="Proportional&#45;Integral&#45;Derivative (PID) controller header file." alt="" coords="5,5,100,32"/>
-<area shape="rect" href="pid_8c_source.html" title=" " alt="" coords="17,80,88,107"/>
-<area shape="poly" title=" " alt="" coords="55,48,55,80,50,80,50,48"/>
+<area shape="rect" title="Proportional&#45;Integral&#45;Derivative (PID) controller header file." alt="" coords="75,5,169,32"/>
+<area shape="rect" href="update_8h.html" title="System update functions for speed and distance measurement." alt="" coords="5,80,122,107"/>
+<area shape="poly" title=" " alt="" coords="104,46,76,81,72,78,100,43"/>
+<area shape="rect" href="pid_8c_source.html" title=" " alt="" coords="145,80,216,107"/>
+<area shape="poly" title=" " alt="" coords="144,43,173,78,169,81,140,46"/>
+<area shape="rect" href="update_8c_source.html" title=" " alt="" coords="17,155,110,181"/>
+<area shape="poly" title=" " alt="" coords="66,122,66,154,61,154,61,122"/>
 </map>
 </div>
 </div>
@@ -145,10 +149,13 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:acd7066f5bf652bcd046aec3ad8bac6ac" id="r_acd7066f5bf652bcd046aec3ad8bac6ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd7066f5bf652bcd046aec3ad8bac6ac">MAX_PID_OUTPUT</a>&#160;&#160;&#160;100</td></tr>
+<tr class="memdesc:acd7066f5bf652bcd046aec3ad8bac6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum output value for the PID controller.  <br /></td></tr>
 <tr class="separator:acd7066f5bf652bcd046aec3ad8bac6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fbb0a998f0cd0e5376896031ab09ed3" id="r_a2fbb0a998f0cd0e5376896031ab09ed3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fbb0a998f0cd0e5376896031ab09ed3">MIN_PID_OUTPUT</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a2fbb0a998f0cd0e5376896031ab09ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum output value for the PID controller.  <br /></td></tr>
 <tr class="separator:a2fbb0a998f0cd0e5376896031ab09ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad802f9d24b0bd2e20978730521aa95f7" id="r_ad802f9d24b0bd2e20978730521aa95f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad802f9d24b0bd2e20978730521aa95f7">MAX_INTEGRAL_ERROR</a>&#160;&#160;&#160;30000.0</td></tr>
+<tr class="memdesc:ad802f9d24b0bd2e20978730521aa95f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum allowable accumulated error for the integral term to prevent windup.  <br /></td></tr>
 <tr class="separator:ad802f9d24b0bd2e20978730521aa95f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -180,11 +187,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Maximum allowable accumulated error for the integral term to prevent windup. </p>
+<p>Caps the accumulated error in the integral term to prevent excessive overshoot, a condition known as integral windup. </p>
 
-<p class="definition">Definition at line <a class="el" href="pid_8h_source.html#l00020">20</a> of file <a class="el" href="pid_8h_source.html">pid.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pid_8h_source.html#l00035">35</a> of file <a class="el" href="pid_8h_source.html">pid.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="pid_8c_source.html#l00019">pid_update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="pid_8c_source.html#l00012">pid_update()</a>.</p>
 
 </div>
 </div>
@@ -199,11 +208,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Maximum output value for the PID controller. </p>
+<p>Sets the upper bound for the controller’s output, typically representing 100% power or the maximum allowable effect of the controller on the system. </p>
 
-<p class="definition">Definition at line <a class="el" href="pid_8h_source.html#l00014">14</a> of file <a class="el" href="pid_8h_source.html">pid.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pid_8h_source.html#l00019">19</a> of file <a class="el" href="pid_8h_source.html">pid.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="pid_8c_source.html#l00019">pid_update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="pid_8c_source.html#l00012">pid_update()</a>.</p>
 
 </div>
 </div>
@@ -218,11 +229,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Minimum output value for the PID controller. </p>
+<p>Defines the lower bound for the controller's output, usually representing 0% power or the minimum effect of the controller. </p>
 
-<p class="definition">Definition at line <a class="el" href="pid_8h_source.html#l00017">17</a> of file <a class="el" href="pid_8h_source.html">pid.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pid_8h_source.html#l00027">27</a> of file <a class="el" href="pid_8h_source.html">pid.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="pid_8c_source.html#l00019">pid_update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="pid_8c_source.html#l00012">pid_update()</a>.</p>
 
 </div>
 </div>
@@ -236,7 +249,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void pid_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structPID__Controller.html">PID_Controller</a> *</td>          <td class="paramname"><span class="paramname"><em>control</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structPID__Controller.html">PID_Controller</a> *</td>          <td class="paramname"><span class="paramname"><em>pid</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -246,18 +259,17 @@ Functions</h2></td></tr>
 <p>This function sets up the PID controller structure with given proportional, integral, and derivative gains, as well as the initial setpoint for the control loop.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pid</td><td>Pointer to the PID controller structure to initialize.</td></tr>
+    <tr><td class="paramname">pid</td><td>Pointer to the PID controller structure. </td></tr>
   </table>
   </dd>
 </dl>
-<p>Initialize the PID controller with specified parameters </p>
 <p>Copy the control parameters into the local PID controller</p>
 
-<p class="definition">Definition at line <a class="el" href="pid_8c_source.html#l00010">10</a> of file <a class="el" href="pid_8c_source.html">pid.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pid_8c_source.html#l00007">7</a> of file <a class="el" href="pid_8c_source.html">pid.c</a>.</p>
 
-<p class="reference">References <a class="el" href="pid_8c_source.html#l00010">pid_init()</a>.</p>
+<p class="reference">References <a class="el" href="pid_8c_source.html#l00007">pid_init()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="pid_8c_source.html#l00010">pid_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="pid_8c_source.html#l00007">pid_init()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -298,18 +310,17 @@ Here is the caller graph for this function:</div>
 <p>This function allows updating the setpoint of the PID controller, defining the target value that the system should aim to reach.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">setpoint</td><td>The desired setpoint for the control loop.</td></tr>
+    <tr><td class="paramname">setpoint</td><td>The desired setpoint for the control loop. </td></tr>
   </table>
   </dd>
 </dl>
-<p>Set the desired setpoint for the PID controller </p>
 <p>Update the setpoint in the PID controller</p>
 
-<p class="definition">Definition at line <a class="el" href="pid_8c_source.html#l00063">63</a> of file <a class="el" href="pid_8c_source.html">pid.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pid_8c_source.html#l00053">53</a> of file <a class="el" href="pid_8c_source.html">pid.c</a>.</p>
 
-<p class="reference">References <a class="el" href="pid_8c_source.html#l00063">pid_setpoint()</a>, and <a class="el" href="pid_8h_source.html#l00034">PID_Controller::setpoint</a>.</p>
+<p class="reference">References <a class="el" href="pid_8c_source.html#l00053">pid_setpoint()</a>, and <a class="el" href="pid_8h_source.html#l00049">PID_Controller::setpoint</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="pid_8c_source.html#l00063">pid_setpoint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="pid_8c_source.html#l00053">pid_setpoint()</a>, and <a class="el" href="update_8c_source.html#l00137">upt_pid()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -324,8 +335,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="pid_8h_a751cced089b6c8f539c4852e60cd0fcc_icgraph.png" border="0" usemap="#apid_8h_a751cced089b6c8f539c4852e60cd0fcc_icgraph" alt=""/></div>
 <map name="apid_8h_a751cced089b6c8f539c4852e60cd0fcc_icgraph" id="apid_8h_a751cced089b6c8f539c4852e60cd0fcc_icgraph">
-<area shape="rect" title="Sets the desired setpoint for the PID controller." alt="" coords="5,29,97,56"/>
-<area shape="poly" title=" " alt="" coords="65,15,60,10,51,8,42,10,38,14,37,20,39,28,34,30,31,20,33,11,40,5,51,3,63,5,69,12"/>
+<area shape="rect" title="Sets the desired setpoint for the PID controller." alt="" coords="117,29,208,56"/>
+<area shape="poly" title=" " alt="" coords="183,16,176,10,162,8,150,10,143,14,142,20,145,28,140,30,136,21,139,11,148,5,162,3,178,5,186,12"/>
+<area shape="rect" href="update_8c.html#a57d33dd3d6141c6e02e8669ab489f8c0" title="Updates the PID controller for motor speed control." alt="" coords="5,29,69,56"/>
+<area shape="poly" title=" " alt="" coords="101,45,69,45,69,40,101,40"/>
+<area shape="poly" title=" " alt="" coords="57,16,50,10,37,8,24,10,18,14,16,20,20,28,15,30,11,21,14,11,23,5,37,3,53,5,61,12"/>
 </map>
 </div>
 
@@ -354,8 +368,7 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The control output, constrained between MIN_PID_OUTPUT and MAX_PID_OUTPUT.</dd></dl>
-<p>Update the PID controller with the latest measured value and calculate the control output </p>
+<dl class="section return"><dt>Returns</dt><dd>The control output, constrained between MIN_PID_OUTPUT and MAX_PID_OUTPUT. </dd></dl>
 <p>Calculate the current error as the difference between setpoint and measured value</p>
 <p>Update the integral term by adding the current error</p>
 <p>Cap the integral to prevent windup</p>
@@ -369,11 +382,11 @@ Here is the caller graph for this function:</div>
 <p>Save the current error to use in the next cycle for the derivative calculation</p>
 <p>Return the constrained output as an 8-bit integer</p>
 
-<p class="definition">Definition at line <a class="el" href="pid_8c_source.html#l00019">19</a> of file <a class="el" href="pid_8c_source.html">pid.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pid_8c_source.html#l00012">12</a> of file <a class="el" href="pid_8c_source.html">pid.c</a>.</p>
 
-<p class="reference">References <a class="el" href="pid_8h_source.html#l00033">PID_Controller::kd</a>, <a class="el" href="pid_8h_source.html#l00032">PID_Controller::ki</a>, <a class="el" href="pid_8h_source.html#l00031">PID_Controller::kp</a>, <a class="el" href="pid_8h_source.html#l00020">MAX_INTEGRAL_ERROR</a>, <a class="el" href="pid_8h_source.html#l00014">MAX_PID_OUTPUT</a>, <a class="el" href="pid_8h_source.html#l00017">MIN_PID_OUTPUT</a>, <a class="el" href="pid_8c_source.html#l00019">pid_update()</a>, and <a class="el" href="pid_8h_source.html#l00034">PID_Controller::setpoint</a>.</p>
+<p class="reference">References <a class="el" href="pid_8h_source.html#l00048">PID_Controller::kd</a>, <a class="el" href="pid_8h_source.html#l00047">PID_Controller::ki</a>, <a class="el" href="pid_8h_source.html#l00046">PID_Controller::kp</a>, <a class="el" href="pid_8h_source.html#l00035">MAX_INTEGRAL_ERROR</a>, <a class="el" href="pid_8h_source.html#l00019">MAX_PID_OUTPUT</a>, <a class="el" href="pid_8h_source.html#l00027">MIN_PID_OUTPUT</a>, <a class="el" href="pid_8c_source.html#l00012">pid_update()</a>, and <a class="el" href="pid_8h_source.html#l00049">PID_Controller::setpoint</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="pid_8c_source.html#l00019">pid_update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="pid_8c_source.html#l00012">pid_update()</a>, and <a class="el" href="update_8c_source.html#l00137">upt_pid()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -388,8 +401,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="pid_8h_a58f9dfae835c7b8f2c6340c53d2d2e52_icgraph.png" border="0" usemap="#apid_8h_a58f9dfae835c7b8f2c6340c53d2d2e52_icgraph" alt=""/></div>
 <map name="apid_8h_a58f9dfae835c7b8f2c6340c53d2d2e52_icgraph" id="apid_8h_a58f9dfae835c7b8f2c6340c53d2d2e52_icgraph">
-<area shape="rect" title="Updates the PID controller and calculates the control output." alt="" coords="5,29,90,56"/>
-<area shape="poly" title=" " alt="" coords="60,15,56,10,47,8,40,10,36,14,37,29,31,29,31,12,37,5,48,3,58,5,64,12"/>
+<area shape="rect" title="Updates the PID controller and calculates the control output." alt="" coords="117,29,201,56"/>
+<area shape="poly" title=" " alt="" coords="179,16,172,10,159,8,147,10,140,14,139,20,142,28,137,30,133,20,136,11,145,5,159,3,174,5,182,12"/>
+<area shape="rect" href="update_8c.html#a57d33dd3d6141c6e02e8669ab489f8c0" title="Updates the PID controller for motor speed control." alt="" coords="5,29,69,56"/>
+<area shape="poly" title=" " alt="" coords="101,45,69,45,69,40,101,40"/>
+<area shape="poly" title=" " alt="" coords="57,16,50,10,37,8,25,10,18,14,17,20,20,28,15,30,12,20,14,11,23,5,37,3,52,5,60,12"/>
 </map>
 </div>
 

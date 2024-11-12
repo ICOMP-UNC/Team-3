@@ -46,10 +46,15 @@ void exti15_10_isr(void)
     }
 
     // CONTROL_BUTTON Handler (EXTI10)
-    if (exti_get_flag_status(EXTI10) && debounce(current_time, &last_exti10_time))
+    if (exti_get_flag_status(EXTI10))
     {
-        exti_reset_request(EXTI10); /**< Clear EXTI10 interrupt flag after debounce check passes. */
-        object_flag = 1;            /**< Set `object_flag` to indicate object detection. */
+        // Debounce Logic for EXTI10
+        if ((current_time - last_exti10_time) > DEBOUNCE_DELAY) /**< Debounce check to filter button noise. */
+        {
+            exti_reset_request(EXTI10); /**< Clear EXTI10 interrupt flag. */
+            last_exti10_time = current_time; /**< Update last recorded time for EXTI10. */
+            object_flag = 1; /**< Set object_flag to indicate an object detection event. */
+        }
     }
 }
 
@@ -66,14 +71,4 @@ uint8_t button_get_object_flag()
 void button_set_object_flag(uint8_t boolean)
 {
     object_flag = boolean;
-}
-
-static inline int debounce(uint32_t current_time, uint32_t* last_time)
-{
-    if ((current_time - *last_time) > DEBOUNCE_DELAY)
-    {
-        *last_time = current_time; /**< Update last recorded time for the interrupt line. */
-        return 1;                  /**< Return true to indicate the interrupt is valid. */
-    }
-    return 0; /**< Return false if debounce delay has not passed. */
 }

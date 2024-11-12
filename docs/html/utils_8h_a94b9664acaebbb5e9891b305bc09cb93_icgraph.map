@@ -1,4 +1,13 @@
 <map id="float_to_string" name="float_to_string">
-<area shape="rect" id="Node000001" title="Converts a floating&#45;point number to a string." alt="" coords="5,29,109,56"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="73,16,67,10,57,8,47,10,42,14,40,20,43,28,38,30,35,20,37,11,45,5,57,3,70,5,77,12"/>
+<area shape="rect" id="Node000001" title="Converts a floating&#45;point number to a string." alt="" coords="201,104,304,131"/>
+<area shape="poly" id="edge5_Node000001_Node000001" title=" " alt="" coords="282,91,271,85,252,83,234,85,225,89,223,95,227,102,222,105,217,95,221,86,233,80,252,77,273,80,284,86"/>
+<area shape="rect" id="Node000002" href="$update_8c.html#a4a7d6edcda3a07879dd8a10eb587cfa7" title="Displays measurement information on the LCD." alt="" coords="5,29,153,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,99,152,70,122,59,124,54,154,66,213,94"/>
+<area shape="rect" id="Node000003" href="$update_8c.html#afd4650ea064c553915d8abc66f203fea" title="Displays the current speed and target setpoint on the LCD." alt="" coords="27,104,131,131"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="185,120,132,120,132,115,185,115"/>
+<area shape="rect" id="Node000004" href="$update_8c.html#a97c262239ed05ce4dbc2e70cdf64d587" title="Records distance measurements from the ultrasonic sensor." alt="" coords="43,179,115,205"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="207,140,113,181,111,176,204,135"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="108,16,98,10,79,8,61,10,51,15,49,20,54,28,49,30,44,21,48,11,60,5,79,3,100,5,111,12"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="108,91,98,85,79,83,61,85,51,89,49,95,54,102,49,105,44,95,48,86,60,80,79,77,100,80,111,86"/>
+<area shape="poly" id="edge7_Node000004_Node000004" title=" " alt="" coords="108,166,98,160,79,157,61,159,51,164,49,169,54,177,49,180,44,170,48,160,60,154,79,152,100,155,111,161"/>
 </map>

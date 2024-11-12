@@ -108,68 +108,68 @@ $(function(){initNavTree('pid_8c_source.html',''); initResizable(true); });
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="pid_8h.html">pid.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><a class="code hl_struct" href="structPID__Controller.html">PID_Controller</a> pid;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keywordtype">float</span> prev_error; </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keywordtype">float</span> integral;   </div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="pid_8h.html#ac0a8270959799980edaf42872118f69c">   10</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="pid_8h.html#ac0a8270959799980edaf42872118f69c">pid_init</a>(<a class="code hl_struct" href="structPID__Controller.html">PID_Controller</a>* control)</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    pid = *control; </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">static</span> <span class="keywordtype">float</span> prev_error; </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">static</span> <span class="keywordtype">float</span> integral;   </div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="pid_8h.html#ac0a8270959799980edaf42872118f69c">    7</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="pid_8h.html#ac0a8270959799980edaf42872118f69c">pid_init</a>(<a class="code hl_struct" href="structPID__Controller.html">PID_Controller</a>* control)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    pid = *control; </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="pid_8h.html#a58f9dfae835c7b8f2c6340c53d2d2e52">   19</a></span>uint8_t <a class="code hl_function" href="pid_8h.html#a58f9dfae835c7b8f2c6340c53d2d2e52">pid_update</a>(<span class="keywordtype">float</span> measured_value)</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">float</span> error = pid.<a class="code hl_variable" href="structPID__Controller.html#a7a0571ff72a6f24c45d556888545ca41">setpoint</a> - measured_value;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    integral += error;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (integral &gt; <a class="code hl_define" href="pid_8h.html#ad802f9d24b0bd2e20978730521aa95f7">MAX_INTEGRAL_ERROR</a>)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        integral = <a class="code hl_define" href="pid_8h.html#ad802f9d24b0bd2e20978730521aa95f7">MAX_INTEGRAL_ERROR</a>; </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (integral &lt; -<a class="code hl_define" href="pid_8h.html#ad802f9d24b0bd2e20978730521aa95f7">MAX_INTEGRAL_ERROR</a>)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        integral = -<a class="code hl_define" href="pid_8h.html#ad802f9d24b0bd2e20978730521aa95f7">MAX_INTEGRAL_ERROR</a>; </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">float</span> derivative = error - prev_error;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">float</span> output = (pid.<a class="code hl_variable" href="structPID__Controller.html#a9608eb2661d299170269a2560dde9e2c">kp</a> * error) + (pid.<a class="code hl_variable" href="structPID__Controller.html#a46825e324bc672616adf8108d0776c2a">ki</a> * integral) + (pid.<a class="code hl_variable" href="structPID__Controller.html#a0b1969e9aa059699242c549384e38f89">kd</a> * derivative);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">if</span> (output &gt; <a class="code hl_define" href="pid_8h.html#acd7066f5bf652bcd046aec3ad8bac6ac">MAX_PID_OUTPUT</a>)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        output = <a class="code hl_define" href="pid_8h.html#acd7066f5bf652bcd046aec3ad8bac6ac">MAX_PID_OUTPUT</a>; </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (output &lt; <a class="code hl_define" href="pid_8h.html#a2fbb0a998f0cd0e5376896031ab09ed3">MIN_PID_OUTPUT</a>)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        output = <a class="code hl_define" href="pid_8h.html#a2fbb0a998f0cd0e5376896031ab09ed3">MIN_PID_OUTPUT</a>; </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="pid_8h.html#a58f9dfae835c7b8f2c6340c53d2d2e52">   12</a></span>uint8_t <a class="code hl_function" href="pid_8h.html#a58f9dfae835c7b8f2c6340c53d2d2e52">pid_update</a>(<span class="keywordtype">float</span> measured_value)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">float</span> error = pid.<a class="code hl_variable" href="structPID__Controller.html#a7a0571ff72a6f24c45d556888545ca41">setpoint</a> - measured_value;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    integral += error;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">if</span> (integral &gt; <a class="code hl_define" href="pid_8h.html#ad802f9d24b0bd2e20978730521aa95f7">MAX_INTEGRAL_ERROR</a>)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        integral = <a class="code hl_define" href="pid_8h.html#ad802f9d24b0bd2e20978730521aa95f7">MAX_INTEGRAL_ERROR</a>; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (integral &lt; -<a class="code hl_define" href="pid_8h.html#ad802f9d24b0bd2e20978730521aa95f7">MAX_INTEGRAL_ERROR</a>)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        integral = -<a class="code hl_define" href="pid_8h.html#ad802f9d24b0bd2e20978730521aa95f7">MAX_INTEGRAL_ERROR</a>; </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">float</span> derivative = error - prev_error;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">float</span> output = (pid.<a class="code hl_variable" href="structPID__Controller.html#a9608eb2661d299170269a2560dde9e2c">kp</a> * error) + (pid.<a class="code hl_variable" href="structPID__Controller.html#a46825e324bc672616adf8108d0776c2a">ki</a> * integral) + (pid.<a class="code hl_variable" href="structPID__Controller.html#a0b1969e9aa059699242c549384e38f89">kd</a> * derivative);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (output &gt; <a class="code hl_define" href="pid_8h.html#acd7066f5bf652bcd046aec3ad8bac6ac">MAX_PID_OUTPUT</a>)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        output = <a class="code hl_define" href="pid_8h.html#acd7066f5bf652bcd046aec3ad8bac6ac">MAX_PID_OUTPUT</a>; </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (output &lt; <a class="code hl_define" href="pid_8h.html#a2fbb0a998f0cd0e5376896031ab09ed3">MIN_PID_OUTPUT</a>)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        output = <a class="code hl_define" href="pid_8h.html#a2fbb0a998f0cd0e5376896031ab09ed3">MIN_PID_OUTPUT</a>; </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    prev_error = error;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">return</span> (uint8_t)output;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
+</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    prev_error = error;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">return</span> (uint8_t)output;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
-</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="pid_8h.html#a751cced089b6c8f539c4852e60cd0fcc">   63</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="pid_8h.html#a751cced089b6c8f539c4852e60cd0fcc">pid_setpoint</a>(<span class="keywordtype">float</span> setpoint)</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    pid.<a class="code hl_variable" href="structPID__Controller.html#a7a0571ff72a6f24c45d556888545ca41">setpoint</a> = setpoint; </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="pid_8h.html#a751cced089b6c8f539c4852e60cd0fcc">   53</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="pid_8h.html#a751cced089b6c8f539c4852e60cd0fcc">pid_setpoint</a>(<span class="keywordtype">float</span> setpoint)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    pid.<a class="code hl_variable" href="structPID__Controller.html#a7a0571ff72a6f24c45d556888545ca41">setpoint</a> = setpoint; </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
 </div>
 <div class="ttc" id="apid_8h_html"><div class="ttname"><a href="pid_8h.html">pid.h</a></div><div class="ttdoc">Proportional-Integral-Derivative (PID) controller header file.</div></div>
-<div class="ttc" id="apid_8h_html_a2fbb0a998f0cd0e5376896031ab09ed3"><div class="ttname"><a href="pid_8h.html#a2fbb0a998f0cd0e5376896031ab09ed3">MIN_PID_OUTPUT</a></div><div class="ttdeci">#define MIN_PID_OUTPUT</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00017">pid.h:17</a></div></div>
-<div class="ttc" id="apid_8h_html_a58f9dfae835c7b8f2c6340c53d2d2e52"><div class="ttname"><a href="pid_8h.html#a58f9dfae835c7b8f2c6340c53d2d2e52">pid_update</a></div><div class="ttdeci">uint8_t pid_update(float measured_value)</div><div class="ttdoc">Updates the PID controller and calculates the control output.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">pid.c:19</a></div></div>
-<div class="ttc" id="apid_8h_html_a751cced089b6c8f539c4852e60cd0fcc"><div class="ttname"><a href="pid_8h.html#a751cced089b6c8f539c4852e60cd0fcc">pid_setpoint</a></div><div class="ttdeci">void pid_setpoint(float setpoint)</div><div class="ttdoc">Sets the desired setpoint for the PID controller.</div><div class="ttdef"><b>Definition</b> <a href="#l00063">pid.c:63</a></div></div>
-<div class="ttc" id="apid_8h_html_ac0a8270959799980edaf42872118f69c"><div class="ttname"><a href="pid_8h.html#ac0a8270959799980edaf42872118f69c">pid_init</a></div><div class="ttdeci">void pid_init(PID_Controller *pid)</div><div class="ttdoc">Initializes the PID controller with specified gains and desired reference.</div><div class="ttdef"><b>Definition</b> <a href="#l00010">pid.c:10</a></div></div>
-<div class="ttc" id="apid_8h_html_acd7066f5bf652bcd046aec3ad8bac6ac"><div class="ttname"><a href="pid_8h.html#acd7066f5bf652bcd046aec3ad8bac6ac">MAX_PID_OUTPUT</a></div><div class="ttdeci">#define MAX_PID_OUTPUT</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00014">pid.h:14</a></div></div>
-<div class="ttc" id="apid_8h_html_ad802f9d24b0bd2e20978730521aa95f7"><div class="ttname"><a href="pid_8h.html#ad802f9d24b0bd2e20978730521aa95f7">MAX_INTEGRAL_ERROR</a></div><div class="ttdeci">#define MAX_INTEGRAL_ERROR</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00020">pid.h:20</a></div></div>
-<div class="ttc" id="astructPID__Controller_html"><div class="ttname"><a href="structPID__Controller.html">PID_Controller</a></div><div class="ttdoc">Structure that holds the PID controller parameters and setpoint.</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00029">pid.h:30</a></div></div>
-<div class="ttc" id="astructPID__Controller_html_a0b1969e9aa059699242c549384e38f89"><div class="ttname"><a href="structPID__Controller.html#a0b1969e9aa059699242c549384e38f89">PID_Controller::kd</a></div><div class="ttdeci">float kd</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00033">pid.h:33</a></div></div>
-<div class="ttc" id="astructPID__Controller_html_a46825e324bc672616adf8108d0776c2a"><div class="ttname"><a href="structPID__Controller.html#a46825e324bc672616adf8108d0776c2a">PID_Controller::ki</a></div><div class="ttdeci">float ki</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00032">pid.h:32</a></div></div>
-<div class="ttc" id="astructPID__Controller_html_a7a0571ff72a6f24c45d556888545ca41"><div class="ttname"><a href="structPID__Controller.html#a7a0571ff72a6f24c45d556888545ca41">PID_Controller::setpoint</a></div><div class="ttdeci">float setpoint</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00034">pid.h:34</a></div></div>
-<div class="ttc" id="astructPID__Controller_html_a9608eb2661d299170269a2560dde9e2c"><div class="ttname"><a href="structPID__Controller.html#a9608eb2661d299170269a2560dde9e2c">PID_Controller::kp</a></div><div class="ttdeci">float kp</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00031">pid.h:31</a></div></div>
+<div class="ttc" id="apid_8h_html_a2fbb0a998f0cd0e5376896031ab09ed3"><div class="ttname"><a href="pid_8h.html#a2fbb0a998f0cd0e5376896031ab09ed3">MIN_PID_OUTPUT</a></div><div class="ttdeci">#define MIN_PID_OUTPUT</div><div class="ttdoc">Minimum output value for the PID controller.</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00027">pid.h:27</a></div></div>
+<div class="ttc" id="apid_8h_html_a58f9dfae835c7b8f2c6340c53d2d2e52"><div class="ttname"><a href="pid_8h.html#a58f9dfae835c7b8f2c6340c53d2d2e52">pid_update</a></div><div class="ttdeci">uint8_t pid_update(float measured_value)</div><div class="ttdoc">Updates the PID controller and calculates the control output.</div><div class="ttdef"><b>Definition</b> <a href="#l00012">pid.c:12</a></div></div>
+<div class="ttc" id="apid_8h_html_a751cced089b6c8f539c4852e60cd0fcc"><div class="ttname"><a href="pid_8h.html#a751cced089b6c8f539c4852e60cd0fcc">pid_setpoint</a></div><div class="ttdeci">void pid_setpoint(float setpoint)</div><div class="ttdoc">Sets the desired setpoint for the PID controller.</div><div class="ttdef"><b>Definition</b> <a href="#l00053">pid.c:53</a></div></div>
+<div class="ttc" id="apid_8h_html_ac0a8270959799980edaf42872118f69c"><div class="ttname"><a href="pid_8h.html#ac0a8270959799980edaf42872118f69c">pid_init</a></div><div class="ttdeci">void pid_init(PID_Controller *pid)</div><div class="ttdoc">Initializes the PID controller with specified gains and desired reference.</div><div class="ttdef"><b>Definition</b> <a href="#l00007">pid.c:7</a></div></div>
+<div class="ttc" id="apid_8h_html_acd7066f5bf652bcd046aec3ad8bac6ac"><div class="ttname"><a href="pid_8h.html#acd7066f5bf652bcd046aec3ad8bac6ac">MAX_PID_OUTPUT</a></div><div class="ttdeci">#define MAX_PID_OUTPUT</div><div class="ttdoc">Maximum output value for the PID controller.</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00019">pid.h:19</a></div></div>
+<div class="ttc" id="apid_8h_html_ad802f9d24b0bd2e20978730521aa95f7"><div class="ttname"><a href="pid_8h.html#ad802f9d24b0bd2e20978730521aa95f7">MAX_INTEGRAL_ERROR</a></div><div class="ttdeci">#define MAX_INTEGRAL_ERROR</div><div class="ttdoc">Maximum allowable accumulated error for the integral term to prevent windup.</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00035">pid.h:35</a></div></div>
+<div class="ttc" id="astructPID__Controller_html"><div class="ttname"><a href="structPID__Controller.html">PID_Controller</a></div><div class="ttdoc">Structure that holds the PID controller parameters and setpoint.</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00044">pid.h:45</a></div></div>
+<div class="ttc" id="astructPID__Controller_html_a0b1969e9aa059699242c549384e38f89"><div class="ttname"><a href="structPID__Controller.html#a0b1969e9aa059699242c549384e38f89">PID_Controller::kd</a></div><div class="ttdeci">float kd</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00048">pid.h:48</a></div></div>
+<div class="ttc" id="astructPID__Controller_html_a46825e324bc672616adf8108d0776c2a"><div class="ttname"><a href="structPID__Controller.html#a46825e324bc672616adf8108d0776c2a">PID_Controller::ki</a></div><div class="ttdeci">float ki</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00047">pid.h:47</a></div></div>
+<div class="ttc" id="astructPID__Controller_html_a7a0571ff72a6f24c45d556888545ca41"><div class="ttname"><a href="structPID__Controller.html#a7a0571ff72a6f24c45d556888545ca41">PID_Controller::setpoint</a></div><div class="ttdeci">float setpoint</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00049">pid.h:49</a></div></div>
+<div class="ttc" id="astructPID__Controller_html_a9608eb2661d299170269a2560dde9e2c"><div class="ttname"><a href="structPID__Controller.html#a9608eb2661d299170269a2560dde9e2c">PID_Controller::kp</a></div><div class="ttdeci">float kp</div><div class="ttdef"><b>Definition</b> <a href="pid_8h_source.html#l00046">pid.h:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

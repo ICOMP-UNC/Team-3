@@ -80,16 +80,3 @@ uint8_t button_get_object_flag(void);
  * @param boolean The new state to set for the object flag (0 or 1).
  */
 void button_set_object_flag(uint8_t boolean);
-
-/**
- * @brief Debounce function to filter out noise from button presses.
- *
- * This function checks if the required debounce delay has passed since the last valid button press.
- * If the time difference between the current time and the last recorded time exceeds `DEBOUNCE_DELAY`,
- * the function updates the last recorded time and returns true, allowing the interrupt to proceed.
- *
- * @param current_time The current time from the SysTick timer.
- * @param last_time Pointer to the last recorded time for the interrupt line.
- * @return 1 if the debounce delay has passed and the interrupt is valid, 0 otherwise.
- */
-static inline int debounce(uint32_t current_time, uint32_t* last_time);

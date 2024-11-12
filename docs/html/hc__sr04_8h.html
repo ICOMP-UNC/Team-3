@@ -136,9 +136,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="hc__sr04_8h__dep__incl.png" border="0" usemap="#ainclude_2hc__sr04_8hdep" alt=""/></div>
 <map name="ainclude_2hc__sr04_8hdep" id="ainclude_2hc__sr04_8hdep">
-<area shape="rect" title="Ultrasonic sensor HC&#45;SR04 driver for STM32 using libopencm3." alt="" coords="5,5,129,32"/>
-<area shape="rect" href="hc__sr04_8c_source.html" title=" " alt="" coords="17,80,117,107"/>
-<area shape="poly" title=" " alt="" coords="70,48,70,80,64,80,64,48"/>
+<area shape="rect" title="Ultrasonic sensor HC&#45;SR04 driver for STM32 using libopencm3." alt="" coords="67,5,190,32"/>
+<area shape="rect" href="update_8h.html" title="System update functions for speed and distance measurement." alt="" coords="5,80,122,107"/>
+<area shape="poly" title=" " alt="" coords="109,45,77,81,73,78,105,42"/>
+<area shape="rect" href="hc__sr04_8c_source.html" title=" " alt="" coords="145,80,246,107"/>
+<area shape="poly" title=" " alt="" coords="153,42,186,78,182,81,149,45"/>
+<area shape="rect" href="update_8c_source.html" title=" " alt="" coords="17,155,110,181"/>
+<area shape="poly" title=" " alt="" coords="66,122,66,154,61,154,61,122"/>
 </map>
 </div>
 </div>
@@ -147,17 +151,32 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a8eab89acd7dcb0e77e7b00d1749022a6" id="r_a8eab89acd7dcb0e77e7b00d1749022a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8eab89acd7dcb0e77e7b00d1749022a6">TRIG_PIN</a>&#160;&#160;&#160;GPIO8</td></tr>
+<tr class="memdesc:a8eab89acd7dcb0e77e7b00d1749022a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger pin for the HC-SR04 ultrasonic sensor.  <br /></td></tr>
 <tr class="separator:a8eab89acd7dcb0e77e7b00d1749022a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acea96cea4a13b6cb38e57a86788adf90" id="r_acea96cea4a13b6cb38e57a86788adf90"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acea96cea4a13b6cb38e57a86788adf90">ECHO_PIN</a>&#160;&#160;&#160;GPIO9</td></tr>
+<tr class="memdesc:acea96cea4a13b6cb38e57a86788adf90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Echo pin for the HC-SR04 ultrasonic sensor.  <br /></td></tr>
 <tr class="separator:acea96cea4a13b6cb38e57a86788adf90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a579786f61b59b44da579a25e424fa2be" id="r_a579786f61b59b44da579a25e424fa2be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a579786f61b59b44da579a25e424fa2be">HCSR04_PORT</a>&#160;&#160;&#160;GPIOB</td></tr>
+<tr class="memdesc:a579786f61b59b44da579a25e424fa2be"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port used for the HC-SR04 pins.  <br /></td></tr>
 <tr class="separator:a579786f61b59b44da579a25e424fa2be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab608652eee9da3cc2376a98ccbea0ff7" id="r_ab608652eee9da3cc2376a98ccbea0ff7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>&#160;&#160;&#160;TIM4</td></tr>
+<tr class="memdesc:ab608652eee9da3cc2376a98ccbea0ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timer used to capture echo signal duration.  <br /></td></tr>
 <tr class="separator:ab608652eee9da3cc2376a98ccbea0ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a324a42c4c04b834b2318e0553367abdf" id="r_a324a42c4c04b834b2318e0553367abdf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a324a42c4c04b834b2318e0553367abdf">MHZ_DIVISOR</a>&#160;&#160;&#160;1000000</td></tr>
+<tr class="memdesc:a324a42c4c04b834b2318e0553367abdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divisor to convert MHz to Hz, used for timing calculations.  <br /></td></tr>
 <tr class="separator:a324a42c4c04b834b2318e0553367abdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef552a60444f8e30ab012976fe61cc4" id="r_a7ef552a60444f8e30ab012976fe61cc4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ef552a60444f8e30ab012976fe61cc4">DELAY_10US</a>&#160;&#160;&#160;32</td></tr>
+<tr class="memdesc:a7ef552a60444f8e30ab012976fe61cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delay in microseconds for the trigger pulse.  <br /></td></tr>
+<tr class="separator:a7ef552a60444f8e30ab012976fe61cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41e303049e3340673700cb5b67d69045" id="r_a41e303049e3340673700cb5b67d69045"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41e303049e3340673700cb5b67d69045">SOUND_SPEED_DIVISOR</a>&#160;&#160;&#160;116</td></tr>
+<tr class="memdesc:a41e303049e3340673700cb5b67d69045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Speed of sound in air, converted for sensor use.  <br /></td></tr>
 <tr class="separator:a41e303049e3340673700cb5b67d69045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1523e806dc56ef51b42d8595d57af78" id="r_ad1523e806dc56ef51b42d8595d57af78"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1523e806dc56ef51b42d8595d57af78">MAX_CAP_DISTANCE</a>&#160;&#160;&#160;400.0</td></tr>
+<tr class="memdesc:ad1523e806dc56ef51b42d8595d57af78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum distance the HC-SR04 sensor can measure.  <br /></td></tr>
+<tr class="separator:ad1523e806dc56ef51b42d8595d57af78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ed3e0a87baeea44b4c93175c298f200" id="r_a5ed3e0a87baeea44b4c93175c298f200"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ed3e0a87baeea44b4c93175c298f200">MIN_CAP_DISTANCE</a>&#160;&#160;&#160;2.0</td></tr>
+<tr class="memdesc:a5ed3e0a87baeea44b4c93175c298f200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum distance the HC-SR04 sensor can measure.  <br /></td></tr>
+<tr class="separator:a5ed3e0a87baeea44b4c93175c298f200"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -180,6 +199,27 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a7ef552a60444f8e30ab012976fe61cc4" name="a7ef552a60444f8e30ab012976fe61cc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ef552a60444f8e30ab012976fe61cc4">&#9670;&#160;</a></span>DELAY_10US</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DELAY_10US&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delay in microseconds for the trigger pulse. </p>
+<p>This value is used to generate a 10 µs pulse for the HC-SR04 sensor. </p>
+
+<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00055">55</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00040">hcsr04_trigger()</a>.</p>
+
+</div>
+</div>
 <a id="acea96cea4a13b6cb38e57a86788adf90" name="acea96cea4a13b6cb38e57a86788adf90"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acea96cea4a13b6cb38e57a86788adf90">&#9670;&#160;</a></span>ECHO_PIN</h2>
 
@@ -191,11 +231,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Echo pin for the HC-SR04 ultrasonic sensor </p>
 
-<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00018">18</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
+<p>Echo pin for the HC-SR04 ultrasonic sensor. </p>
+<p>Receives the pulse back after reflecting from an object, allowing for the calculation of distance. </p>
 
-<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00010">hcsr04_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00027">27</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00007">hcsr04_init()</a>.</p>
 
 </div>
 </div>
@@ -210,11 +252,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>GPIO port used for the HC-SR04 pins </p>
 
-<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00021">21</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
+<p>GPIO port used for the HC-SR04 pins. </p>
+<p>This port (GPIOB) contains both the trigger and echo pins for the sensor. </p>
 
-<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00010">hcsr04_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00034">34</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00007">hcsr04_init()</a>, and <a class="el" href="hc__sr04_8c_source.html#l00040">hcsr04_trigger()</a>.</p>
 
 </div>
 </div>
@@ -229,11 +273,34 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Timer used to capture echo signal duration </p>
 
-<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00024">24</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
+<p>Timer used to capture echo signal duration. </p>
+<p>TIM4 is used for timing the echo return to determine the distance. </p>
 
-<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00010">hcsr04_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00041">41</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00007">hcsr04_init()</a>.</p>
+
+</div>
+</div>
+<a id="ad1523e806dc56ef51b42d8595d57af78" name="ad1523e806dc56ef51b42d8595d57af78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1523e806dc56ef51b42d8595d57af78">&#9670;&#160;</a></span>MAX_CAP_DISTANCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_CAP_DISTANCE&#160;&#160;&#160;400.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum distance the HC-SR04 sensor can measure. </p>
+<p>This value is used to limit the distance readings to a reasonable range. </p>
+
+<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00070">70</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00081">saturation()</a>.</p>
 
 </div>
 </div>
@@ -248,11 +315,34 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Divisor to convert MHz to Hz, used for timing calculations </p>
 
-<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00027">27</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
+<p>Divisor to convert MHz to Hz, used for timing calculations. </p>
+<p>Used to set the timer's prescaler to achieve a 1 µs tick interval. </p>
 
-<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00010">hcsr04_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00048">48</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00007">hcsr04_init()</a>.</p>
+
+</div>
+</div>
+<a id="a5ed3e0a87baeea44b4c93175c298f200" name="a5ed3e0a87baeea44b4c93175c298f200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ed3e0a87baeea44b4c93175c298f200">&#9670;&#160;</a></span>MIN_CAP_DISTANCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN_CAP_DISTANCE&#160;&#160;&#160;2.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Minimum distance the HC-SR04 sensor can measure. </p>
+<p>This value is used to limit the distance readings to a reasonable range. </p>
+
+<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00077">77</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00081">saturation()</a>.</p>
 
 </div>
 </div>
@@ -267,9 +357,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Speed of sound in air converted for sensor use. Value derived from (343 m/s) divided by 2 (for round trip) and converted to cm/µs for calculations. </p>
 
-<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00034">34</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
+<p>Speed of sound in air, converted for sensor use. </p>
+<p>Value derived from (343 m/s) divided by 2 (for round trip) and converted to cm/µs for accurate distance calculation in centimeters. </p>
+
+<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00063">63</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
 
 </div>
 </div>
@@ -284,11 +376,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Trigger pin for the HC-SR04 ultrasonic sensor </p>
 
-<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00015">15</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
+<p>Trigger pin for the HC-SR04 ultrasonic sensor. </p>
+<p>Used to send a 10 µs pulse to start the distance measurement. </p>
 
-<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00010">hcsr04_init()</a>, and <a class="el" href="hc__sr04_8c_source.html#l00046">hcsr04_trigger()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hc__sr04_8h_source.html#l00019">19</a> of file <a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00007">hcsr04_init()</a>, and <a class="el" href="hc__sr04_8c_source.html#l00040">hcsr04_trigger()</a>.</p>
 
 </div>
 </div>
@@ -310,17 +404,16 @@ Functions</h2></td></tr>
 
 <p>Retrieves the distance measured by the HC-SR04 sensor in centimeters. </p>
 <p>This function measures the time taken for the echo pulse to return to the echo pin (ECHO_PIN) and calculates the distance in centimeters.</p>
-<dl class="section return"><dt>Returns</dt><dd>The measured distance in centimeters.</dd></dl>
-<p>Trigger a measurement and return the calculated distance in cm </p>
+<dl class="section return"><dt>Returns</dt><dd>The measured distance in centimeters. </dd></dl>
 <p>Start a new measurement by triggering the sensor</p>
 <p>Wait until the measurement is complete</p>
 <p>Return the measured distance with saturation applied</p>
 
-<p class="definition">Definition at line <a class="el" href="hc__sr04_8c_source.html#l00080">80</a> of file <a class="el" href="hc__sr04_8c_source.html">hc_sr04.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hc__sr04_8c_source.html#l00068">68</a> of file <a class="el" href="hc__sr04_8c_source.html">hc_sr04.c</a>.</p>
 
-<p class="reference">References <a class="el" href="hc__sr04_8c_source.html#l00080">hcsr04_get_distance()</a>, <a class="el" href="hc__sr04_8c_source.html#l00046">hcsr04_trigger()</a>, and <a class="el" href="hc__sr04_8c_source.html#l00092">saturation()</a>.</p>
+<p class="reference">References <a class="el" href="hc__sr04_8c_source.html#l00068">hcsr04_get_distance()</a>, <a class="el" href="hc__sr04_8c_source.html#l00040">hcsr04_trigger()</a>, and <a class="el" href="hc__sr04_8c_source.html#l00081">saturation()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00080">hcsr04_get_distance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00068">hcsr04_get_distance()</a>, and <a class="el" href="update_8c_source.html#l00112">measure()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -341,8 +434,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="hc__sr04_8h_a16a50cc10ebfa3c146e1b506cf3bcbee_icgraph.png" border="0" usemap="#ahc__sr04_8h_a16a50cc10ebfa3c146e1b506cf3bcbee_icgraph" alt=""/></div>
 <map name="ahc__sr04_8h_a16a50cc10ebfa3c146e1b506cf3bcbee_icgraph" id="ahc__sr04_8h_a16a50cc10ebfa3c146e1b506cf3bcbee_icgraph">
-<area shape="rect" title="Retrieves the distance measured by the HC&#45;SR04 sensor in centimeters." alt="" coords="5,29,147,56"/>
-<area shape="poly" title=" " alt="" coords="99,16,91,10,76,8,62,10,54,14,52,20,56,28,51,30,47,21,50,11,60,5,76,3,93,5,103,12"/>
+<area shape="rect" title="Retrieves the distance measured by the HC&#45;SR04 sensor in centimeters." alt="" coords="125,29,266,56"/>
+<area shape="poly" title=" " alt="" coords="221,16,212,10,195,8,180,10,171,15,169,20,173,28,168,30,164,21,167,11,178,5,195,3,214,5,224,12"/>
+<area shape="rect" href="update_8c.html#a97c262239ed05ce4dbc2e70cdf64d587" title="Records distance measurements from the ultrasonic sensor." alt="" coords="5,29,77,56"/>
+<area shape="poly" title=" " alt="" coords="109,45,77,45,77,40,109,40"/>
+<area shape="poly" title=" " alt="" coords="67,16,58,10,41,8,25,10,17,15,15,20,19,28,14,30,9,21,13,11,24,5,41,3,60,5,70,12"/>
 </map>
 </div>
 
@@ -365,28 +461,30 @@ Here is the caller graph for this function:</div>
 
 <p>Initializes the pins and timers needed for the HC-SR04. </p>
 <p>This function configures the trigger pin (TRIG_PIN) as an output and the echo pin (ECHO_PIN) as an input, setting up the necessary timers to measure the duration of the echo pulse.</p>
-<p>Flag to indicate completion of distance measurement Initialize the HC-SR04 ultrasonic sensor by configuring GPIO, timer, and interrupts </p>
+<p>Flag to indicate completion of distance measurement </p>
 <p>Enable clocks for GPIOB and TIM4</p>
 <p>Configure TRIG_PIN as a 2 MHz output push-pull pin for triggering the sensor</p>
 <p>Ensure TRIG_PIN is low initially</p>
 <p>Configure ECHO_PIN as a floating input pin to receive the echo signal</p>
-<p>Configure TIM4 for input capture on channel 4, detecting both rising and falling edges</p>
-<p>Set TIM4 CH1 to capture on rising edge</p>
-<p>Detect rising edge for start time</p>
-<p>Enable input capture on CH1</p>
-<p>Set TIM4 CH2 to capture on falling edge</p>
-<p>Detect falling edge for end time</p>
-<p>Enable input capture on CH2</p>
+<p>&ndash; Configure TIM4 for input capture on channel 4, detecting both rising and falling edges &ndash;</p>
+<p>Set up TIM4 Channel 4 to capture on the rising edge</p>
+<p>Map TIM4 CH4 to GPIOB9</p>
+<p>Rising edge for CH4</p>
+<p>Enable input capture on CH4</p>
+<p>Set up TIM4 Channel 3 to capture on the falling edge</p>
+<p>Map TIM4 CH3 to GPIOB9</p>
+<p>Falling edge for CH3</p>
+<p>Enable input capture on CH3</p>
 <p>Set the timer prescaler to create a 1 µs tick (based on APB1 frequency)</p>
 <p>Start the timer</p>
 <p>Enable interrupts for both capture channels</p>
 <p>Enable NVIC interrupt for TIM4</p>
 
-<p class="definition">Definition at line <a class="el" href="hc__sr04_8c_source.html#l00010">10</a> of file <a class="el" href="hc__sr04_8c_source.html">hc_sr04.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hc__sr04_8c_source.html#l00007">7</a> of file <a class="el" href="hc__sr04_8c_source.html">hc_sr04.c</a>.</p>
 
-<p class="reference">References <a class="el" href="hc__sr04_8h_source.html#l00018">ECHO_PIN</a>, <a class="el" href="hc__sr04_8c_source.html#l00010">hcsr04_init()</a>, <a class="el" href="hc__sr04_8h_source.html#l00021">HCSR04_PORT</a>, <a class="el" href="hc__sr04_8h_source.html#l00024">HCSR04_TIMER</a>, <a class="el" href="hc__sr04_8h_source.html#l00027">MHZ_DIVISOR</a>, and <a class="el" href="hc__sr04_8h_source.html#l00015">TRIG_PIN</a>.</p>
+<p class="reference">References <a class="el" href="hc__sr04_8h_source.html#l00027">ECHO_PIN</a>, <a class="el" href="hc__sr04_8c_source.html#l00007">hcsr04_init()</a>, <a class="el" href="hc__sr04_8h_source.html#l00034">HCSR04_PORT</a>, <a class="el" href="hc__sr04_8h_source.html#l00041">HCSR04_TIMER</a>, <a class="el" href="hc__sr04_8h_source.html#l00048">MHZ_DIVISOR</a>, and <a class="el" href="hc__sr04_8h_source.html#l00019">TRIG_PIN</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00010">hcsr04_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00007">hcsr04_init()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -424,18 +522,17 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Sends a 10 µs trigger pulse to the HC-SR04 sensor. </p>
-<p>This function activates the trigger pin (TRIG_PIN) for 10 microseconds, generating a pulse to start the distance measurement on the HC-SR04.</p>
-<p>Trigger the HC-SR04 sensor by sending a 10 µs pulse on TRIG_PIN </p>
+<p>This function activates the trigger pin (TRIG_PIN) for 10 microseconds, generating a pulse to start the distance measurement on the HC-SR04. </p>
 <p>Set TRIG_PIN high to start the pulse</p>
 <p>Delay for approximately 10 µs</p>
 <p>No-operation for precise timing</p>
 <p>Set TRIG_PIN low to end the pulse</p>
 
-<p class="definition">Definition at line <a class="el" href="hc__sr04_8c_source.html#l00046">46</a> of file <a class="el" href="hc__sr04_8c_source.html">hc_sr04.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hc__sr04_8c_source.html#l00040">40</a> of file <a class="el" href="hc__sr04_8c_source.html">hc_sr04.c</a>.</p>
 
-<p class="reference">References <a class="el" href="hc__sr04_8c_source.html#l00046">hcsr04_trigger()</a>, and <a class="el" href="hc__sr04_8h_source.html#l00015">TRIG_PIN</a>.</p>
+<p class="reference">References <a class="el" href="hc__sr04_8h_source.html#l00055">DELAY_10US</a>, <a class="el" href="hc__sr04_8h_source.html#l00034">HCSR04_PORT</a>, <a class="el" href="hc__sr04_8c_source.html#l00040">hcsr04_trigger()</a>, and <a class="el" href="hc__sr04_8h_source.html#l00019">TRIG_PIN</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00080">hcsr04_get_distance()</a>, and <a class="el" href="hc__sr04_8c_source.html#l00046">hcsr04_trigger()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00068">hcsr04_get_distance()</a>, and <a class="el" href="hc__sr04_8c_source.html#l00040">hcsr04_trigger()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -450,11 +547,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="hc__sr04_8h_a1d98d7c399ecba7202789b91195fef87_icgraph.png" border="0" usemap="#ahc__sr04_8h_a1d98d7c399ecba7202789b91195fef87_icgraph" alt=""/></div>
 <map name="ahc__sr04_8h_a1d98d7c399ecba7202789b91195fef87_icgraph" id="ahc__sr04_8h_a1d98d7c399ecba7202789b91195fef87_icgraph">
-<area shape="rect" title="Sends a 10 µs trigger pulse to the HC&#45;SR04 sensor." alt="" coords="195,29,298,56"/>
-<area shape="poly" title=" " alt="" coords="275,16,265,10,246,8,229,10,219,15,217,20,222,28,217,30,212,21,215,11,227,5,246,3,267,5,278,12"/>
-<area shape="rect" href="hc__sr04_8c.html#a16a50cc10ebfa3c146e1b506cf3bcbee" title="Retrieves the distance measured by the HC&#45;SR04 sensor in centimeters." alt="" coords="5,29,147,56"/>
-<area shape="poly" title=" " alt="" coords="179,45,147,45,147,40,179,40"/>
-<area shape="poly" title=" " alt="" coords="105,16,95,10,76,8,58,10,49,15,47,20,51,28,47,30,41,21,45,11,57,5,76,3,97,5,107,12"/>
+<area shape="rect" title="Sends a 10 µs trigger pulse to the HC&#45;SR04 sensor." alt="" coords="314,29,417,56"/>
+<area shape="poly" title=" " alt="" coords="394,16,384,10,366,8,348,10,339,15,336,20,341,28,336,30,331,21,335,11,347,5,366,3,386,5,397,12"/>
+<area shape="rect" href="hc__sr04_8c.html#a16a50cc10ebfa3c146e1b506cf3bcbee" title="Retrieves the distance measured by the HC&#45;SR04 sensor in centimeters." alt="" coords="125,29,266,56"/>
+<area shape="poly" title=" " alt="" coords="299,45,266,45,266,40,299,40"/>
+<area shape="poly" title=" " alt="" coords="221,16,212,10,195,8,180,10,171,15,169,20,173,28,168,30,164,21,167,11,178,5,195,3,214,5,224,12"/>
+<area shape="rect" href="update_8c.html#a97c262239ed05ce4dbc2e70cdf64d587" title="Records distance measurements from the ultrasonic sensor." alt="" coords="5,29,77,56"/>
+<area shape="poly" title=" " alt="" coords="109,45,77,45,77,40,109,40"/>
+<area shape="poly" title=" " alt="" coords="67,16,58,10,41,8,25,10,17,15,15,20,19,28,14,30,9,21,13,11,24,5,41,3,60,5,70,12"/>
 </map>
 </div>
 
@@ -477,17 +577,16 @@ Here is the caller graph for this function:</div>
 
 <p>Applies saturation to the distance values to avoid out-of-range results. </p>
 <p>This function ensures that the distance values remain within a reasonable range, discarding any outlier or extreme values. Distances are constrained to a minimum and maximum allowable range for accurate readings.</p>
-<dl class="section return"><dt>Returns</dt><dd>The corrected distance value after applying saturation.</dd></dl>
-<p>Apply saturation limits to the distance measurement </p><dl class="section return"><dt>Returns</dt><dd>Distance capped between 2 cm and 400 cm </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The corrected distance value after applying saturation. </dd></dl>
 <p>Cap distance at 400 cm if exceeded</p>
 <p>Cap distance at 2 cm minimum</p>
 <p>Return the measured distance if within range</p>
 
-<p class="definition">Definition at line <a class="el" href="hc__sr04_8c_source.html#l00092">92</a> of file <a class="el" href="hc__sr04_8c_source.html">hc_sr04.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hc__sr04_8c_source.html#l00081">81</a> of file <a class="el" href="hc__sr04_8c_source.html">hc_sr04.c</a>.</p>
 
-<p class="reference">References <a class="el" href="hc__sr04_8c_source.html#l00092">saturation()</a>.</p>
+<p class="reference">References <a class="el" href="hc__sr04_8h_source.html#l00070">MAX_CAP_DISTANCE</a>, <a class="el" href="hc__sr04_8h_source.html#l00077">MIN_CAP_DISTANCE</a>, and <a class="el" href="hc__sr04_8c_source.html#l00081">saturation()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00080">hcsr04_get_distance()</a>, and <a class="el" href="hc__sr04_8c_source.html#l00092">saturation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hc__sr04_8c_source.html#l00068">hcsr04_get_distance()</a>, and <a class="el" href="hc__sr04_8c_source.html#l00081">saturation()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -502,11 +601,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="hc__sr04_8h_adc780ff3ce471de65092181bbd65d576_icgraph.png" border="0" usemap="#ahc__sr04_8h_adc780ff3ce471de65092181bbd65d576_icgraph" alt=""/></div>
 <map name="ahc__sr04_8h_adc780ff3ce471de65092181bbd65d576_icgraph" id="ahc__sr04_8h_adc780ff3ce471de65092181bbd65d576_icgraph">
-<area shape="rect" title="Applies saturation to the distance values to avoid out&#45;of&#45;range results." alt="" coords="195,29,273,56"/>
-<area shape="poly" title=" " alt="" coords="260,16,251,10,234,8,218,10,209,15,207,20,211,28,206,30,202,21,205,11,216,5,234,3,253,5,263,12"/>
-<area shape="rect" href="hc__sr04_8c.html#a16a50cc10ebfa3c146e1b506cf3bcbee" title="Retrieves the distance measured by the HC&#45;SR04 sensor in centimeters." alt="" coords="5,29,147,56"/>
-<area shape="poly" title=" " alt="" coords="179,45,147,45,147,40,179,40"/>
-<area shape="poly" title=" " alt="" coords="102,16,93,10,76,8,60,10,51,15,49,20,53,28,49,30,44,21,47,11,58,5,76,3,95,5,105,12"/>
+<area shape="rect" title="Applies saturation to the distance values to avoid out&#45;of&#45;range results." alt="" coords="314,29,392,56"/>
+<area shape="poly" title=" " alt="" coords="380,16,370,10,353,8,337,10,328,15,326,20,330,28,326,30,321,21,324,11,335,5,353,3,372,5,383,12"/>
+<area shape="rect" href="hc__sr04_8c.html#a16a50cc10ebfa3c146e1b506cf3bcbee" title="Retrieves the distance measured by the HC&#45;SR04 sensor in centimeters." alt="" coords="125,29,266,56"/>
+<area shape="poly" title=" " alt="" coords="298,45,267,45,267,40,298,40"/>
+<area shape="poly" title=" " alt="" coords="221,16,212,10,195,8,180,10,171,15,169,20,173,28,168,30,164,21,167,11,178,5,195,3,214,5,224,12"/>
+<area shape="rect" href="update_8c.html#a97c262239ed05ce4dbc2e70cdf64d587" title="Records distance measurements from the ultrasonic sensor." alt="" coords="5,29,77,56"/>
+<area shape="poly" title=" " alt="" coords="109,45,77,45,77,40,109,40"/>
+<area shape="poly" title=" " alt="" coords="67,16,58,10,41,8,25,10,17,15,15,20,19,28,14,30,9,21,13,11,24,5,41,3,60,5,70,12"/>
 </map>
 </div>
 

@@ -1,4 +1,13 @@
 <map id="lcd_clear" name="lcd_clear">
-<area shape="rect" id="Node000001" title="Clears the display data." alt="" coords="5,29,79,56"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="53,15,49,10,42,8,36,10,32,14,33,29,28,29,27,12,33,5,42,3,52,5,57,12"/>
+<area shape="rect" id="Node000001" title="Clears the LCD display." alt="" coords="201,104,274,131"/>
+<area shape="poly" id="edge5_Node000001_Node000001" title=" " alt="" coords="264,91,255,85,237,83,221,85,212,89,210,95,215,102,210,105,205,95,208,86,219,80,237,77,257,80,267,87"/>
+<area shape="rect" id="Node000002" href="$update_8c.html#a4a7d6edcda3a07879dd8a10eb587cfa7" title="Displays measurement information on the LCD." alt="" coords="5,29,153,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,98,152,70,123,59,125,54,154,66,204,93"/>
+<area shape="rect" id="Node000003" href="$update_8c.html#afd4650ea064c553915d8abc66f203fea" title="Displays the current speed and target setpoint on the LCD." alt="" coords="27,104,131,131"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="185,120,132,120,132,115,185,115"/>
+<area shape="rect" id="Node000004" href="$update_8c.html#a97c262239ed05ce4dbc2e70cdf64d587" title="Records distance measurements from the ultrasonic sensor." alt="" coords="43,179,115,205"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="195,140,110,181,108,176,192,135"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="106,16,96,10,79,8,63,10,54,15,52,20,56,28,51,30,47,21,50,11,61,5,79,3,98,5,108,12"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="106,91,96,85,79,83,63,85,54,89,52,95,56,102,51,105,47,95,50,86,61,80,79,77,98,80,108,87"/>
+<area shape="poly" id="edge7_Node000004_Node000004" title=" " alt="" coords="106,166,96,160,79,157,63,159,54,164,52,169,56,177,51,179,47,170,50,160,61,154,79,152,98,155,108,161"/>
 </map>
