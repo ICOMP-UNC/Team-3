@@ -1,0 +1,10 @@
+<map id="get_measurement_prom" name="get_measurement_prom">
+<area shape="rect" id="Node000001" title="Calculates the average of recorded measurements." alt="" coords="201,67,362,93"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="316,54,304,48,281,45,260,47,249,52,246,57,251,65,247,68,241,58,245,48,259,42,281,40,305,43,318,49"/>
+<area shape="rect" id="Node000002" href="$update_8c.html#a4a7d6edcda3a07879dd8a10eb587cfa7" title="Displays measurement information on the LCD." alt="" coords="5,29,153,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,66,152,59,153,54,191,61"/>
+<area shape="rect" id="Node000003" href="$update_8c.html#a97c262239ed05ce4dbc2e70cdf64d587" title="Records distance measurements from the ultrasonic sensor." alt="" coords="43,104,115,131"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="191,99,116,113,115,108,190,94"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="114,16,102,10,79,8,58,10,46,15,44,20,49,27,45,30,38,21,43,11,57,5,79,3,103,5,116,12"/>
+<area shape="poly" id="edge5_Node000003_Node000003" title=" " alt="" coords="114,91,102,85,79,83,58,85,46,89,44,95,49,102,45,105,38,95,43,86,57,79,79,77,103,80,116,86"/>
+</map>

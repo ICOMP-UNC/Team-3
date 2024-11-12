@@ -1,10 +1,7 @@
 <map id="motor_enable" name="motor_enable">
-<area shape="rect" id="Node000001" title="Enables the motor output by turning on the PWM signal." alt="" coords="175,67,274,93"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="251,54,242,48,224,45,208,47,199,52,197,57,202,65,197,67,192,58,195,48,206,42,224,40,244,43,254,49"/>
-<area shape="rect" id="Node000002" href="$motor__driver_8c.html#a151cccf0120a24d251b5ce5d878abb67" title="Initializes the motor control GPIO and timer for PWM output." alt="" coords="27,29,105,56"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="159,67,105,54,106,49,160,62"/>
-<area shape="rect" id="Node000003" href="$motor__driver_8c.html#a13fda465d7a5854bde53087bc1489ea0" title="Sets the motor power by adjusting the PWM duty cycle." alt="" coords="5,104,127,131"/>
-<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="160,98,126,106,125,101,159,93"/>
-<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="93,16,83,10,66,8,50,10,41,15,39,20,43,28,38,30,34,21,37,11,48,5,66,3,85,5,95,12"/>
-<area shape="poly" id="edge5_Node000003_Node000003" title=" " alt="" coords="93,91,83,85,66,83,50,85,41,89,39,95,43,102,38,105,34,95,37,86,48,80,66,77,85,80,95,87"/>
+<area shape="rect" id="Node000001" title="Enables the motor output by turning on the PWM signal." alt="" coords="132,29,231,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="204,16,196,10,181,8,168,10,160,14,158,20,162,28,157,30,153,21,156,11,166,5,181,3,198,5,207,12"/>
+<area shape="rect" id="Node000002" href="$motor__driver_8c.html#a151cccf0120a24d251b5ce5d878abb67" title="Initializes the motor control GPIO and timer for PWM output." alt="" coords="5,29,84,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="116,45,84,45,84,40,116,40"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="67,16,59,10,44,8,31,10,23,14,22,20,25,28,20,30,16,21,19,11,29,5,45,3,61,5,70,12"/>
 </map>

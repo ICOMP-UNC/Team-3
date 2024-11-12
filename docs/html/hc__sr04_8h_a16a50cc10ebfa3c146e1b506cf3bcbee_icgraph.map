@@ -1,4 +1,7 @@
 <map id="hcsr04_get_distance" name="hcsr04_get_distance">
-<area shape="rect" id="Node000001" title="Retrieves the distance measured by the HC&#45;SR04 sensor in centimeters." alt="" coords="5,29,147,56"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="99,16,91,10,76,8,62,10,54,14,52,20,56,28,51,30,47,21,50,11,60,5,76,3,93,5,103,12"/>
+<area shape="rect" id="Node000001" title="Retrieves the distance measured by the HC&#45;SR04 sensor in centimeters." alt="" coords="125,29,266,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="221,16,212,10,195,8,180,10,171,15,169,20,173,28,168,30,164,21,167,11,178,5,195,3,214,5,224,12"/>
+<area shape="rect" id="Node000002" href="$update_8c.html#a97c262239ed05ce4dbc2e70cdf64d587" title="Records distance measurements from the ultrasonic sensor." alt="" coords="5,29,77,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="109,45,77,45,77,40,109,40"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="67,16,58,10,41,8,25,10,17,15,15,20,19,28,14,30,9,21,13,11,24,5,41,3,60,5,70,12"/>
 </map>

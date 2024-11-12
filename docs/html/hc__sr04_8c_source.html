@@ -110,96 +110,104 @@ $(function(){initNavTree('hc__sr04_8c_source.html',''); initResizable(true); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">static</span> <span class="keyword">volatile</span> uint32_t times[2];           </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">static</span> <span class="keyword">volatile</span> <span class="keywordtype">float</span> distance = 0;          </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">static</span> <span class="keyword">volatile</span> uint8_t conversion_flag = 0; </div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="hc__sr04_8h.html#ac4a331668da010f502b6fef5df1c2be9">   10</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="hc__sr04_8h.html#ac4a331668da010f502b6fef5df1c2be9">hcsr04_init</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    rcc_periph_clock_enable(RCC_GPIOB);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    rcc_periph_clock_enable(RCC_TIM4);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    gpio_set_mode(<a class="code hl_define" href="hc__sr04_8h.html#a579786f61b59b44da579a25e424fa2be">HCSR04_PORT</a>, GPIO_MODE_OUTPUT_2_MHZ, GPIO_CNF_OUTPUT_PUSHPULL, <a class="code hl_define" href="hc__sr04_8h.html#a8eab89acd7dcb0e77e7b00d1749022a6">TRIG_PIN</a>);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    gpio_clear(<a class="code hl_define" href="hc__sr04_8h.html#a579786f61b59b44da579a25e424fa2be">HCSR04_PORT</a>, <a class="code hl_define" href="hc__sr04_8h.html#a8eab89acd7dcb0e77e7b00d1749022a6">TRIG_PIN</a>); </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    gpio_set_mode(<a class="code hl_define" href="hc__sr04_8h.html#a579786f61b59b44da579a25e424fa2be">HCSR04_PORT</a>, GPIO_MODE_INPUT, GPIO_CNF_INPUT_FLOAT, <a class="code hl_define" href="hc__sr04_8h.html#acea96cea4a13b6cb38e57a86788adf90">ECHO_PIN</a>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    timer_ic_set_input(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, TIM_IC1, TIM_IC_IN_TI4);    </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    timer_ic_set_polarity(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, TIM_IC1, TIM_IC_RISING); </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    timer_ic_enable(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, TIM_IC1);                      </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    timer_ic_set_input(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, TIM_IC2, TIM_IC_IN_TI4);     </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    timer_ic_set_polarity(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, TIM_IC2, TIM_IC_FALLING); </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    timer_ic_enable(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, TIM_IC2);                       </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    timer_set_prescaler(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, (rcc_apb1_frequency / <a class="code hl_define" href="hc__sr04_8h.html#a324a42c4c04b834b2318e0553367abdf">MHZ_DIVISOR</a>) - 1);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    timer_enable_counter(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>); </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    timer_enable_irq(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, TIM_DIER_CC1IE | TIM_DIER_CC2IE);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    nvic_enable_irq(NVIC_TIM4_IRQ); </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="hc__sr04_8h.html#ac4a331668da010f502b6fef5df1c2be9">    7</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="hc__sr04_8h.html#ac4a331668da010f502b6fef5df1c2be9">hcsr04_init</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    rcc_periph_clock_enable(RCC_GPIOB);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    rcc_periph_clock_enable(RCC_TIM4);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    gpio_set_mode(<a class="code hl_define" href="hc__sr04_8h.html#a579786f61b59b44da579a25e424fa2be">HCSR04_PORT</a>, GPIO_MODE_OUTPUT_2_MHZ, GPIO_CNF_OUTPUT_PUSHPULL, <a class="code hl_define" href="hc__sr04_8h.html#a8eab89acd7dcb0e77e7b00d1749022a6">TRIG_PIN</a>);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    gpio_clear(<a class="code hl_define" href="hc__sr04_8h.html#a579786f61b59b44da579a25e424fa2be">HCSR04_PORT</a>, <a class="code hl_define" href="hc__sr04_8h.html#a8eab89acd7dcb0e77e7b00d1749022a6">TRIG_PIN</a>); </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    gpio_set_mode(<a class="code hl_define" href="hc__sr04_8h.html#a579786f61b59b44da579a25e424fa2be">HCSR04_PORT</a>, GPIO_MODE_INPUT, GPIO_CNF_INPUT_FLOAT, <a class="code hl_define" href="hc__sr04_8h.html#acea96cea4a13b6cb38e57a86788adf90">ECHO_PIN</a>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    timer_ic_set_input(TIM4, TIM_IC4, TIM_IC_IN_TI4);    </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    timer_ic_set_polarity(TIM4, TIM_IC4, TIM_IC_RISING); </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    timer_ic_enable(TIM4, TIM_IC4);                      </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    timer_ic_set_input(TIM4, TIM_IC3, TIM_IC_IN_TI4);     </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    timer_ic_set_polarity(TIM4, TIM_IC3, TIM_IC_FALLING); </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    timer_ic_enable(TIM4, TIM_IC3);                       </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    timer_set_prescaler(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, (rcc_apb1_frequency / <a class="code hl_define" href="hc__sr04_8h.html#a324a42c4c04b834b2318e0553367abdf">MHZ_DIVISOR</a>) - 1);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    timer_enable_counter(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>); </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    timer_enable_irq(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, TIM_DIER_CC3IE | TIM_DIER_CC4IE);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    nvic_enable_irq(NVIC_TIM4_IRQ); </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
 </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="hc__sr04_8h.html#a1d98d7c399ecba7202789b91195fef87">   46</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="hc__sr04_8h.html#a1d98d7c399ecba7202789b91195fef87">hcsr04_trigger</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    gpio_set(GPIOA, <a class="code hl_define" href="hc__sr04_8h.html#a8eab89acd7dcb0e77e7b00d1749022a6">TRIG_PIN</a>);                </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">for</span> (<span class="keyword">volatile</span> uint8_t i = 0; i &lt; 30; i++) </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        __asm__(<span class="stringliteral">&quot;nop&quot;</span>); </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    gpio_clear(GPIOA, <a class="code hl_define" href="hc__sr04_8h.html#a8eab89acd7dcb0e77e7b00d1749022a6">TRIG_PIN</a>); </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="hc__sr04_8h.html#a1d98d7c399ecba7202789b91195fef87">   40</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="hc__sr04_8h.html#a1d98d7c399ecba7202789b91195fef87">hcsr04_trigger</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    gpio_set(<a class="code hl_define" href="hc__sr04_8h.html#a579786f61b59b44da579a25e424fa2be">HCSR04_PORT</a>, <a class="code hl_define" href="hc__sr04_8h.html#a8eab89acd7dcb0e77e7b00d1749022a6">TRIG_PIN</a>);                  </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">for</span> (<span class="keyword">volatile</span> uint8_t i = 0; i &lt; <a class="code hl_define" href="hc__sr04_8h.html#a7ef552a60444f8e30ab012976fe61cc4">DELAY_10US</a>; i++) </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        __asm__(<span class="stringliteral">&quot;nop&quot;</span>); </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    gpio_clear(<a class="code hl_define" href="hc__sr04_8h.html#a579786f61b59b44da579a25e424fa2be">HCSR04_PORT</a>, <a class="code hl_define" href="hc__sr04_8h.html#a8eab89acd7dcb0e77e7b00d1749022a6">TRIG_PIN</a>); </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keywordtype">void</span> tim4_isr(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>{</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">if</span> (timer_get_flag(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, TIM_SR_CC1IF))</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        timer_clear_flag(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, TIM_SR_CC1IF); </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        times[0] = timer_get_counter(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>);   </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        conversion_flag = 0;                          </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        timer_clear_flag(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, TIM_SR_CC2IF);             </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        times[1] = timer_get_counter(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>);               </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        distance = ((times[1] - times[0])) / <a class="code hl_define" href="hc__sr04_8h.html#a41e303049e3340673700cb5b67d69045">SOUND_SPEED_DIVISOR</a>; </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        conversion_flag = 1; </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="hc__sr04_8h.html#a16a50cc10ebfa3c146e1b506cf3bcbee">   80</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="hc__sr04_8h.html#a16a50cc10ebfa3c146e1b506cf3bcbee">hcsr04_get_distance</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>{</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_function" href="hc__sr04_8h.html#a1d98d7c399ecba7202789b91195fef87">hcsr04_trigger</a>(); </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">while</span> (!conversion_flag)</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        ;                </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="hc__sr04_8h.html#adc780ff3ce471de65092181bbd65d576">saturation</a>(); </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">void</span> tim4_isr(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">if</span> (timer_get_flag(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, TIM_SR_CC4IF))</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        timer_clear_flag(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, TIM_SR_CC4IF); </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        times[0] = timer_get_counter(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>);   </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        conversion_flag = 0;                          </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        timer_clear_flag(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>, TIM_SR_CC3IF);             </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        times[1] = timer_get_counter(<a class="code hl_define" href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a>);               </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        distance = ((times[1] - times[0])) / <a class="code hl_define" href="hc__sr04_8h.html#a41e303049e3340673700cb5b67d69045">SOUND_SPEED_DIVISOR</a>; </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        conversion_flag = 1; </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="hc__sr04_8h.html#a16a50cc10ebfa3c146e1b506cf3bcbee">   68</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="hc__sr04_8h.html#a16a50cc10ebfa3c146e1b506cf3bcbee">hcsr04_get_distance</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_function" href="hc__sr04_8h.html#a1d98d7c399ecba7202789b91195fef87">hcsr04_trigger</a>();          </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    uint32_t timeout = 0xFFFF; <span class="comment">// Set a timeout limit</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">while</span> (!conversion_flag &amp;&amp; --timeout)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        ; </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">if</span> (!timeout)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> -1.0f;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="hc__sr04_8h.html#adc780ff3ce471de65092181bbd65d576">saturation</a>(); </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
 </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="hc__sr04_8h.html#adc780ff3ce471de65092181bbd65d576">   92</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="hc__sr04_8h.html#adc780ff3ce471de65092181bbd65d576">saturation</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>{</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">if</span> (distance &gt; 400.0)</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span> 400.0; </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (distance &lt;= 2.0)</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">return</span> 2.0; </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    {</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">return</span> distance; </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="hc__sr04_8h.html#adc780ff3ce471de65092181bbd65d576">   81</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="hc__sr04_8h.html#adc780ff3ce471de65092181bbd65d576">saturation</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>{</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">if</span> (distance &gt; <a class="code hl_define" href="hc__sr04_8h.html#ad1523e806dc56ef51b42d8595d57af78">MAX_CAP_DISTANCE</a>)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="hc__sr04_8h.html#ad1523e806dc56ef51b42d8595d57af78">MAX_CAP_DISTANCE</a>; </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (distance &lt;= <a class="code hl_define" href="hc__sr04_8h.html#a5ed3e0a87baeea44b4c93175c298f200">MIN_CAP_DISTANCE</a>)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="hc__sr04_8h.html#a5ed3e0a87baeea44b4c93175c298f200">MIN_CAP_DISTANCE</a>; </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">return</span> distance; </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
 </div>
 <div class="ttc" id="ahc__sr04_8h_html"><div class="ttname"><a href="hc__sr04_8h.html">hc_sr04.h</a></div><div class="ttdoc">Ultrasonic sensor HC-SR04 driver for STM32 using libopencm3.</div></div>
-<div class="ttc" id="ahc__sr04_8h_html_a16a50cc10ebfa3c146e1b506cf3bcbee"><div class="ttname"><a href="hc__sr04_8h.html#a16a50cc10ebfa3c146e1b506cf3bcbee">hcsr04_get_distance</a></div><div class="ttdeci">float hcsr04_get_distance(void)</div><div class="ttdoc">Retrieves the distance measured by the HC-SR04 sensor in centimeters.</div><div class="ttdef"><b>Definition</b> <a href="#l00080">hc_sr04.c:80</a></div></div>
-<div class="ttc" id="ahc__sr04_8h_html_a1d98d7c399ecba7202789b91195fef87"><div class="ttname"><a href="hc__sr04_8h.html#a1d98d7c399ecba7202789b91195fef87">hcsr04_trigger</a></div><div class="ttdeci">void hcsr04_trigger(void)</div><div class="ttdoc">Sends a 10 µs trigger pulse to the HC-SR04 sensor.</div><div class="ttdef"><b>Definition</b> <a href="#l00046">hc_sr04.c:46</a></div></div>
-<div class="ttc" id="ahc__sr04_8h_html_a324a42c4c04b834b2318e0553367abdf"><div class="ttname"><a href="hc__sr04_8h.html#a324a42c4c04b834b2318e0553367abdf">MHZ_DIVISOR</a></div><div class="ttdeci">#define MHZ_DIVISOR</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00027">hc_sr04.h:27</a></div></div>
-<div class="ttc" id="ahc__sr04_8h_html_a41e303049e3340673700cb5b67d69045"><div class="ttname"><a href="hc__sr04_8h.html#a41e303049e3340673700cb5b67d69045">SOUND_SPEED_DIVISOR</a></div><div class="ttdeci">#define SOUND_SPEED_DIVISOR</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00034">hc_sr04.h:34</a></div></div>
-<div class="ttc" id="ahc__sr04_8h_html_a579786f61b59b44da579a25e424fa2be"><div class="ttname"><a href="hc__sr04_8h.html#a579786f61b59b44da579a25e424fa2be">HCSR04_PORT</a></div><div class="ttdeci">#define HCSR04_PORT</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00021">hc_sr04.h:21</a></div></div>
-<div class="ttc" id="ahc__sr04_8h_html_a8eab89acd7dcb0e77e7b00d1749022a6"><div class="ttname"><a href="hc__sr04_8h.html#a8eab89acd7dcb0e77e7b00d1749022a6">TRIG_PIN</a></div><div class="ttdeci">#define TRIG_PIN</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00015">hc_sr04.h:15</a></div></div>
-<div class="ttc" id="ahc__sr04_8h_html_ab608652eee9da3cc2376a98ccbea0ff7"><div class="ttname"><a href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a></div><div class="ttdeci">#define HCSR04_TIMER</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00024">hc_sr04.h:24</a></div></div>
-<div class="ttc" id="ahc__sr04_8h_html_ac4a331668da010f502b6fef5df1c2be9"><div class="ttname"><a href="hc__sr04_8h.html#ac4a331668da010f502b6fef5df1c2be9">hcsr04_init</a></div><div class="ttdeci">void hcsr04_init(void)</div><div class="ttdoc">Initializes the pins and timers needed for the HC-SR04.</div><div class="ttdef"><b>Definition</b> <a href="#l00010">hc_sr04.c:10</a></div></div>
-<div class="ttc" id="ahc__sr04_8h_html_acea96cea4a13b6cb38e57a86788adf90"><div class="ttname"><a href="hc__sr04_8h.html#acea96cea4a13b6cb38e57a86788adf90">ECHO_PIN</a></div><div class="ttdeci">#define ECHO_PIN</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00018">hc_sr04.h:18</a></div></div>
-<div class="ttc" id="ahc__sr04_8h_html_adc780ff3ce471de65092181bbd65d576"><div class="ttname"><a href="hc__sr04_8h.html#adc780ff3ce471de65092181bbd65d576">saturation</a></div><div class="ttdeci">float saturation(void)</div><div class="ttdoc">Applies saturation to the distance values to avoid out-of-range results.</div><div class="ttdef"><b>Definition</b> <a href="#l00092">hc_sr04.c:92</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html_a16a50cc10ebfa3c146e1b506cf3bcbee"><div class="ttname"><a href="hc__sr04_8h.html#a16a50cc10ebfa3c146e1b506cf3bcbee">hcsr04_get_distance</a></div><div class="ttdeci">float hcsr04_get_distance(void)</div><div class="ttdoc">Retrieves the distance measured by the HC-SR04 sensor in centimeters.</div><div class="ttdef"><b>Definition</b> <a href="#l00068">hc_sr04.c:68</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html_a1d98d7c399ecba7202789b91195fef87"><div class="ttname"><a href="hc__sr04_8h.html#a1d98d7c399ecba7202789b91195fef87">hcsr04_trigger</a></div><div class="ttdeci">void hcsr04_trigger(void)</div><div class="ttdoc">Sends a 10 µs trigger pulse to the HC-SR04 sensor.</div><div class="ttdef"><b>Definition</b> <a href="#l00040">hc_sr04.c:40</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html_a324a42c4c04b834b2318e0553367abdf"><div class="ttname"><a href="hc__sr04_8h.html#a324a42c4c04b834b2318e0553367abdf">MHZ_DIVISOR</a></div><div class="ttdeci">#define MHZ_DIVISOR</div><div class="ttdoc">Divisor to convert MHz to Hz, used for timing calculations.</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00048">hc_sr04.h:48</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html_a41e303049e3340673700cb5b67d69045"><div class="ttname"><a href="hc__sr04_8h.html#a41e303049e3340673700cb5b67d69045">SOUND_SPEED_DIVISOR</a></div><div class="ttdeci">#define SOUND_SPEED_DIVISOR</div><div class="ttdoc">Speed of sound in air, converted for sensor use.</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00063">hc_sr04.h:63</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html_a579786f61b59b44da579a25e424fa2be"><div class="ttname"><a href="hc__sr04_8h.html#a579786f61b59b44da579a25e424fa2be">HCSR04_PORT</a></div><div class="ttdeci">#define HCSR04_PORT</div><div class="ttdoc">GPIO port used for the HC-SR04 pins.</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00034">hc_sr04.h:34</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html_a5ed3e0a87baeea44b4c93175c298f200"><div class="ttname"><a href="hc__sr04_8h.html#a5ed3e0a87baeea44b4c93175c298f200">MIN_CAP_DISTANCE</a></div><div class="ttdeci">#define MIN_CAP_DISTANCE</div><div class="ttdoc">Minimum distance the HC-SR04 sensor can measure.</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00077">hc_sr04.h:77</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html_a7ef552a60444f8e30ab012976fe61cc4"><div class="ttname"><a href="hc__sr04_8h.html#a7ef552a60444f8e30ab012976fe61cc4">DELAY_10US</a></div><div class="ttdeci">#define DELAY_10US</div><div class="ttdoc">Delay in microseconds for the trigger pulse.</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00055">hc_sr04.h:55</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html_a8eab89acd7dcb0e77e7b00d1749022a6"><div class="ttname"><a href="hc__sr04_8h.html#a8eab89acd7dcb0e77e7b00d1749022a6">TRIG_PIN</a></div><div class="ttdeci">#define TRIG_PIN</div><div class="ttdoc">Trigger pin for the HC-SR04 ultrasonic sensor.</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00019">hc_sr04.h:19</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html_ab608652eee9da3cc2376a98ccbea0ff7"><div class="ttname"><a href="hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7">HCSR04_TIMER</a></div><div class="ttdeci">#define HCSR04_TIMER</div><div class="ttdoc">Timer used to capture echo signal duration.</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00041">hc_sr04.h:41</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html_ac4a331668da010f502b6fef5df1c2be9"><div class="ttname"><a href="hc__sr04_8h.html#ac4a331668da010f502b6fef5df1c2be9">hcsr04_init</a></div><div class="ttdeci">void hcsr04_init(void)</div><div class="ttdoc">Initializes the pins and timers needed for the HC-SR04.</div><div class="ttdef"><b>Definition</b> <a href="#l00007">hc_sr04.c:7</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html_acea96cea4a13b6cb38e57a86788adf90"><div class="ttname"><a href="hc__sr04_8h.html#acea96cea4a13b6cb38e57a86788adf90">ECHO_PIN</a></div><div class="ttdeci">#define ECHO_PIN</div><div class="ttdoc">Echo pin for the HC-SR04 ultrasonic sensor.</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00027">hc_sr04.h:27</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html_ad1523e806dc56ef51b42d8595d57af78"><div class="ttname"><a href="hc__sr04_8h.html#ad1523e806dc56ef51b42d8595d57af78">MAX_CAP_DISTANCE</a></div><div class="ttdeci">#define MAX_CAP_DISTANCE</div><div class="ttdoc">Maximum distance the HC-SR04 sensor can measure.</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8h_source.html#l00070">hc_sr04.h:70</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html_adc780ff3ce471de65092181bbd65d576"><div class="ttname"><a href="hc__sr04_8h.html#adc780ff3ce471de65092181bbd65d576">saturation</a></div><div class="ttdeci">float saturation(void)</div><div class="ttdoc">Applies saturation to the distance values to avoid out-of-range results.</div><div class="ttdef"><b>Definition</b> <a href="#l00081">hc_sr04.c:81</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

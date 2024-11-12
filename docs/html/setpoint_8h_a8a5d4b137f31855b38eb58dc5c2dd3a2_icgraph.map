@@ -1,4 +1,7 @@
 <map id="pot_get_value" name="pot_get_value">
-<area shape="rect" id="Node000001" title="Retrieves the latest potentiometer value." alt="" coords="5,29,108,56"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="73,16,67,10,56,8,47,10,41,14,40,20,43,28,38,30,35,20,37,11,44,5,57,3,69,5,76,12"/>
+<area shape="rect" id="Node000001" title="Retrieves the latest potentiometer value." alt="" coords="117,29,219,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="189,16,182,10,168,8,155,10,148,14,146,20,149,28,145,30,141,21,143,11,153,5,168,3,184,5,193,12"/>
+<area shape="rect" id="Node000002" href="$update_8c.html#a57d33dd3d6141c6e02e8669ab489f8c0" title="Updates the PID controller for motor speed control." alt="" coords="5,29,69,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="101,45,69,45,69,40,101,40"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="58,16,51,10,37,8,24,10,17,14,15,20,19,28,14,30,10,21,13,11,22,5,37,3,53,5,62,12"/>
 </map>

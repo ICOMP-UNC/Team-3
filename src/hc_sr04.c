@@ -4,9 +4,6 @@ static volatile uint32_t times[2];           /** Array to store the timer values
 static volatile float distance = 0;          /** Distance in centimeters */
 static volatile uint8_t conversion_flag = 0; /** Flag to indicate completion of distance measurement */
 
-/**
- * Initialize the HC-SR04 ultrasonic sensor by configuring GPIO, timer, and interrupts
- */
 void hcsr04_init(void)
 {
     /** Enable clocks for GPIOB and TIM4 */
@@ -20,9 +17,7 @@ void hcsr04_init(void)
     /** Configure ECHO_PIN as a floating input pin to receive the echo signal */
     gpio_set_mode(HCSR04_PORT, GPIO_MODE_INPUT, GPIO_CNF_INPUT_FLOAT, ECHO_PIN);
 
-    /**
-     * Configure TIM4 for input capture on channel 4, detecting both rising and falling edges
-     */
+    /** -- Configure TIM4 for input capture on channel 4, detecting both rising and falling edges -- */
     /** Set up TIM4 Channel 4 to capture on the rising edge */
     timer_ic_set_input(TIM4, TIM_IC4, TIM_IC_IN_TI4);    /** Map TIM4 CH4 to GPIOB9 */
     timer_ic_set_polarity(TIM4, TIM_IC4, TIM_IC_RISING); /** Rising edge for CH4 */
@@ -42,28 +37,21 @@ void hcsr04_init(void)
     nvic_enable_irq(NVIC_TIM4_IRQ); /** Enable NVIC interrupt for TIM4 */
 }
 
-/**
- * Trigger the HC-SR04 sensor by sending a 10 µs pulse on TRIG_PIN
- */
 void hcsr04_trigger(void)
 {
-    gpio_set(HCSR04_PORT, TRIG_PIN);          /** Set TRIG_PIN high to start the pulse */
-    for (volatile uint8_t i = 0; i < 32; i++) /** Delay for approximately 10 µs */
+    gpio_set(HCSR04_PORT, TRIG_PIN);                  /** Set TRIG_PIN high to start the pulse */
+    for (volatile uint8_t i = 0; i < DELAY_10US; i++) /** Delay for approximately 10 µs */
     {
         __asm__("nop"); /** No-operation for precise timing */
     }
     gpio_clear(HCSR04_PORT, TRIG_PIN); /** Set TRIG_PIN low to end the pulse */
 }
 
-/**
- * TIM4 interrupt service routine to capture echo signal times and calculate distance
- */
 void tim4_isr(void)
 {
     /** Check if the rising edge capture flag is set */
     if (timer_get_flag(HCSR04_TIMER, TIM_SR_CC4IF))
     {
-
         timer_clear_flag(HCSR04_TIMER, TIM_SR_CC4IF); /** Clear the rising edge flag */
         times[0] = timer_get_counter(HCSR04_TIMER);   /** Record the rising edge time */
         conversion_flag = 0;                          /** Reset conversion flag for new measurement */
@@ -77,14 +65,12 @@ void tim4_isr(void)
     }
 }
 
-/**
- * Trigger a measurement and return the calculated distance in cm
- */
 float hcsr04_get_distance(void)
 {
-    hcsr04_trigger();                      /** Start a new measurement by triggering the sensor */
-    uint32_t timeout = 0xFFFF;             // Set a timeout limit
-    while (!conversion_flag && --timeout); /** Wait until the measurement is complete */
+    hcsr04_trigger();          /** Start a new measurement by triggering the sensor */
+    uint32_t timeout = 0xFFFF; // Set a timeout limit
+    while (!conversion_flag && --timeout)
+        ; /** Wait until the measurement is complete */
     if (!timeout)
     {
         return -1.0f;
@@ -92,19 +78,15 @@ float hcsr04_get_distance(void)
     return saturation(); /** Return the measured distance with saturation applied */
 }
 
-/**
- * Apply saturation limits to the distance measurement
- * @return Distance capped between 2 cm and 400 cm
- */
 float saturation(void)
 {
-    if (distance > 400.0)
+    if (distance > MAX_CAP_DISTANCE)
     {
-        return 400.0; /** Cap distance at 400 cm if exceeded */
+        return MAX_CAP_DISTANCE; /** Cap distance at 400 cm if exceeded */
     }
-    else if (distance <= 2.0)
+    else if (distance <= MIN_CAP_DISTANCE)
     {
-        return 2.0; /** Cap distance at 2 cm minimum */
+        return MIN_CAP_DISTANCE; /** Cap distance at 2 cm minimum */
     }
     else
     {

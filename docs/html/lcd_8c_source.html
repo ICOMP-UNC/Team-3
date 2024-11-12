@@ -107,148 +107,149 @@ $(function(){initNavTree('lcd_8c_source.html',''); initResizable(true); });
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="lcd_8h.html">lcd.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="lcd_8h.html#a3934b2e0af4384b7647cdfc343a59b53">    4</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#a3934b2e0af4384b7647cdfc343a59b53">lcd_pulse_enable</a>(uint8_t data)</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    uint8_t d = data | <a class="code hl_define" href="lcd_8h.html#a1640ffbc0d8ec0f7edb04a2b93918072">LCD_EN</a>;                            </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    i2c_transfer7(I2C1, <a class="code hl_define" href="lcd_8h.html#a7956677db066bbbfbc6ba2734c529cbc">PCF8574_ADDRESS</a>, &amp;d, 1, NULL, 0); </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(1);                                          </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    d = data &amp; ~LCD_EN;                                   </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    i2c_transfer7(I2C1, <a class="code hl_define" href="lcd_8h.html#a7956677db066bbbfbc6ba2734c529cbc">PCF8574_ADDRESS</a>, &amp;d, 1, NULL, 0); </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(1);                                          </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="foldopen" id="foldopen00003" data-start="{" data-end="}">
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="lcd_8h.html#a3934b2e0af4384b7647cdfc343a59b53">    3</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#a3934b2e0af4384b7647cdfc343a59b53">lcd_pulse_enable</a>(uint8_t data)</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    uint8_t d = data | <a class="code hl_define" href="lcd_8h.html#a1640ffbc0d8ec0f7edb04a2b93918072">LCD_EN</a>;                            </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    i2c_transfer7(I2C1, <a class="code hl_define" href="lcd_8h.html#a7956677db066bbbfbc6ba2734c529cbc">PCF8574_ADDRESS</a>, &amp;d, 1, NULL, 0); </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(1);                                          </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    d = data &amp; ~LCD_EN;                                   </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    i2c_transfer7(I2C1, <a class="code hl_define" href="lcd_8h.html#a7956677db066bbbfbc6ba2734c529cbc">PCF8574_ADDRESS</a>, &amp;d, 1, NULL, 0); </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(1);                                          </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">   16</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a>(uint8_t nibble, uint8_t mode)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    uint8_t data = (nibble &amp; 0xF0) | mode |</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                   <a class="code hl_define" href="lcd_8h.html#ac059d24dfe9c1e1f7c07cb7869a1833b">LCD_BACKLIGHT</a>; </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="lcd_8h.html#a3934b2e0af4384b7647cdfc343a59b53">lcd_pulse_enable</a>(data);       </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">   14</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a>(uint8_t nibble, uint8_t mode)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    uint8_t data = (nibble &amp; 0xF0) | mode |</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                   <a class="code hl_define" href="lcd_8h.html#ac059d24dfe9c1e1f7c07cb7869a1833b">LCD_BACKLIGHT</a>; </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_function" href="lcd_8h.html#a3934b2e0af4384b7647cdfc343a59b53">lcd_pulse_enable</a>(data);       </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">   24</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(uint8_t <span class="keywordtype">byte</span>, uint8_t mode)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a>(<span class="keywordtype">byte</span> &amp; 0xF0, mode);        </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a>((<span class="keywordtype">byte</span> &lt;&lt; 4) &amp; 0xF0, mode); </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(2);                               </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">   21</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(uint8_t <span class="keywordtype">byte</span>, uint8_t mode)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_function" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a>(<span class="keywordtype">byte</span> &amp; 0xF0, mode);        </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a>((<span class="keywordtype">byte</span> &lt;&lt; 4) &amp; 0xF0, mode); </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(2);                               </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="lcd_8h.html#a6842775ba83d166f02b8fef8bb63b1e6">   32</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#a6842775ba83d166f02b8fef8bb63b1e6">lcd_init</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    rcc_periph_clock_enable(RCC_GPIOB); </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    rcc_periph_clock_enable(RCC_I2C1);  </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    gpio_set_mode(GPIOB,</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                  GPIO_MODE_OUTPUT_50_MHZ,</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                  GPIO_CNF_OUTPUT_ALTFN_PUSHPULL,</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                  <a class="code hl_define" href="lcd_8h.html#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a> | <a class="code hl_define" href="lcd_8h.html#a06c967e78bcedcee909a70764f879433">SCL_PIN</a>); </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    i2c_peripheral_disable(I2C1);      </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    i2c_set_standard_mode(I2C1);       </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    i2c_set_clock_frequency(I2C1, 36); </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    i2c_set_trise(I2C1, 36);           </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    i2c_set_ccr(I2C1, 180);            </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    i2c_peripheral_enable(I2C1);       </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(50); </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="lcd_8h.html#a6842775ba83d166f02b8fef8bb63b1e6">   28</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#a6842775ba83d166f02b8fef8bb63b1e6">lcd_init</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    rcc_periph_clock_enable(RCC_GPIOB); </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    rcc_periph_clock_enable(RCC_I2C1);  </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    gpio_set_mode(GPIOB,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                  GPIO_MODE_OUTPUT_50_MHZ,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                  GPIO_CNF_OUTPUT_ALTFN_PUSHPULL,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                  <a class="code hl_define" href="lcd_8h.html#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a> | <a class="code hl_define" href="lcd_8h.html#a06c967e78bcedcee909a70764f879433">SCL_PIN</a>); </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    i2c_peripheral_disable(I2C1);      </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    i2c_set_standard_mode(I2C1);       </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    i2c_set_clock_frequency(I2C1, 36); </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    i2c_set_trise(I2C1, 36);           </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    i2c_set_ccr(I2C1, 180);            </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    i2c_peripheral_enable(I2C1);       </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(50); </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_function" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a>(0x30, 0); </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(5);              </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_function" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a>(0x30, 0); </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(5);              </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_function" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a>(0x30, 0); </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(5);              </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_function" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a>(0x30, 0); </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_function" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a>(0x20, 0); </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(5);              </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_function" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a>(0x30, 0); </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(5);              </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_function" href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a>(0x20, 0); </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(5);              </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(<a class="code hl_define" href="lcd_8h.html#aaef882ae70d1f485cd132815d9716111">LCD_FUNCTIONSET</a> | <a class="code hl_define" href="lcd_8h.html#a7987e93538df2819583ba43b81ddbb25">LCD_2LINE</a> | <a class="code hl_define" href="lcd_8h.html#a9ef57e724c1b846dae0f531aff6fb464">LCD_5x8DOTS</a> | <a class="code hl_define" href="lcd_8h.html#ab8c35d355d2372090c7a347e961c9224">LCD_4BITMODE</a>, 0);          </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(<a class="code hl_define" href="lcd_8h.html#adfb8b2b8b8a08d7313504d7a4f89d99f">LCD_DISPLAYCONTROL</a> | <a class="code hl_define" href="lcd_8h.html#a76236ae8317b34bbc98ea56bc0a2639c">LCD_DISPLAYON</a> | <a class="code hl_define" href="lcd_8h.html#a32b194a3adaa0a0bb69acee2e6a754fa">LCD_CURSOROFF</a> | <a class="code hl_define" href="lcd_8h.html#a4b28243034cec656b0ed490ba6979752">LCD_BLINKOFF</a>, 0); </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(<a class="code hl_define" href="lcd_8h.html#a5597e1d5819ea2f0734ad4313abf6703">LCD_ENTRYMODESET</a> | <a class="code hl_define" href="lcd_8h.html#ae7c6309fce6200bd7526d090a4a84dd0">LCD_ENTRYLEFT</a>, 0); </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(<a class="code hl_define" href="lcd_8h.html#acc3509bc0442b41e2b816555de473ed2">LCD_CLEARDISPLAY</a>, 0);                 </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(2);                                        </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(<a class="code hl_define" href="lcd_8h.html#aaef882ae70d1f485cd132815d9716111">LCD_FUNCTIONSET</a> | <a class="code hl_define" href="lcd_8h.html#a7987e93538df2819583ba43b81ddbb25">LCD_2LINE</a> | <a class="code hl_define" href="lcd_8h.html#a9ef57e724c1b846dae0f531aff6fb464">LCD_5x8DOTS</a> | <a class="code hl_define" href="lcd_8h.html#ab8c35d355d2372090c7a347e961c9224">LCD_4BITMODE</a>, 0);          </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(<a class="code hl_define" href="lcd_8h.html#adfb8b2b8b8a08d7313504d7a4f89d99f">LCD_DISPLAYCONTROL</a> | <a class="code hl_define" href="lcd_8h.html#a76236ae8317b34bbc98ea56bc0a2639c">LCD_DISPLAYON</a> | <a class="code hl_define" href="lcd_8h.html#a32b194a3adaa0a0bb69acee2e6a754fa">LCD_CURSOROFF</a> | <a class="code hl_define" href="lcd_8h.html#a4b28243034cec656b0ed490ba6979752">LCD_BLINKOFF</a>, 0); </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(<a class="code hl_define" href="lcd_8h.html#a5597e1d5819ea2f0734ad4313abf6703">LCD_ENTRYMODESET</a> | <a class="code hl_define" href="lcd_8h.html#ae7c6309fce6200bd7526d090a4a84dd0">LCD_ENTRYLEFT</a>, 0); </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(<a class="code hl_define" href="lcd_8h.html#acc3509bc0442b41e2b816555de473ed2">LCD_CLEARDISPLAY</a>, 0);                 </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(2);                                        </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
 </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="lcd_8h.html#afa08102a314bc83e4e9825add5dcbc44">   64</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#afa08102a314bc83e4e9825add5dcbc44">lcd_print_char</a>(<span class="keywordtype">char</span> c)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>{</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(c, <a class="code hl_define" href="lcd_8h.html#a4781e073871c6f27f89b9463ad3a4ed1">LCD_RS</a>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="lcd_8h.html#afa08102a314bc83e4e9825add5dcbc44">   69</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#afa08102a314bc83e4e9825add5dcbc44">lcd_print_char</a>(<span class="keywordtype">char</span> c)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="lcd_8h.html#a0725f9cf954c41cdad7a759d7303702c">   69</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#a0725f9cf954c41cdad7a759d7303702c">lcd_print_string</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* str)</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>{</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(c, <a class="code hl_define" href="lcd_8h.html#a4781e073871c6f27f89b9463ad3a4ed1">LCD_RS</a>); </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">while</span> (*str) </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <a class="code hl_function" href="lcd_8h.html#afa08102a314bc83e4e9825add5dcbc44">lcd_print_char</a>(*str++);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
 </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="lcd_8h.html#a0725f9cf954c41cdad7a759d7303702c">   75</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#a0725f9cf954c41cdad7a759d7303702c">lcd_print_string</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* str)</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">while</span> (*str) </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <a class="code hl_function" href="lcd_8h.html#afa08102a314bc83e4e9825add5dcbc44">lcd_print_char</a>(*str++); </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="lcd_8h.html#ad235a86241458b1e7b8771688bfdaf9a">   77</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>{</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(<a class="code hl_define" href="lcd_8h.html#acc3509bc0442b41e2b816555de473ed2">LCD_CLEARDISPLAY</a>, 0); </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(1);                        </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
 </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="lcd_8h.html#ad235a86241458b1e7b8771688bfdaf9a">   84</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(<a class="code hl_define" href="lcd_8h.html#acc3509bc0442b41e2b816555de473ed2">LCD_CLEARDISPLAY</a>, 0); </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(1);                        </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="lcd_8h.html#a68e592603e66b23b0360f910f3356877">   83</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#a68e592603e66b23b0360f910f3356877">lcd_set_cursor</a>(uint8_t row, uint8_t col)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    uint8_t address;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">if</span> (row == 0) </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        address = 0x00 + col;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">else</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        address = 0x40 + col;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(<a class="code hl_define" href="lcd_8h.html#a15008b832807a208d9d88c74e6751ebf">LCD_SETDDRAMADDR</a> | address, 0); </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
 </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="lcd_8h.html#a68e592603e66b23b0360f910f3356877">   91</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#a68e592603e66b23b0360f910f3356877">lcd_set_cursor</a>(uint8_t row, uint8_t col)</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>{</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    uint8_t address;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (row == 0) </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        address = 0x00 + col;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">else</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        address = 0x40 + col;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_function" href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a>(<a class="code hl_define" href="lcd_8h.html#a15008b832807a208d9d88c74e6751ebf">LCD_SETDDRAMADDR</a> | address, 0); </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">   99</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(uint32_t ms)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>{</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; ms * <a class="code hl_define" href="lcd_8h.html#a1033219259579a261a7714e41a6e860e">TICKS_TO_MS</a>; i++)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        __asm__(<span class="stringliteral">&quot;nop&quot;</span>); </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
 </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">  108</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a>(uint32_t ms)</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>{</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; ms * 8000; i++)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        __asm__(<span class="stringliteral">&quot;nop&quot;</span>); </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>}</div>
-</div>
 <div class="ttc" id="alcd_8h_html"><div class="ttname"><a href="lcd_8h.html">lcd.h</a></div><div class="ttdoc">LCD driver using STM32 microcontroller and I2C expander PCF8574.</div></div>
-<div class="ttc" id="alcd_8h_html_a06c967e78bcedcee909a70764f879433"><div class="ttname"><a href="lcd_8h.html#a06c967e78bcedcee909a70764f879433">SCL_PIN</a></div><div class="ttdeci">#define SCL_PIN</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00020">lcd.h:20</a></div></div>
-<div class="ttc" id="alcd_8h_html_a0725f9cf954c41cdad7a759d7303702c"><div class="ttname"><a href="lcd_8h.html#a0725f9cf954c41cdad7a759d7303702c">lcd_print_string</a></div><div class="ttdeci">void lcd_print_string(const char *str)</div><div class="ttdoc">Prints a string on the LCD.</div><div class="ttdef"><b>Definition</b> <a href="#l00075">lcd.c:75</a></div></div>
-<div class="ttc" id="alcd_8h_html_a15008b832807a208d9d88c74e6751ebf"><div class="ttname"><a href="lcd_8h.html#a15008b832807a208d9d88c74e6751ebf">LCD_SETDDRAMADDR</a></div><div class="ttdeci">#define LCD_SETDDRAMADDR</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00039">lcd.h:39</a></div></div>
-<div class="ttc" id="alcd_8h_html_a1640ffbc0d8ec0f7edb04a2b93918072"><div class="ttname"><a href="lcd_8h.html#a1640ffbc0d8ec0f7edb04a2b93918072">LCD_EN</a></div><div class="ttdeci">#define LCD_EN</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00073">lcd.h:73</a></div></div>
-<div class="ttc" id="alcd_8h_html_a32b194a3adaa0a0bb69acee2e6a754fa"><div class="ttname"><a href="lcd_8h.html#a32b194a3adaa0a0bb69acee2e6a754fa">LCD_CURSOROFF</a></div><div class="ttdeci">#define LCD_CURSOROFF</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00050">lcd.h:50</a></div></div>
-<div class="ttc" id="alcd_8h_html_a3934b2e0af4384b7647cdfc343a59b53"><div class="ttname"><a href="lcd_8h.html#a3934b2e0af4384b7647cdfc343a59b53">lcd_pulse_enable</a></div><div class="ttdeci">void lcd_pulse_enable(uint8_t data)</div><div class="ttdoc">Sends a pulse to enable the LCD.</div><div class="ttdef"><b>Definition</b> <a href="#l00004">lcd.c:4</a></div></div>
-<div class="ttc" id="alcd_8h_html_a4781e073871c6f27f89b9463ad3a4ed1"><div class="ttname"><a href="lcd_8h.html#a4781e073871c6f27f89b9463ad3a4ed1">LCD_RS</a></div><div class="ttdeci">#define LCD_RS</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00076">lcd.h:76</a></div></div>
-<div class="ttc" id="alcd_8h_html_a488c7c357a54839bcd60fc874b617b61"><div class="ttname"><a href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a></div><div class="ttdeci">void lcd_send_nibble(uint8_t nibble, uint8_t mode)</div><div class="ttdoc">Sends a nibble (4 bits) of data or command to the LCD.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">lcd.c:16</a></div></div>
-<div class="ttc" id="alcd_8h_html_a4b28243034cec656b0ed490ba6979752"><div class="ttname"><a href="lcd_8h.html#a4b28243034cec656b0ed490ba6979752">LCD_BLINKOFF</a></div><div class="ttdeci">#define LCD_BLINKOFF</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00053">lcd.h:53</a></div></div>
-<div class="ttc" id="alcd_8h_html_a526d580d324bce60a3e964066fae77e3"><div class="ttname"><a href="lcd_8h.html#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a></div><div class="ttdeci">#define SDA_PIN</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00017">lcd.h:17</a></div></div>
-<div class="ttc" id="alcd_8h_html_a5597e1d5819ea2f0734ad4313abf6703"><div class="ttname"><a href="lcd_8h.html#a5597e1d5819ea2f0734ad4313abf6703">LCD_ENTRYMODESET</a></div><div class="ttdeci">#define LCD_ENTRYMODESET</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00030">lcd.h:30</a></div></div>
-<div class="ttc" id="alcd_8h_html_a62b0ce347e78e4030bda4729362011ce"><div class="ttname"><a href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a></div><div class="ttdeci">void lcd_send_byte(uint8_t byte, uint8_t mode)</div><div class="ttdoc">Sends a full byte of data or command to the LCD.</div><div class="ttdef"><b>Definition</b> <a href="#l00024">lcd.c:24</a></div></div>
-<div class="ttc" id="alcd_8h_html_a6842775ba83d166f02b8fef8bb63b1e6"><div class="ttname"><a href="lcd_8h.html#a6842775ba83d166f02b8fef8bb63b1e6">lcd_init</a></div><div class="ttdeci">void lcd_init(void)</div><div class="ttdoc">Initializes the LCD, pins, and I2C communication.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">lcd.c:32</a></div></div>
-<div class="ttc" id="alcd_8h_html_a68e592603e66b23b0360f910f3356877"><div class="ttname"><a href="lcd_8h.html#a68e592603e66b23b0360f910f3356877">lcd_set_cursor</a></div><div class="ttdeci">void lcd_set_cursor(uint8_t row, uint8_t col)</div><div class="ttdoc">Sets the cursor to a specific position on the LCD.</div><div class="ttdef"><b>Definition</b> <a href="#l00091">lcd.c:91</a></div></div>
-<div class="ttc" id="alcd_8h_html_a76236ae8317b34bbc98ea56bc0a2639c"><div class="ttname"><a href="lcd_8h.html#a76236ae8317b34bbc98ea56bc0a2639c">LCD_DISPLAYON</a></div><div class="ttdeci">#define LCD_DISPLAYON</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00047">lcd.h:47</a></div></div>
-<div class="ttc" id="alcd_8h_html_a7956677db066bbbfbc6ba2734c529cbc"><div class="ttname"><a href="lcd_8h.html#a7956677db066bbbfbc6ba2734c529cbc">PCF8574_ADDRESS</a></div><div class="ttdeci">#define PCF8574_ADDRESS</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00014">lcd.h:14</a></div></div>
-<div class="ttc" id="alcd_8h_html_a7987e93538df2819583ba43b81ddbb25"><div class="ttname"><a href="lcd_8h.html#a7987e93538df2819583ba43b81ddbb25">LCD_2LINE</a></div><div class="ttdeci">#define LCD_2LINE</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00060">lcd.h:60</a></div></div>
-<div class="ttc" id="alcd_8h_html_a9ef57e724c1b846dae0f531aff6fb464"><div class="ttname"><a href="lcd_8h.html#a9ef57e724c1b846dae0f531aff6fb464">LCD_5x8DOTS</a></div><div class="ttdeci">#define LCD_5x8DOTS</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00063">lcd.h:63</a></div></div>
-<div class="ttc" id="alcd_8h_html_aaef882ae70d1f485cd132815d9716111"><div class="ttname"><a href="lcd_8h.html#aaef882ae70d1f485cd132815d9716111">LCD_FUNCTIONSET</a></div><div class="ttdeci">#define LCD_FUNCTIONSET</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00036">lcd.h:36</a></div></div>
-<div class="ttc" id="alcd_8h_html_ab7cce8122024d7ba47bf10f434956de4"><div class="ttname"><a href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a></div><div class="ttdeci">void delay_ms(uint32_t ms)</div><div class="ttdoc">Delays execution for a specified time in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="#l00108">lcd.c:108</a></div></div>
-<div class="ttc" id="alcd_8h_html_ab8c35d355d2372090c7a347e961c9224"><div class="ttname"><a href="lcd_8h.html#ab8c35d355d2372090c7a347e961c9224">LCD_4BITMODE</a></div><div class="ttdeci">#define LCD_4BITMODE</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00057">lcd.h:57</a></div></div>
-<div class="ttc" id="alcd_8h_html_ac059d24dfe9c1e1f7c07cb7869a1833b"><div class="ttname"><a href="lcd_8h.html#ac059d24dfe9c1e1f7c07cb7869a1833b">LCD_BACKLIGHT</a></div><div class="ttdeci">#define LCD_BACKLIGHT</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00067">lcd.h:67</a></div></div>
-<div class="ttc" id="alcd_8h_html_acc3509bc0442b41e2b816555de473ed2"><div class="ttname"><a href="lcd_8h.html#acc3509bc0442b41e2b816555de473ed2">LCD_CLEARDISPLAY</a></div><div class="ttdeci">#define LCD_CLEARDISPLAY</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00024">lcd.h:24</a></div></div>
-<div class="ttc" id="alcd_8h_html_ad235a86241458b1e7b8771688bfdaf9a"><div class="ttname"><a href="lcd_8h.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a></div><div class="ttdeci">void lcd_clear(void)</div><div class="ttdoc">Clears the display data.</div><div class="ttdef"><b>Definition</b> <a href="#l00084">lcd.c:84</a></div></div>
-<div class="ttc" id="alcd_8h_html_adfb8b2b8b8a08d7313504d7a4f89d99f"><div class="ttname"><a href="lcd_8h.html#adfb8b2b8b8a08d7313504d7a4f89d99f">LCD_DISPLAYCONTROL</a></div><div class="ttdeci">#define LCD_DISPLAYCONTROL</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00033">lcd.h:33</a></div></div>
-<div class="ttc" id="alcd_8h_html_ae7c6309fce6200bd7526d090a4a84dd0"><div class="ttname"><a href="lcd_8h.html#ae7c6309fce6200bd7526d090a4a84dd0">LCD_ENTRYLEFT</a></div><div class="ttdeci">#define LCD_ENTRYLEFT</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00043">lcd.h:43</a></div></div>
-<div class="ttc" id="alcd_8h_html_afa08102a314bc83e4e9825add5dcbc44"><div class="ttname"><a href="lcd_8h.html#afa08102a314bc83e4e9825add5dcbc44">lcd_print_char</a></div><div class="ttdeci">void lcd_print_char(char c)</div><div class="ttdoc">Prints a single character on the LCD.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">lcd.c:69</a></div></div>
+<div class="ttc" id="alcd_8h_html_a06c967e78bcedcee909a70764f879433"><div class="ttname"><a href="lcd_8h.html#a06c967e78bcedcee909a70764f879433">SCL_PIN</a></div><div class="ttdeci">#define SCL_PIN</div><div class="ttdoc">STM32 SCL pin.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00032">lcd.h:32</a></div></div>
+<div class="ttc" id="alcd_8h_html_a0725f9cf954c41cdad7a759d7303702c"><div class="ttname"><a href="lcd_8h.html#a0725f9cf954c41cdad7a759d7303702c">lcd_print_string</a></div><div class="ttdeci">void lcd_print_string(const char *str)</div><div class="ttdoc">Prints a string on the LCD.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">lcd.c:69</a></div></div>
+<div class="ttc" id="alcd_8h_html_a1033219259579a261a7714e41a6e860e"><div class="ttname"><a href="lcd_8h.html#a1033219259579a261a7714e41a6e860e">TICKS_TO_MS</a></div><div class="ttdeci">#define TICKS_TO_MS</div><div class="ttdoc">Conversion factor to create a delay in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00130">lcd.h:130</a></div></div>
+<div class="ttc" id="alcd_8h_html_a15008b832807a208d9d88c74e6751ebf"><div class="ttname"><a href="lcd_8h.html#a15008b832807a208d9d88c74e6751ebf">LCD_SETDDRAMADDR</a></div><div class="ttdeci">#define LCD_SETDDRAMADDR</div><div class="ttdoc">Command to set DDRAM address.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00063">lcd.h:63</a></div></div>
+<div class="ttc" id="alcd_8h_html_a1640ffbc0d8ec0f7edb04a2b93918072"><div class="ttname"><a href="lcd_8h.html#a1640ffbc0d8ec0f7edb04a2b93918072">LCD_EN</a></div><div class="ttdeci">#define LCD_EN</div><div class="ttdoc">Enable bit for LCD command latching.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00117">lcd.h:117</a></div></div>
+<div class="ttc" id="alcd_8h_html_a32b194a3adaa0a0bb69acee2e6a754fa"><div class="ttname"><a href="lcd_8h.html#a32b194a3adaa0a0bb69acee2e6a754fa">LCD_CURSOROFF</a></div><div class="ttdeci">#define LCD_CURSOROFF</div><div class="ttdoc">Flag to turn the cursor off.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00080">lcd.h:80</a></div></div>
+<div class="ttc" id="alcd_8h_html_a3934b2e0af4384b7647cdfc343a59b53"><div class="ttname"><a href="lcd_8h.html#a3934b2e0af4384b7647cdfc343a59b53">lcd_pulse_enable</a></div><div class="ttdeci">void lcd_pulse_enable(uint8_t data)</div><div class="ttdoc">Sends a pulse to enable the LCD.</div><div class="ttdef"><b>Definition</b> <a href="#l00003">lcd.c:3</a></div></div>
+<div class="ttc" id="alcd_8h_html_a4781e073871c6f27f89b9463ad3a4ed1"><div class="ttname"><a href="lcd_8h.html#a4781e073871c6f27f89b9463ad3a4ed1">LCD_RS</a></div><div class="ttdeci">#define LCD_RS</div><div class="ttdoc">Register select bit for choosing between command and data mode.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00122">lcd.h:122</a></div></div>
+<div class="ttc" id="alcd_8h_html_a488c7c357a54839bcd60fc874b617b61"><div class="ttname"><a href="lcd_8h.html#a488c7c357a54839bcd60fc874b617b61">lcd_send_nibble</a></div><div class="ttdeci">void lcd_send_nibble(uint8_t nibble, uint8_t mode)</div><div class="ttdoc">Sends a nibble (4 bits) of data or command to the LCD.</div><div class="ttdef"><b>Definition</b> <a href="#l00014">lcd.c:14</a></div></div>
+<div class="ttc" id="alcd_8h_html_a4b28243034cec656b0ed490ba6979752"><div class="ttname"><a href="lcd_8h.html#a4b28243034cec656b0ed490ba6979752">LCD_BLINKOFF</a></div><div class="ttdeci">#define LCD_BLINKOFF</div><div class="ttdoc">Flag to disable cursor blinking.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00085">lcd.h:85</a></div></div>
+<div class="ttc" id="alcd_8h_html_a526d580d324bce60a3e964066fae77e3"><div class="ttname"><a href="lcd_8h.html#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a></div><div class="ttdeci">#define SDA_PIN</div><div class="ttdoc">STM32 SDA pin.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00025">lcd.h:25</a></div></div>
+<div class="ttc" id="alcd_8h_html_a5597e1d5819ea2f0734ad4313abf6703"><div class="ttname"><a href="lcd_8h.html#a5597e1d5819ea2f0734ad4313abf6703">LCD_ENTRYMODESET</a></div><div class="ttdeci">#define LCD_ENTRYMODESET</div><div class="ttdoc">Command to set the LCD entry mode.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00048">lcd.h:48</a></div></div>
+<div class="ttc" id="alcd_8h_html_a62b0ce347e78e4030bda4729362011ce"><div class="ttname"><a href="lcd_8h.html#a62b0ce347e78e4030bda4729362011ce">lcd_send_byte</a></div><div class="ttdeci">void lcd_send_byte(uint8_t byte, uint8_t mode)</div><div class="ttdoc">Sends a full byte of data or command to the LCD.</div><div class="ttdef"><b>Definition</b> <a href="#l00021">lcd.c:21</a></div></div>
+<div class="ttc" id="alcd_8h_html_a6842775ba83d166f02b8fef8bb63b1e6"><div class="ttname"><a href="lcd_8h.html#a6842775ba83d166f02b8fef8bb63b1e6">lcd_init</a></div><div class="ttdeci">void lcd_init(void)</div><div class="ttdoc">Initializes the LCD, pins, and I2C communication.</div><div class="ttdef"><b>Definition</b> <a href="#l00028">lcd.c:28</a></div></div>
+<div class="ttc" id="alcd_8h_html_a68e592603e66b23b0360f910f3356877"><div class="ttname"><a href="lcd_8h.html#a68e592603e66b23b0360f910f3356877">lcd_set_cursor</a></div><div class="ttdeci">void lcd_set_cursor(uint8_t row, uint8_t col)</div><div class="ttdoc">Sets the cursor to a specific position on the LCD.</div><div class="ttdef"><b>Definition</b> <a href="#l00083">lcd.c:83</a></div></div>
+<div class="ttc" id="alcd_8h_html_a76236ae8317b34bbc98ea56bc0a2639c"><div class="ttname"><a href="lcd_8h.html#a76236ae8317b34bbc98ea56bc0a2639c">LCD_DISPLAYON</a></div><div class="ttdeci">#define LCD_DISPLAYON</div><div class="ttdoc">Flag to turn the display on.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00075">lcd.h:75</a></div></div>
+<div class="ttc" id="alcd_8h_html_a7956677db066bbbfbc6ba2734c529cbc"><div class="ttname"><a href="lcd_8h.html#a7956677db066bbbfbc6ba2734c529cbc">PCF8574_ADDRESS</a></div><div class="ttdeci">#define PCF8574_ADDRESS</div><div class="ttdoc">I2C address of the PCF8574.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00018">lcd.h:18</a></div></div>
+<div class="ttc" id="alcd_8h_html_a7987e93538df2819583ba43b81ddbb25"><div class="ttname"><a href="lcd_8h.html#a7987e93538df2819583ba43b81ddbb25">LCD_2LINE</a></div><div class="ttdeci">#define LCD_2LINE</div><div class="ttdoc">Flag to set 2-line display mode.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00096">lcd.h:96</a></div></div>
+<div class="ttc" id="alcd_8h_html_a9ef57e724c1b846dae0f531aff6fb464"><div class="ttname"><a href="lcd_8h.html#a9ef57e724c1b846dae0f531aff6fb464">LCD_5x8DOTS</a></div><div class="ttdeci">#define LCD_5x8DOTS</div><div class="ttdoc">Flag to set 5x8 character dot size.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00101">lcd.h:101</a></div></div>
+<div class="ttc" id="alcd_8h_html_aaef882ae70d1f485cd132815d9716111"><div class="ttname"><a href="lcd_8h.html#aaef882ae70d1f485cd132815d9716111">LCD_FUNCTIONSET</a></div><div class="ttdeci">#define LCD_FUNCTIONSET</div><div class="ttdoc">Command to set LCD function parameters.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00058">lcd.h:58</a></div></div>
+<div class="ttc" id="alcd_8h_html_ab7cce8122024d7ba47bf10f434956de4"><div class="ttname"><a href="lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a></div><div class="ttdeci">void delay_ms(uint32_t ms)</div><div class="ttdoc">Creates a delay for a specified time in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="#l00099">lcd.c:99</a></div></div>
+<div class="ttc" id="alcd_8h_html_ab8c35d355d2372090c7a347e961c9224"><div class="ttname"><a href="lcd_8h.html#ab8c35d355d2372090c7a347e961c9224">LCD_4BITMODE</a></div><div class="ttdeci">#define LCD_4BITMODE</div><div class="ttdoc">Flag to set 4-bit data mode.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00091">lcd.h:91</a></div></div>
+<div class="ttc" id="alcd_8h_html_ac059d24dfe9c1e1f7c07cb7869a1833b"><div class="ttname"><a href="lcd_8h.html#ac059d24dfe9c1e1f7c07cb7869a1833b">LCD_BACKLIGHT</a></div><div class="ttdeci">#define LCD_BACKLIGHT</div><div class="ttdoc">Flag to turn the LCD backlight on.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00107">lcd.h:107</a></div></div>
+<div class="ttc" id="alcd_8h_html_acc3509bc0442b41e2b816555de473ed2"><div class="ttname"><a href="lcd_8h.html#acc3509bc0442b41e2b816555de473ed2">LCD_CLEARDISPLAY</a></div><div class="ttdeci">#define LCD_CLEARDISPLAY</div><div class="ttdoc">Command to clear the LCD screen.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00038">lcd.h:38</a></div></div>
+<div class="ttc" id="alcd_8h_html_ad235a86241458b1e7b8771688bfdaf9a"><div class="ttname"><a href="lcd_8h.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a></div><div class="ttdeci">void lcd_clear(void)</div><div class="ttdoc">Clears the LCD display.</div><div class="ttdef"><b>Definition</b> <a href="#l00077">lcd.c:77</a></div></div>
+<div class="ttc" id="alcd_8h_html_adfb8b2b8b8a08d7313504d7a4f89d99f"><div class="ttname"><a href="lcd_8h.html#adfb8b2b8b8a08d7313504d7a4f89d99f">LCD_DISPLAYCONTROL</a></div><div class="ttdeci">#define LCD_DISPLAYCONTROL</div><div class="ttdoc">Command to control the display settings.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00053">lcd.h:53</a></div></div>
+<div class="ttc" id="alcd_8h_html_ae7c6309fce6200bd7526d090a4a84dd0"><div class="ttname"><a href="lcd_8h.html#ae7c6309fce6200bd7526d090a4a84dd0">LCD_ENTRYLEFT</a></div><div class="ttdeci">#define LCD_ENTRYLEFT</div><div class="ttdoc">Flag for left-to-right text entry mode.</div><div class="ttdef"><b>Definition</b> <a href="lcd_8h_source.html#l00069">lcd.h:69</a></div></div>
+<div class="ttc" id="alcd_8h_html_afa08102a314bc83e4e9825add5dcbc44"><div class="ttname"><a href="lcd_8h.html#afa08102a314bc83e4e9825add5dcbc44">lcd_print_char</a></div><div class="ttdeci">void lcd_print_char(char c)</div><div class="ttdoc">Prints a single character on the LCD.</div><div class="ttdef"><b>Definition</b> <a href="#l00064">lcd.c:64</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

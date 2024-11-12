@@ -4,7 +4,7 @@
 <area shape="rect" id="Node000002" href="$lcd_8c.html#a3934b2e0af4384b7647cdfc343a59b53" title="Sends a pulse to enable the LCD." alt="" coords="168,29,289,56"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,40,152,40,152,45,120,45"/>
 <area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="203,30,198,21,201,11,212,5,228,3,246,5,256,12,253,16,244,10,228,8,213,10,205,14,203,20,207,28"/>
-<area shape="rect" id="Node000003" href="$lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Delays execution for a specified time in milliseconds." alt="" coords="337,29,414,56"/>
+<area shape="rect" id="Node000003" href="$lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Creates a delay for a specified time in milliseconds." alt="" coords="337,29,414,56"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="289,40,321,40,321,45,289,45"/>
 <area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="350,30,345,21,349,11,359,5,376,3,394,5,403,12,400,16,392,10,376,8,361,10,353,14,351,20,355,28"/>
 </map>

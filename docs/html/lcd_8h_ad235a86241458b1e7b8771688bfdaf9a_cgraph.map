@@ -1,7 +1,7 @@
 <map id="lcd_clear" name="lcd_clear">
-<area shape="rect" id="Node000001" title="Clears the display data." alt="" coords="5,29,79,56"/>
+<area shape="rect" id="Node000001" title="Clears the LCD display." alt="" coords="5,29,79,56"/>
 <area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="18,30,14,21,17,11,26,5,42,3,59,5,68,12,65,16,57,10,42,8,28,10,21,14,19,20,23,28"/>
-<area shape="rect" id="Node000002" href="$lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Delays execution for a specified time in milliseconds." alt="" coords="612,43,689,69"/>
+<area shape="rect" id="Node000002" href="$lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Creates a delay for a specified time in milliseconds." alt="" coords="612,43,689,69"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,34,126,28,236,26,369,31,564,43,596,46,596,51,563,48,368,36,236,31,127,33,80,39"/>
 <area shape="rect" id="Node000003" href="$lcd_8c.html#a62b0ce347e78e4030bda4729362011ce" title="Sends a full byte of data or command to the LCD." alt="" coords="127,67,232,93"/>
 <area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="80,50,114,59,112,65,78,55"/>

@@ -1,11 +1,8 @@
-#include <stdlib.h>
 #include "speedometer.h"
+#include <stdlib.h>
 
 static volatile uint16_t turns[2]; /** Variable to store the number of encoder turns */
 
-/**
- * Initialize the speedometer by configuring timers, DMA, and GPIO
- */
 void speedometer_init(void)
 {
     /** Enable clocks for DMA1, TIM2 (encoder timer), TIM1 (timer for measurements), and GPIOA */
@@ -56,17 +53,11 @@ void speedometer_init(void)
     timer_enable_counter(TENMS_TIMER);   /** Start TIM1 (measurement timer) */
 }
 
-/**
- * Calculate and return the speed in RPM based on encoder turns
- */
 float speedometer_getRPM(void)
 {
     return (float)(abs(turns[1] - turns[0]) * CONSTANT_TO_RPM); /** Convert turns to RPM */
 }
 
-/**
- * Calculate and return the speed in radians per second based on encoder turns
- */
 float speedometer_getRAD_S(void)
 {
     return (float)(abs(turns[1] - turns[0]) * CONSTANT_TO_RAD_S); /** Convert turns to rad/s */

@@ -5,5 +5,7 @@ var searchData=
   ['sda_5fpin_2',['SDA_PIN',['../lcd_8h.html#a526d580d324bce60a3e964066fae77e3',1,'lcd.h']]],
   ['sound_5fspeed_5fdivisor_3',['SOUND_SPEED_DIVISOR',['../hc__sr04_8h.html#a41e303049e3340673700cb5b67d69045',1,'hc_sr04.h']]],
   ['speedometer_5fpin_4',['SPEEDOMETER_PIN',['../speedometer_8h.html#aaa2076a38bdb2951dcf2c8b1f5cdef15',1,'speedometer.h']]],
-  ['speedometer_5fport_5',['SPEEDOMETER_PORT',['../speedometer_8h.html#aa7742d6ccedf0581d0ffc8440bcab91c',1,'speedometer.h']]]
+  ['speedometer_5fport_5',['SPEEDOMETER_PORT',['../speedometer_8h.html#aa7742d6ccedf0581d0ffc8440bcab91c',1,'speedometer.h']]],
+  ['stop_5fbutton_5fpin_6',['STOP_BUTTON_PIN',['../button_8h.html#a9da436c5bf6a3ce86e3c4a178ca6a862',1,'button.h']]],
+  ['stop_5fbutton_5fport_7',['STOP_BUTTON_PORT',['../button_8h.html#acd8744c2cbcfa981f77e15c471b3cb02',1,'button.h']]]
 ];

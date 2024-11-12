@@ -20,6 +20,7 @@ var lcd_8h =
     [ "PCF8574_ADDRESS", "lcd_8h.html#a7956677db066bbbfbc6ba2734c529cbc", null ],
     [ "SCL_PIN", "lcd_8h.html#a06c967e78bcedcee909a70764f879433", null ],
     [ "SDA_PIN", "lcd_8h.html#a526d580d324bce60a3e964066fae77e3", null ],
+    [ "TICKS_TO_MS", "lcd_8h.html#a1033219259579a261a7714e41a6e860e", null ],
     [ "delay_ms", "lcd_8h.html#ab7cce8122024d7ba47bf10f434956de4", null ],
     [ "lcd_clear", "lcd_8h.html#ad235a86241458b1e7b8771688bfdaf9a", null ],
     [ "lcd_init", "lcd_8h.html#a6842775ba83d166f02b8fef8bb63b1e6", null ],

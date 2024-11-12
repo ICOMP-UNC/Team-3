@@ -133,9 +133,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="lcd_8h__dep__incl.png" border="0" usemap="#ainclude_2lcd_8hdep" alt=""/></div>
 <map name="ainclude_2lcd_8hdep" id="ainclude_2lcd_8hdep">
-<area shape="rect" title="LCD driver using STM32 microcontroller and I2C expander PCF8574." alt="" coords="5,5,100,32"/>
-<area shape="rect" href="lcd_8c_source.html" title=" " alt="" coords="17,80,88,107"/>
-<area shape="poly" title=" " alt="" coords="55,48,55,80,50,80,50,48"/>
+<area shape="rect" title="LCD driver using STM32 microcontroller and I2C expander PCF8574." alt="" coords="75,5,169,32"/>
+<area shape="rect" href="update_8h.html" title="System update functions for speed and distance measurement." alt="" coords="5,80,122,107"/>
+<area shape="poly" title=" " alt="" coords="104,46,76,81,72,78,100,43"/>
+<area shape="rect" href="lcd_8c_source.html" title=" " alt="" coords="145,80,216,107"/>
+<area shape="poly" title=" " alt="" coords="144,43,173,78,169,81,140,46"/>
+<area shape="rect" href="update_8c_source.html" title=" " alt="" coords="17,155,110,181"/>
+<area shape="poly" title=" " alt="" coords="66,122,66,154,61,154,61,122"/>
 </map>
 </div>
 </div>
@@ -144,45 +148,68 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a7956677db066bbbfbc6ba2734c529cbc" id="r_a7956677db066bbbfbc6ba2734c529cbc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7956677db066bbbfbc6ba2734c529cbc">PCF8574_ADDRESS</a>&#160;&#160;&#160;0x27</td></tr>
+<tr class="memdesc:a7956677db066bbbfbc6ba2734c529cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C address of the PCF8574.  <br /></td></tr>
 <tr class="separator:a7956677db066bbbfbc6ba2734c529cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a526d580d324bce60a3e964066fae77e3" id="r_a526d580d324bce60a3e964066fae77e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a>&#160;&#160;&#160;GPIO7</td></tr>
+<tr class="memdesc:a526d580d324bce60a3e964066fae77e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">STM32 SDA pin.  <br /></td></tr>
 <tr class="separator:a526d580d324bce60a3e964066fae77e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06c967e78bcedcee909a70764f879433" id="r_a06c967e78bcedcee909a70764f879433"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06c967e78bcedcee909a70764f879433">SCL_PIN</a>&#160;&#160;&#160;GPIO6</td></tr>
+<tr class="memdesc:a06c967e78bcedcee909a70764f879433"><td class="mdescLeft">&#160;</td><td class="mdescRight">STM32 SCL pin.  <br /></td></tr>
 <tr class="separator:a06c967e78bcedcee909a70764f879433"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc3509bc0442b41e2b816555de473ed2" id="r_acc3509bc0442b41e2b816555de473ed2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc3509bc0442b41e2b816555de473ed2">LCD_CLEARDISPLAY</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="memdesc:acc3509bc0442b41e2b816555de473ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command to clear the LCD screen.  <br /></td></tr>
 <tr class="separator:acc3509bc0442b41e2b816555de473ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a154c86a887633d0f6d9988e4dbb1f419" id="r_a154c86a887633d0f6d9988e4dbb1f419"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a154c86a887633d0f6d9988e4dbb1f419">LCD_RETURNHOME</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="memdesc:a154c86a887633d0f6d9988e4dbb1f419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command to return the cursor to the home position.  <br /></td></tr>
 <tr class="separator:a154c86a887633d0f6d9988e4dbb1f419"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5597e1d5819ea2f0734ad4313abf6703" id="r_a5597e1d5819ea2f0734ad4313abf6703"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5597e1d5819ea2f0734ad4313abf6703">LCD_ENTRYMODESET</a>&#160;&#160;&#160;0x04</td></tr>
+<tr class="memdesc:a5597e1d5819ea2f0734ad4313abf6703"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command to set the LCD entry mode.  <br /></td></tr>
 <tr class="separator:a5597e1d5819ea2f0734ad4313abf6703"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfb8b2b8b8a08d7313504d7a4f89d99f" id="r_adfb8b2b8b8a08d7313504d7a4f89d99f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfb8b2b8b8a08d7313504d7a4f89d99f">LCD_DISPLAYCONTROL</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="memdesc:adfb8b2b8b8a08d7313504d7a4f89d99f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command to control the display settings.  <br /></td></tr>
 <tr class="separator:adfb8b2b8b8a08d7313504d7a4f89d99f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaef882ae70d1f485cd132815d9716111" id="r_aaef882ae70d1f485cd132815d9716111"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaef882ae70d1f485cd132815d9716111">LCD_FUNCTIONSET</a>&#160;&#160;&#160;0x20</td></tr>
+<tr class="memdesc:aaef882ae70d1f485cd132815d9716111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command to set LCD function parameters.  <br /></td></tr>
 <tr class="separator:aaef882ae70d1f485cd132815d9716111"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15008b832807a208d9d88c74e6751ebf" id="r_a15008b832807a208d9d88c74e6751ebf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15008b832807a208d9d88c74e6751ebf">LCD_SETDDRAMADDR</a>&#160;&#160;&#160;0x80</td></tr>
+<tr class="memdesc:a15008b832807a208d9d88c74e6751ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command to set DDRAM address.  <br /></td></tr>
 <tr class="separator:a15008b832807a208d9d88c74e6751ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7c6309fce6200bd7526d090a4a84dd0" id="r_ae7c6309fce6200bd7526d090a4a84dd0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7c6309fce6200bd7526d090a4a84dd0">LCD_ENTRYLEFT</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="memdesc:ae7c6309fce6200bd7526d090a4a84dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag for left-to-right text entry mode.  <br /></td></tr>
 <tr class="separator:ae7c6309fce6200bd7526d090a4a84dd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76236ae8317b34bbc98ea56bc0a2639c" id="r_a76236ae8317b34bbc98ea56bc0a2639c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76236ae8317b34bbc98ea56bc0a2639c">LCD_DISPLAYON</a>&#160;&#160;&#160;0x04</td></tr>
+<tr class="memdesc:a76236ae8317b34bbc98ea56bc0a2639c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to turn the display on.  <br /></td></tr>
 <tr class="separator:a76236ae8317b34bbc98ea56bc0a2639c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32b194a3adaa0a0bb69acee2e6a754fa" id="r_a32b194a3adaa0a0bb69acee2e6a754fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32b194a3adaa0a0bb69acee2e6a754fa">LCD_CURSOROFF</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memdesc:a32b194a3adaa0a0bb69acee2e6a754fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to turn the cursor off.  <br /></td></tr>
 <tr class="separator:a32b194a3adaa0a0bb69acee2e6a754fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b28243034cec656b0ed490ba6979752" id="r_a4b28243034cec656b0ed490ba6979752"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b28243034cec656b0ed490ba6979752">LCD_BLINKOFF</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memdesc:a4b28243034cec656b0ed490ba6979752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to disable cursor blinking.  <br /></td></tr>
 <tr class="separator:a4b28243034cec656b0ed490ba6979752"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8c35d355d2372090c7a347e961c9224" id="r_ab8c35d355d2372090c7a347e961c9224"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8c35d355d2372090c7a347e961c9224">LCD_4BITMODE</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memdesc:ab8c35d355d2372090c7a347e961c9224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to set 4-bit data mode.  <br /></td></tr>
 <tr class="separator:ab8c35d355d2372090c7a347e961c9224"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7987e93538df2819583ba43b81ddbb25" id="r_a7987e93538df2819583ba43b81ddbb25"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7987e93538df2819583ba43b81ddbb25">LCD_2LINE</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="memdesc:a7987e93538df2819583ba43b81ddbb25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to set 2-line display mode.  <br /></td></tr>
 <tr class="separator:a7987e93538df2819583ba43b81ddbb25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ef57e724c1b846dae0f531aff6fb464" id="r_a9ef57e724c1b846dae0f531aff6fb464"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ef57e724c1b846dae0f531aff6fb464">LCD_5x8DOTS</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memdesc:a9ef57e724c1b846dae0f531aff6fb464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to set 5x8 character dot size.  <br /></td></tr>
 <tr class="separator:a9ef57e724c1b846dae0f531aff6fb464"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac059d24dfe9c1e1f7c07cb7869a1833b" id="r_ac059d24dfe9c1e1f7c07cb7869a1833b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac059d24dfe9c1e1f7c07cb7869a1833b">LCD_BACKLIGHT</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="memdesc:ac059d24dfe9c1e1f7c07cb7869a1833b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to turn the LCD backlight on.  <br /></td></tr>
 <tr class="separator:ac059d24dfe9c1e1f7c07cb7869a1833b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65fa786d6e31fe8b1aa51784a9736581" id="r_a65fa786d6e31fe8b1aa51784a9736581"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65fa786d6e31fe8b1aa51784a9736581">LCD_NOBACKLIGHT</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memdesc:a65fa786d6e31fe8b1aa51784a9736581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to turn the LCD backlight off.  <br /></td></tr>
 <tr class="separator:a65fa786d6e31fe8b1aa51784a9736581"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1640ffbc0d8ec0f7edb04a2b93918072" id="r_a1640ffbc0d8ec0f7edb04a2b93918072"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1640ffbc0d8ec0f7edb04a2b93918072">LCD_EN</a>&#160;&#160;&#160;0B00000100</td></tr>
+<tr class="memdesc:a1640ffbc0d8ec0f7edb04a2b93918072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable bit for LCD command latching.  <br /></td></tr>
 <tr class="separator:a1640ffbc0d8ec0f7edb04a2b93918072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4781e073871c6f27f89b9463ad3a4ed1" id="r_a4781e073871c6f27f89b9463ad3a4ed1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4781e073871c6f27f89b9463ad3a4ed1">LCD_RS</a>&#160;&#160;&#160;0B00000001</td></tr>
+<tr class="memdesc:a4781e073871c6f27f89b9463ad3a4ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register select bit for choosing between command and data mode.  <br /></td></tr>
 <tr class="separator:a4781e073871c6f27f89b9463ad3a4ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1033219259579a261a7714e41a6e860e" id="r_a1033219259579a261a7714e41a6e860e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1033219259579a261a7714e41a6e860e">TICKS_TO_MS</a>&#160;&#160;&#160;8000</td></tr>
+<tr class="memdesc:a1033219259579a261a7714e41a6e860e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion factor to create a delay in milliseconds.  <br /></td></tr>
+<tr class="separator:a1033219259579a261a7714e41a6e860e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -205,13 +232,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:a0725f9cf954c41cdad7a759d7303702c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a string on the LCD.  <br /></td></tr>
 <tr class="separator:a0725f9cf954c41cdad7a759d7303702c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad235a86241458b1e7b8771688bfdaf9a" id="r_ad235a86241458b1e7b8771688bfdaf9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a> (void)</td></tr>
-<tr class="memdesc:ad235a86241458b1e7b8771688bfdaf9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the display data.  <br /></td></tr>
+<tr class="memdesc:ad235a86241458b1e7b8771688bfdaf9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the LCD display.  <br /></td></tr>
 <tr class="separator:ad235a86241458b1e7b8771688bfdaf9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68e592603e66b23b0360f910f3356877" id="r_a68e592603e66b23b0360f910f3356877"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68e592603e66b23b0360f910f3356877">lcd_set_cursor</a> (uint8_t row, uint8_t col)</td></tr>
 <tr class="memdesc:a68e592603e66b23b0360f910f3356877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cursor to a specific position on the LCD.  <br /></td></tr>
 <tr class="separator:a68e592603e66b23b0360f910f3356877"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7cce8122024d7ba47bf10f434956de4" id="r_ab7cce8122024d7ba47bf10f434956de4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7cce8122024d7ba47bf10f434956de4">delay_ms</a> (uint32_t ms)</td></tr>
-<tr class="memdesc:ab7cce8122024d7ba47bf10f434956de4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delays execution for a specified time in milliseconds.  <br /></td></tr>
+<tr class="memdesc:ab7cce8122024d7ba47bf10f434956de4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a delay for a specified time in milliseconds.  <br /></td></tr>
 <tr class="separator:ab7cce8122024d7ba47bf10f434956de4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -231,11 +258,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Flag to set 2-line display mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00060">60</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00096">96</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>.</p>
 
 </div>
 </div>
@@ -250,11 +278,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Flag to set 4-bit data mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00057">57</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00091">91</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>.</p>
 
 </div>
 </div>
@@ -269,11 +298,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Flag to set 5x8 character dot size. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00063">63</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00101">101</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>.</p>
 
 </div>
 </div>
@@ -288,11 +318,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Flag to turn the LCD backlight on. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00067">67</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00107">107</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00016">lcd_send_nibble()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00014">lcd_send_nibble()</a>.</p>
 
 </div>
 </div>
@@ -307,11 +338,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Flag to disable cursor blinking. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00053">53</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00085">85</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>.</p>
 
 </div>
 </div>
@@ -326,11 +358,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Command to clear the LCD screen. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00024">24</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00038">38</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00084">lcd_clear()</a>, and <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00077">lcd_clear()</a>, and <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>.</p>
 
 </div>
 </div>
@@ -345,11 +378,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Flag to turn the cursor off. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00050">50</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00080">80</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>.</p>
 
 </div>
 </div>
@@ -364,11 +398,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Command to control the display settings. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00033">33</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00053">53</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>.</p>
 
 </div>
 </div>
@@ -383,11 +418,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Flag to turn the display on. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00047">47</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00075">75</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>.</p>
 
 </div>
 </div>
@@ -402,11 +438,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Enable bit. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00073">73</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p>Enable bit for LCD command latching. </p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00004">lcd_pulse_enable()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00117">117</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00003">lcd_pulse_enable()</a>.</p>
 
 </div>
 </div>
@@ -421,11 +458,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Flag for left-to-right text entry mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00043">43</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00069">69</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>.</p>
 
 </div>
 </div>
@@ -440,11 +478,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Command to set the LCD entry mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00030">30</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00048">48</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>.</p>
 
 </div>
 </div>
@@ -459,11 +498,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Command to set LCD function parameters. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00036">36</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00058">58</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>.</p>
 
 </div>
 </div>
@@ -478,9 +518,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Flag to turn the LCD backlight off. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00070">70</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00112">112</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
 </div>
 </div>
@@ -495,9 +536,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Command to return the cursor to the home position. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00027">27</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00043">43</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
 </div>
 </div>
@@ -512,11 +554,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Register select bit. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00076">76</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p>Register select bit for choosing between command and data mode. </p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00069">lcd_print_char()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00122">122</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00064">lcd_print_char()</a>.</p>
 
 </div>
 </div>
@@ -531,11 +574,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Command to set DDRAM address. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00039">39</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00063">63</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00091">lcd_set_cursor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00083">lcd_set_cursor()</a>.</p>
 
 </div>
 </div>
@@ -550,11 +594,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>I2C address of the PCF8574. </p>
+<p>The address used by the I2C expander to communicate with the LCD. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00014">14</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00018">18</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00004">lcd_pulse_enable()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00003">lcd_pulse_enable()</a>.</p>
 
 </div>
 </div>
@@ -569,11 +615,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>STM32 SCL pin. </p>
+<p>The SCL (clock) pin used for I2C communication. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00020">20</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00032">32</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>.</p>
 
 </div>
 </div>
@@ -588,11 +636,34 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>STM32 SDA pin. </p>
+<p>The SDA (data) pin used for I2C communication. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00017">17</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00025">25</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>.</p>
+
+</div>
+</div>
+<a id="a1033219259579a261a7714e41a6e860e" name="a1033219259579a261a7714e41a6e860e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1033219259579a261a7714e41a6e860e">&#9670;&#160;</a></span>TICKS_TO_MS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TICKS_TO_MS&#160;&#160;&#160;8000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Conversion factor to create a delay in milliseconds. </p>
+<p>Used in delay functions to calculate the number of ticks for a given millisecond delay. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00130">130</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00099">delay_ms()</a>.</p>
 
 </div>
 </div>
@@ -612,28 +683,27 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Delays execution for a specified time in milliseconds. </p>
-<p>This function introduces a delay by performing a software loop, which is useful for timing-sensitive operations on the LCD.</p>
+<p>Creates a delay for a specified time in milliseconds. </p>
+<p>Introduces a delay by performing a software loop, useful for timing-sensitive operations on the LCD.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ms</td><td>Time to wait in milliseconds.</td></tr>
+    <tr><td class="paramname">ms</td><td>Time to wait in milliseconds. </td></tr>
   </table>
   </dd>
 </dl>
-<p>Create a delay in milliseconds </p>
 <p>No-operation loop to create delay</p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00108">108</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00099">99</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
 
-<p class="reference">References <a class="el" href="lcd_8c_source.html#l00108">delay_ms()</a>.</p>
+<p class="reference">References <a class="el" href="lcd_8c_source.html#l00099">delay_ms()</a>, and <a class="el" href="lcd_8h_source.html#l00130">TICKS_TO_MS</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00108">delay_ms()</a>, <a class="el" href="lcd_8c_source.html#l00084">lcd_clear()</a>, <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>, <a class="el" href="lcd_8c_source.html#l00004">lcd_pulse_enable()</a>, and <a class="el" href="lcd_8c_source.html#l00024">lcd_send_byte()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00099">delay_ms()</a>, <a class="el" href="lcd_8c_source.html#l00077">lcd_clear()</a>, <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>, <a class="el" href="lcd_8c_source.html#l00003">lcd_pulse_enable()</a>, and <a class="el" href="lcd_8c_source.html#l00021">lcd_send_byte()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="lcd_8h_ab7cce8122024d7ba47bf10f434956de4_cgraph.png" border="0" usemap="#alcd_8h_ab7cce8122024d7ba47bf10f434956de4_cgraph" alt=""/></div>
 <map name="alcd_8h_ab7cce8122024d7ba47bf10f434956de4_cgraph" id="alcd_8h_ab7cce8122024d7ba47bf10f434956de4_cgraph">
-<area shape="rect" title="Delays execution for a specified time in milliseconds." alt="" coords="5,29,83,56"/>
+<area shape="rect" title="Creates a delay for a specified time in milliseconds." alt="" coords="5,29,83,56"/>
 <area shape="poly" title=" " alt="" coords="29,29,28,12,34,5,44,3,54,5,60,12,55,15,51,10,44,8,37,10,33,14,34,29"/>
 </map>
 </div>
@@ -642,36 +712,50 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="lcd_8h_ab7cce8122024d7ba47bf10f434956de4_icgraph.png" border="0" usemap="#alcd_8h_ab7cce8122024d7ba47bf10f434956de4_icgraph" alt=""/></div>
 <map name="alcd_8h_ab7cce8122024d7ba47bf10f434956de4_icgraph" id="alcd_8h_ab7cce8122024d7ba47bf10f434956de4_icgraph">
-<area shape="rect" title="Delays execution for a specified time in milliseconds." alt="" coords="802,165,879,192"/>
-<area shape="poly" title=" " alt="" coords="865,152,857,146,841,144,826,146,818,150,816,156,820,164,815,166,810,157,814,147,824,141,841,139,859,141,868,148"/>
-<area shape="rect" href="lcd_8c.html#ad235a86241458b1e7b8771688bfdaf9a" title="Clears the display data." alt="" coords="179,29,252,56"/>
-<area shape="poly" title=" " alt="" coords="793,162,753,148,609,112,466,83,252,50,253,45,467,78,610,107,755,143,794,157"/>
-<area shape="rect" href="lcd_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="Initializes the LCD, pins, and I2C communication." alt="" coords="185,253,247,280"/>
-<area shape="poly" title=" " alt="" coords="817,204,789,226,755,244,684,264,610,278,536,285,463,287,336,283,247,274,248,269,336,278,463,282,535,280,609,272,683,259,753,239,786,222,814,200"/>
-<area shape="rect" href="lcd_8c.html#a3934b2e0af4384b7647cdfc343a59b53" title="Sends a pulse to enable the LCD." alt="" coords="633,203,754,229"/>
-<area shape="poly" title=" " alt="" coords="788,195,749,205,748,200,786,190"/>
-<area shape="rect" href="lcd_8c.html#a62b0ce347e78e4030bda4729362011ce" title="Sends a full byte of data or command to the LCD." alt="" coords="317,145,422,172"/>
-<area shape="poly" title=" " alt="" coords="787,173,754,169,571,161,423,160,423,155,572,156,754,164,787,168"/>
-<area shape="poly" title=" " alt="" coords="242,16,233,10,216,8,200,10,192,14,190,20,194,28,189,30,184,21,188,11,198,5,216,3,235,5,245,12"/>
-<area shape="poly" title=" " alt="" coords="242,240,233,234,216,232,200,234,192,238,190,244,194,252,189,254,184,245,188,235,198,229,216,227,235,229,245,236"/>
-<area shape="poly" title=" " alt="" coords="718,190,709,184,693,181,678,183,670,188,668,194,672,201,668,203,663,194,666,184,677,178,693,176,711,179,721,185"/>
-<area shape="rect" href="lcd_8c.html#a488c7c357a54839bcd60fc874b617b61" title="Sends a nibble (4 bits) of data or command to the LCD." alt="" coords="470,203,585,229"/>
-<area shape="poly" title=" " alt="" coords="617,219,585,219,585,213,617,213"/>
-<area shape="poly" title=" " alt="" coords="455,229,317,251,248,263,247,258,317,245,454,224"/>
-<area shape="poly" title=" " alt="" coords="554,190,545,184,527,181,511,183,503,188,501,193,505,201,500,203,495,194,499,184,510,178,528,176,547,179,557,185"/>
-<area shape="poly" title=" " alt="" coords="473,199,408,175,410,170,475,194"/>
-<area shape="poly" title=" " alt="" coords="343,136,309,103,268,70,248,59,251,54,270,66,312,99,347,132"/>
-<area shape="poly" title=" " alt="" coords="338,183,238,255,235,251,335,179"/>
-<area shape="poly" title=" " alt="" coords="395,132,386,126,370,124,354,126,346,130,344,136,348,144,343,146,338,137,341,127,352,121,370,119,388,121,398,128"/>
-<area shape="rect" href="lcd_8c.html#afa08102a314bc83e4e9825add5dcbc44" title="Prints a single character on the LCD." alt="" coords="165,104,267,131"/>
-<area shape="poly" title=" " alt="" coords="302,143,267,134,268,128,303,138"/>
-<area shape="rect" href="lcd_8c.html#a68e592603e66b23b0360f910f3356877" title="Sets the cursor to a specific position on the LCD." alt="" coords="163,179,269,205"/>
-<area shape="poly" title=" " alt="" coords="302,176,270,183,269,178,301,171"/>
-<area shape="poly" title=" " alt="" coords="242,91,233,85,216,83,200,85,192,89,190,95,194,102,189,105,184,95,188,86,198,80,216,77,235,80,245,87"/>
-<area shape="rect" href="lcd_8c.html#a0725f9cf954c41cdad7a759d7303702c" title="Prints a string on the LCD." alt="" coords="5,104,115,131"/>
-<area shape="poly" title=" " alt="" coords="149,120,115,120,115,115,149,115"/>
-<area shape="poly" title=" " alt="" coords="86,91,77,85,60,83,44,85,36,89,33,95,38,102,33,105,28,95,31,86,42,80,60,77,79,80,89,87"/>
-<area shape="poly" title=" " alt="" coords="242,166,233,160,216,157,200,159,192,164,190,169,194,177,189,179,184,170,188,160,198,154,216,152,235,155,245,161"/>
+<area shape="rect" title="Creates a delay for a specified time in milliseconds." alt="" coords="993,204,1071,231"/>
+<area shape="poly" title=" " alt="" coords="1057,191,1048,185,1032,183,1017,185,1009,189,1007,195,1011,202,1006,205,1002,195,1005,186,1015,180,1032,177,1050,180,1060,187"/>
+<area shape="rect" href="lcd_8c.html#ad235a86241458b1e7b8771688bfdaf9a" title="Clears the LCD display." alt="" coords="219,179,292,205"/>
+<area shape="poly" title=" " alt="" coords="983,239,930,258,865,276,793,290,720,296,560,296,456,296,411,289,357,270,331,257,306,240,269,208,272,204,309,236,333,252,359,266,413,284,457,291,560,291,720,291,792,285,864,271,929,253,982,234"/>
+<area shape="rect" href="lcd_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="Initializes the LCD, pins, and I2C communication." alt="" coords="378,229,440,256"/>
+<area shape="poly" title=" " alt="" coords="978,222,441,244,441,239,978,217"/>
+<area shape="rect" href="lcd_8c.html#a3934b2e0af4384b7647cdfc343a59b53" title="Sends a pulse to enable the LCD." alt="" coords="824,179,945,205"/>
+<area shape="poly" title=" " alt="" coords="978,211,945,205,946,200,979,206"/>
+<area shape="rect" href="lcd_8c.html#a62b0ce347e78e4030bda4729362011ce" title="Sends a full byte of data or command to the LCD." alt="" coords="508,116,614,143"/>
+<area shape="poly" title=" " alt="" coords="1009,195,980,167,944,145,902,131,857,122,766,114,682,116,614,123,614,118,682,111,766,108,858,116,903,126,946,140,984,163,1013,191"/>
+<area shape="poly" title=" " alt="" coords="281,166,272,160,255,157,240,159,231,164,229,169,233,177,229,179,224,170,227,160,238,154,255,152,274,155,284,161"/>
+<area shape="rect" href="update_8c.html#a4a7d6edcda3a07879dd8a10eb587cfa7" title="Displays measurement information on the LCD." alt="" coords="5,104,153,131"/>
+<area shape="poly" title=" " alt="" coords="213,174,152,145,122,134,124,129,154,140,216,169"/>
+<area shape="rect" href="update_8c.html#afd4650ea064c553915d8abc66f203fea" title="Displays the current speed and target setpoint on the LCD." alt="" coords="27,29,131,56"/>
+<area shape="poly" title=" " alt="" coords="224,170,199,144,184,123,176,104,168,87,151,70,130,58,133,53,154,66,172,84,181,102,189,120,203,141,228,167"/>
+<area shape="rect" href="update_8c.html#a97c262239ed05ce4dbc2e70cdf64d587" title="Records distance measurements from the ultrasonic sensor." alt="" coords="43,179,115,205"/>
+<area shape="poly" title=" " alt="" coords="203,195,115,195,115,189,203,189"/>
+<area shape="poly" title=" " alt="" coords="109,91,99,85,79,83,61,85,51,89,49,95,53,102,49,105,43,95,47,86,59,79,79,77,100,80,112,86"/>
+<area shape="poly" title=" " alt="" coords="109,16,99,10,79,8,61,10,51,15,49,20,53,28,49,30,43,21,47,11,59,5,79,3,100,5,112,12"/>
+<area shape="poly" title=" " alt="" coords="109,166,99,160,79,157,61,159,51,164,49,169,53,177,49,180,43,170,47,160,59,154,79,152,100,155,112,161"/>
+<area shape="poly" title=" " alt="" coords="435,216,426,210,409,208,394,210,385,214,383,220,387,228,383,230,378,221,381,211,392,205,409,203,428,205,437,212"/>
+<area shape="poly" title=" " alt="" coords="909,166,901,160,885,157,870,159,862,164,860,170,864,177,859,179,854,170,858,160,868,154,885,152,903,155,912,161"/>
+<area shape="rect" href="lcd_8c.html#a488c7c357a54839bcd60fc874b617b61" title="Sends a nibble (4 bits) of data or command to the LCD." alt="" coords="662,179,776,205"/>
+<area shape="poly" title=" " alt="" coords="808,195,776,195,776,189,808,189"/>
+<area shape="poly" title=" " alt="" coords="647,205,509,227,441,239,440,234,508,221,646,200"/>
+<area shape="poly" title=" " alt="" coords="745,166,736,160,719,157,703,159,694,164,692,169,696,177,691,179,687,170,690,160,701,154,719,152,738,155,748,161"/>
+<area shape="poly" title=" " alt="" coords="668,175,596,146,598,141,670,170"/>
+<area shape="poly" title=" " alt="" coords="494,146,293,187,292,182,493,140"/>
+<area shape="poly" title=" " alt="" coords="531,154,430,231,427,227,528,150"/>
+<area shape="poly" title=" " alt="" coords="586,103,578,97,561,95,545,97,537,101,535,107,539,114,534,117,530,107,533,98,544,92,561,89,579,92,589,99"/>
+<area shape="rect" href="lcd_8c.html#afa08102a314bc83e4e9825add5dcbc44" title="Prints a single character on the LCD." alt="" coords="358,104,460,131"/>
+<area shape="poly" title=" " alt="" coords="493,127,460,124,461,119,493,121"/>
+<area shape="rect" href="lcd_8c.html#a68e592603e66b23b0360f910f3356877" title="Sets the cursor to a specific position on the LCD." alt="" coords="202,29,308,56"/>
+<area shape="poly" title=" " alt="" coords="529,109,497,88,459,70,421,60,382,52,309,46,309,40,382,47,422,54,461,66,499,83,532,104"/>
+<area shape="poly" title=" " alt="" coords="435,91,426,85,409,83,394,85,385,89,383,95,387,102,383,105,378,95,381,86,392,80,409,77,428,80,437,87"/>
+<area shape="rect" href="lcd_8c.html#a0725f9cf954c41cdad7a759d7303702c" title="Prints a string on the LCD." alt="" coords="201,104,310,131"/>
+<area shape="poly" title=" " alt="" coords="342,120,310,120,310,115,342,115"/>
+<area shape="poly" title=" " alt="" coords="185,120,153,120,153,115,185,115"/>
+<area shape="poly" title=" " alt="" coords="213,99,152,70,122,59,124,54,154,66,216,94"/>
+<area shape="poly" title=" " alt="" coords="209,140,113,181,111,176,207,135"/>
+<area shape="poly" title=" " alt="" coords="281,91,272,85,255,83,240,85,231,89,229,95,233,102,229,105,224,95,227,86,238,80,255,77,274,80,284,87"/>
+<area shape="poly" title=" " alt="" coords="209,65,113,106,111,101,207,60"/>
+<area shape="poly" title=" " alt="" coords="187,45,132,45,132,40,187,40"/>
+<area shape="poly" title=" " alt="" coords="281,16,272,10,255,8,240,10,231,14,229,20,233,28,229,30,224,21,227,11,238,5,255,3,274,5,284,12"/>
 </map>
 </div>
 
@@ -692,25 +776,24 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Clears the display data. </p>
-<p>This function clears any characters on the LCD screen and sets the cursor position to the home position.</p>
-<p>Clear the LCD display </p>
+<p>Clears the LCD display. </p>
+<p>Clears any text on the LCD screen and resets the cursor position to home. </p>
 <p>Send clear display command</p>
 <p>Delay to allow LCD to process clear command</p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00084">84</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00077">77</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
 
-<p class="reference">References <a class="el" href="lcd_8c_source.html#l00108">delay_ms()</a>, <a class="el" href="lcd_8c_source.html#l00084">lcd_clear()</a>, <a class="el" href="lcd_8h_source.html#l00024">LCD_CLEARDISPLAY</a>, and <a class="el" href="lcd_8c_source.html#l00024">lcd_send_byte()</a>.</p>
+<p class="reference">References <a class="el" href="lcd_8c_source.html#l00099">delay_ms()</a>, <a class="el" href="lcd_8c_source.html#l00077">lcd_clear()</a>, <a class="el" href="lcd_8h_source.html#l00038">LCD_CLEARDISPLAY</a>, and <a class="el" href="lcd_8c_source.html#l00021">lcd_send_byte()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00084">lcd_clear()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="update_8c_source.html#l00145">display_measure_info()</a>, <a class="el" href="update_8c_source.html#l00102">display_speed()</a>, <a class="el" href="lcd_8c_source.html#l00077">lcd_clear()</a>, and <a class="el" href="update_8c_source.html#l00112">measure()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="lcd_8h_ad235a86241458b1e7b8771688bfdaf9a_cgraph.png" border="0" usemap="#alcd_8h_ad235a86241458b1e7b8771688bfdaf9a_cgraph" alt=""/></div>
 <map name="alcd_8h_ad235a86241458b1e7b8771688bfdaf9a_cgraph" id="alcd_8h_ad235a86241458b1e7b8771688bfdaf9a_cgraph">
-<area shape="rect" title="Clears the display data." alt="" coords="5,29,79,56"/>
+<area shape="rect" title="Clears the LCD display." alt="" coords="5,29,79,56"/>
 <area shape="poly" title=" " alt="" coords="18,30,14,21,17,11,26,5,42,3,59,5,68,12,65,16,57,10,42,8,28,10,21,14,19,20,23,28"/>
-<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Delays execution for a specified time in milliseconds." alt="" coords="612,43,689,69"/>
+<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Creates a delay for a specified time in milliseconds." alt="" coords="612,43,689,69"/>
 <area shape="poly" title=" " alt="" coords="79,34,126,28,236,26,369,31,564,43,596,46,596,51,563,48,368,36,236,31,127,33,80,39"/>
 <area shape="rect" href="lcd_8c.html#a62b0ce347e78e4030bda4729362011ce" title="Sends a full byte of data or command to the LCD." alt="" coords="127,67,232,93"/>
 <area shape="poly" title=" " alt="" coords="80,50,114,59,112,65,78,55"/>
@@ -731,8 +814,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="lcd_8h_ad235a86241458b1e7b8771688bfdaf9a_icgraph.png" border="0" usemap="#alcd_8h_ad235a86241458b1e7b8771688bfdaf9a_icgraph" alt=""/></div>
 <map name="alcd_8h_ad235a86241458b1e7b8771688bfdaf9a_icgraph" id="alcd_8h_ad235a86241458b1e7b8771688bfdaf9a_icgraph">
-<area shape="rect" title="Clears the display data." alt="" coords="5,29,79,56"/>
-<area shape="poly" title=" " alt="" coords="53,15,49,10,42,8,36,10,32,14,33,29,28,29,27,12,33,5,42,3,52,5,57,12"/>
+<area shape="rect" title="Clears the LCD display." alt="" coords="201,104,274,131"/>
+<area shape="poly" title=" " alt="" coords="264,91,255,85,237,83,221,85,212,89,210,95,215,102,210,105,205,95,208,86,219,80,237,77,257,80,267,87"/>
+<area shape="rect" href="update_8c.html#a4a7d6edcda3a07879dd8a10eb587cfa7" title="Displays measurement information on the LCD." alt="" coords="5,29,153,56"/>
+<area shape="poly" title=" " alt="" coords="201,98,152,70,123,59,125,54,154,66,204,93"/>
+<area shape="rect" href="update_8c.html#afd4650ea064c553915d8abc66f203fea" title="Displays the current speed and target setpoint on the LCD." alt="" coords="27,104,131,131"/>
+<area shape="poly" title=" " alt="" coords="185,120,132,120,132,115,185,115"/>
+<area shape="rect" href="update_8c.html#a97c262239ed05ce4dbc2e70cdf64d587" title="Records distance measurements from the ultrasonic sensor." alt="" coords="43,179,115,205"/>
+<area shape="poly" title=" " alt="" coords="195,140,110,181,108,176,192,135"/>
+<area shape="poly" title=" " alt="" coords="106,16,96,10,79,8,63,10,54,15,52,20,56,28,51,30,47,21,50,11,61,5,79,3,98,5,108,12"/>
+<area shape="poly" title=" " alt="" coords="106,91,96,85,79,83,63,85,54,89,52,95,56,102,51,105,47,95,50,86,61,80,79,77,98,80,108,87"/>
+<area shape="poly" title=" " alt="" coords="106,166,96,160,79,157,63,159,54,164,52,169,56,177,51,179,47,170,50,160,61,154,79,152,98,155,108,161"/>
 </map>
 </div>
 
@@ -754,8 +846,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Initializes the LCD, pins, and I2C communication. </p>
-<p>This function configures the LCD for 4-bit mode, 2-line display, and enables the backlight if required. It also sets up the peripheral clock, I2C setup, and any other initial settings required for normal operation.</p>
-<p>Initialize the LCD by setting up the I2C, configuring the LCD mode, and clearing the display </p>
+<p>Configures the LCD for 4-bit mode, 2-line display, and enables the backlight if required. Sets up the peripheral clock, I2C settings, and other initial configurations. </p>
 <p>Enable GPIOB clock for I2C</p>
 <p>Enable I2C1 clock</p>
 <p>Set GPIOB SDA and SCL pins to I2C mode</p>
@@ -781,11 +872,11 @@ Here is the caller graph for this function:</div>
 <p>Clear the display</p>
 <p>Delay for display clear</p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00032">32</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00028">28</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
 
-<p class="reference">References <a class="el" href="lcd_8c_source.html#l00108">delay_ms()</a>, <a class="el" href="lcd_8h_source.html#l00060">LCD_2LINE</a>, <a class="el" href="lcd_8h_source.html#l00057">LCD_4BITMODE</a>, <a class="el" href="lcd_8h_source.html#l00063">LCD_5x8DOTS</a>, <a class="el" href="lcd_8h_source.html#l00053">LCD_BLINKOFF</a>, <a class="el" href="lcd_8h_source.html#l00024">LCD_CLEARDISPLAY</a>, <a class="el" href="lcd_8h_source.html#l00050">LCD_CURSOROFF</a>, <a class="el" href="lcd_8h_source.html#l00033">LCD_DISPLAYCONTROL</a>, <a class="el" href="lcd_8h_source.html#l00047">LCD_DISPLAYON</a>, <a class="el" href="lcd_8h_source.html#l00043">LCD_ENTRYLEFT</a>, <a class="el" href="lcd_8h_source.html#l00030">LCD_ENTRYMODESET</a>, <a class="el" href="lcd_8h_source.html#l00036">LCD_FUNCTIONSET</a>, <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>, <a class="el" href="lcd_8c_source.html#l00024">lcd_send_byte()</a>, <a class="el" href="lcd_8c_source.html#l00016">lcd_send_nibble()</a>, <a class="el" href="lcd_8h_source.html#l00020">SCL_PIN</a>, and <a class="el" href="lcd_8h_source.html#l00017">SDA_PIN</a>.</p>
+<p class="reference">References <a class="el" href="lcd_8c_source.html#l00099">delay_ms()</a>, <a class="el" href="lcd_8h_source.html#l00096">LCD_2LINE</a>, <a class="el" href="lcd_8h_source.html#l00091">LCD_4BITMODE</a>, <a class="el" href="lcd_8h_source.html#l00101">LCD_5x8DOTS</a>, <a class="el" href="lcd_8h_source.html#l00085">LCD_BLINKOFF</a>, <a class="el" href="lcd_8h_source.html#l00038">LCD_CLEARDISPLAY</a>, <a class="el" href="lcd_8h_source.html#l00080">LCD_CURSOROFF</a>, <a class="el" href="lcd_8h_source.html#l00053">LCD_DISPLAYCONTROL</a>, <a class="el" href="lcd_8h_source.html#l00075">LCD_DISPLAYON</a>, <a class="el" href="lcd_8h_source.html#l00069">LCD_ENTRYLEFT</a>, <a class="el" href="lcd_8h_source.html#l00048">LCD_ENTRYMODESET</a>, <a class="el" href="lcd_8h_source.html#l00058">LCD_FUNCTIONSET</a>, <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>, <a class="el" href="lcd_8c_source.html#l00021">lcd_send_byte()</a>, <a class="el" href="lcd_8c_source.html#l00014">lcd_send_nibble()</a>, <a class="el" href="lcd_8h_source.html#l00032">SCL_PIN</a>, and <a class="el" href="lcd_8h_source.html#l00025">SDA_PIN</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -793,7 +884,7 @@ Here is the call graph for this function:</div>
 <map name="alcd_8h_a6842775ba83d166f02b8fef8bb63b1e6_cgraph" id="alcd_8h_a6842775ba83d166f02b8fef8bb63b1e6_cgraph">
 <area shape="rect" title="Initializes the LCD, pins, and I2C communication." alt="" coords="5,65,68,92"/>
 <area shape="poly" title=" " alt="" coords="13,66,9,56,12,47,21,41,37,38,53,41,61,48,58,52,51,46,36,44,23,45,16,50,14,56,18,63"/>
-<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Delays execution for a specified time in milliseconds." alt="" coords="601,41,678,68"/>
+<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Creates a delay for a specified time in milliseconds." alt="" coords="601,41,678,68"/>
 <area shape="poly" title=" " alt="" coords="52,62,80,42,115,26,179,12,245,5,312,3,377,6,495,20,586,38,585,43,495,25,377,11,312,8,246,10,180,17,117,31,83,47,55,66"/>
 <area shape="rect" href="lcd_8c.html#a62b0ce347e78e4030bda4729362011ce" title="Sends a full byte of data or command to the LCD." alt="" coords="116,65,221,92"/>
 <area shape="poly" title=" " alt="" coords="68,76,100,76,100,81,68,81"/>
@@ -838,21 +929,19 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Prints a single character on the LCD. </p>
-<p>This function sends a single character to be displayed on the LCD at the current cursor position.</p>
+<p>Sends a character to be displayed at the current cursor position.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td>Character to print.</td></tr>
+    <tr><td class="paramname">c</td><td>Character to print. </td></tr>
   </table>
   </dd>
 </dl>
-<p>Send a single character to the LCD </p>
-<p>Send character byte with RS (register select) high for data mode</p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00069">69</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00064">64</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
 
-<p class="reference">References <a class="el" href="lcd_8c_source.html#l00069">lcd_print_char()</a>, <a class="el" href="lcd_8h_source.html#l00076">LCD_RS</a>, and <a class="el" href="lcd_8c_source.html#l00024">lcd_send_byte()</a>.</p>
+<p class="reference">References <a class="el" href="lcd_8c_source.html#l00064">lcd_print_char()</a>, <a class="el" href="lcd_8h_source.html#l00122">LCD_RS</a>, and <a class="el" href="lcd_8c_source.html#l00021">lcd_send_byte()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00069">lcd_print_char()</a>, and <a class="el" href="lcd_8c_source.html#l00075">lcd_print_string()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00064">lcd_print_char()</a>, and <a class="el" href="lcd_8c_source.html#l00069">lcd_print_string()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -863,7 +952,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="lcd_8c.html#a62b0ce347e78e4030bda4729362011ce" title="Sends a full byte of data or command to the LCD." alt="" coords="156,29,261,56"/>
 <area shape="poly" title=" " alt="" coords="108,40,140,40,140,45,108,45"/>
 <area shape="poly" title=" " alt="" coords="182,30,177,21,180,11,191,5,208,3,227,5,237,12,234,16,225,10,208,8,193,10,185,14,183,20,187,28"/>
-<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Delays execution for a specified time in milliseconds." alt="" coords="641,29,718,56"/>
+<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Creates a delay for a specified time in milliseconds." alt="" coords="641,29,718,56"/>
 <area shape="poly" title=" " alt="" coords="261,33,309,28,451,22,593,28,626,31,625,37,592,33,451,27,309,33,262,38"/>
 <area shape="rect" href="lcd_8c.html#a488c7c357a54839bcd60fc874b617b61" title="Sends a nibble (4 bits) of data or command to the LCD." alt="" coords="309,67,423,93"/>
 <area shape="poly" title=" " alt="" coords="262,53,294,60,293,66,261,58"/>
@@ -880,11 +969,20 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="lcd_8h_afa08102a314bc83e4e9825add5dcbc44_icgraph.png" border="0" usemap="#alcd_8h_afa08102a314bc83e4e9825add5dcbc44_icgraph" alt=""/></div>
 <map name="alcd_8h_afa08102a314bc83e4e9825add5dcbc44_icgraph" id="alcd_8h_afa08102a314bc83e4e9825add5dcbc44_icgraph">
-<area shape="rect" title="Prints a single character on the LCD." alt="" coords="163,29,265,56"/>
-<area shape="poly" title=" " alt="" coords="240,16,231,10,214,8,198,10,190,14,188,20,192,28,187,30,182,21,186,11,196,5,214,3,233,5,243,12"/>
-<area shape="rect" href="lcd_8c.html#a0725f9cf954c41cdad7a759d7303702c" title="Prints a string on the LCD." alt="" coords="5,29,115,56"/>
-<area shape="poly" title=" " alt="" coords="147,45,115,45,115,40,147,40"/>
-<area shape="poly" title=" " alt="" coords="86,16,77,10,60,8,44,10,36,14,34,20,38,28,33,30,29,21,32,11,43,5,60,3,79,5,89,12"/>
+<area shape="rect" title="Prints a single character on the LCD." alt="" coords="358,104,460,131"/>
+<area shape="poly" title=" " alt="" coords="435,91,426,85,409,83,393,85,385,89,383,95,387,102,382,105,378,95,381,86,392,80,409,77,428,80,438,87"/>
+<area shape="rect" href="lcd_8c.html#a0725f9cf954c41cdad7a759d7303702c" title="Prints a string on the LCD." alt="" coords="201,104,310,131"/>
+<area shape="poly" title=" " alt="" coords="342,120,310,120,310,115,342,115"/>
+<area shape="poly" title=" " alt="" coords="281,91,272,85,255,83,240,85,231,89,229,95,233,102,229,105,224,95,227,86,238,80,255,77,274,80,284,87"/>
+<area shape="rect" href="update_8c.html#a4a7d6edcda3a07879dd8a10eb587cfa7" title="Displays measurement information on the LCD." alt="" coords="5,29,153,56"/>
+<area shape="poly" title=" " alt="" coords="213,99,152,70,122,59,124,54,154,66,216,94"/>
+<area shape="rect" href="update_8c.html#afd4650ea064c553915d8abc66f203fea" title="Displays the current speed and target setpoint on the LCD." alt="" coords="27,104,131,131"/>
+<area shape="poly" title=" " alt="" coords="185,120,131,120,131,115,185,115"/>
+<area shape="rect" href="update_8c.html#a97c262239ed05ce4dbc2e70cdf64d587" title="Records distance measurements from the ultrasonic sensor." alt="" coords="43,179,115,205"/>
+<area shape="poly" title=" " alt="" coords="209,140,113,181,111,176,207,135"/>
+<area shape="poly" title=" " alt="" coords="109,16,99,10,79,8,61,10,51,15,49,20,53,28,49,30,43,21,47,11,59,5,79,3,100,5,112,12"/>
+<area shape="poly" title=" " alt="" coords="109,91,99,85,79,83,61,85,51,89,49,95,53,102,49,105,43,95,47,86,59,79,79,77,100,80,112,86"/>
+<area shape="poly" title=" " alt="" coords="109,166,99,160,79,157,61,159,51,164,49,169,53,177,49,180,43,170,47,160,59,154,79,152,100,155,112,161"/>
 </map>
 </div>
 
@@ -906,22 +1004,20 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Prints a string on the LCD. </p>
-<p>This function sends a null-terminated string to the LCD, printing it starting from the current cursor position.</p>
+<p>Sends a null-terminated string to the LCD, displaying it from the current cursor position.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>Pointer to the null-terminated string to print.</td></tr>
+    <tr><td class="paramname">str</td><td>Pointer to the null-terminated string to print. </td></tr>
   </table>
   </dd>
 </dl>
-<p>Send a null-terminated string to the LCD </p>
 <p>Loop through the string until null character</p>
-<p>Print each character and move to the next</p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00075">75</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00069">69</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
 
-<p class="reference">References <a class="el" href="lcd_8c_source.html#l00069">lcd_print_char()</a>, and <a class="el" href="lcd_8c_source.html#l00075">lcd_print_string()</a>.</p>
+<p class="reference">References <a class="el" href="lcd_8c_source.html#l00064">lcd_print_char()</a>, and <a class="el" href="lcd_8c_source.html#l00069">lcd_print_string()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00075">lcd_print_string()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="update_8c_source.html#l00145">display_measure_info()</a>, <a class="el" href="update_8c_source.html#l00102">display_speed()</a>, <a class="el" href="lcd_8c_source.html#l00069">lcd_print_string()</a>, and <a class="el" href="update_8c_source.html#l00112">measure()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -935,7 +1031,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="lcd_8c.html#a62b0ce347e78e4030bda4729362011ce" title="Sends a full byte of data or command to the LCD." alt="" coords="313,29,418,56"/>
 <area shape="poly" title=" " alt="" coords="265,40,298,40,298,45,265,45"/>
 <area shape="poly" title=" " alt="" coords="339,30,335,21,338,11,348,5,366,3,384,5,394,12,391,16,382,10,366,8,350,10,342,14,340,20,344,28"/>
-<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Delays execution for a specified time in milliseconds." alt="" coords="798,29,875,56"/>
+<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Creates a delay for a specified time in milliseconds." alt="" coords="798,29,875,56"/>
 <area shape="poly" title=" " alt="" coords="419,33,466,28,608,22,750,28,783,31,783,37,750,33,608,27,467,33,419,38"/>
 <area shape="rect" href="lcd_8c.html#a488c7c357a54839bcd60fc874b617b61" title="Sends a nibble (4 bits) of data or command to the LCD." alt="" coords="466,67,581,93"/>
 <area shape="poly" title=" " alt="" coords="419,53,452,60,451,66,418,58"/>
@@ -952,8 +1048,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="lcd_8h_a0725f9cf954c41cdad7a759d7303702c_icgraph.png" border="0" usemap="#alcd_8h_a0725f9cf954c41cdad7a759d7303702c_icgraph" alt=""/></div>
 <map name="alcd_8h_a0725f9cf954c41cdad7a759d7303702c_icgraph" id="alcd_8h_a0725f9cf954c41cdad7a759d7303702c_icgraph">
-<area shape="rect" title="Prints a string on the LCD." alt="" coords="5,29,115,56"/>
-<area shape="poly" title=" " alt="" coords="77,16,71,10,60,8,49,10,44,14,42,20,45,28,40,30,37,20,39,11,47,5,60,3,74,5,81,12"/>
+<area shape="rect" title="Prints a string on the LCD." alt="" coords="201,104,310,131"/>
+<area shape="poly" title=" " alt="" coords="285,91,275,85,255,83,237,85,227,89,225,95,230,102,225,105,220,95,223,86,236,79,255,77,277,80,288,86"/>
+<area shape="rect" href="update_8c.html#a4a7d6edcda3a07879dd8a10eb587cfa7" title="Displays measurement information on the LCD." alt="" coords="5,29,153,56"/>
+<area shape="poly" title=" " alt="" coords="213,99,152,70,122,59,124,54,154,66,216,94"/>
+<area shape="rect" href="update_8c.html#afd4650ea064c553915d8abc66f203fea" title="Displays the current speed and target setpoint on the LCD." alt="" coords="27,104,131,131"/>
+<area shape="poly" title=" " alt="" coords="185,120,131,120,131,115,185,115"/>
+<area shape="rect" href="update_8c.html#a97c262239ed05ce4dbc2e70cdf64d587" title="Records distance measurements from the ultrasonic sensor." alt="" coords="43,179,115,205"/>
+<area shape="poly" title=" " alt="" coords="209,140,113,181,111,176,207,135"/>
+<area shape="poly" title=" " alt="" coords="109,16,99,10,79,8,61,10,51,15,49,20,53,28,49,30,43,21,47,11,59,5,79,3,100,5,112,12"/>
+<area shape="poly" title=" " alt="" coords="109,91,99,85,79,83,61,85,51,89,49,95,53,102,49,105,43,95,47,86,59,79,79,77,100,80,112,86"/>
+<area shape="poly" title=" " alt="" coords="109,166,99,160,79,157,61,159,51,164,49,169,53,177,49,180,43,170,47,160,59,154,79,152,100,155,112,161"/>
 </map>
 </div>
 
@@ -975,14 +1080,13 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Sends a pulse to enable the LCD. </p>
-<p>This function sets the enable bit (EN) to latch the data or command currently being sent to the LCD.</p>
+<p>Sets the enable bit (EN) to latch the data or command currently being sent to the LCD.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>Data to send along with the enable pulse.</td></tr>
+    <tr><td class="paramname">data</td><td>Data to send along with the enable pulse. </td></tr>
   </table>
   </dd>
 </dl>
-<p>Set the EN line high to latch the command, then set it low </p>
 <p>Set the EN bit high</p>
 <p>Send data with EN high to latch the command</p>
 <p>Small delay for stability</p>
@@ -990,11 +1094,11 @@ Here is the caller graph for this function:</div>
 <p>Send data with EN low to complete the pulse</p>
 <p>Small delay to allow the LCD to process</p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00004">4</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00003">3</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
 
-<p class="reference">References <a class="el" href="lcd_8c_source.html#l00108">delay_ms()</a>, <a class="el" href="lcd_8h_source.html#l00073">LCD_EN</a>, <a class="el" href="lcd_8c_source.html#l00004">lcd_pulse_enable()</a>, and <a class="el" href="lcd_8h_source.html#l00014">PCF8574_ADDRESS</a>.</p>
+<p class="reference">References <a class="el" href="lcd_8c_source.html#l00099">delay_ms()</a>, <a class="el" href="lcd_8h_source.html#l00117">LCD_EN</a>, <a class="el" href="lcd_8c_source.html#l00003">lcd_pulse_enable()</a>, and <a class="el" href="lcd_8h_source.html#l00018">PCF8574_ADDRESS</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00004">lcd_pulse_enable()</a>, and <a class="el" href="lcd_8c_source.html#l00016">lcd_send_nibble()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00003">lcd_pulse_enable()</a>, and <a class="el" href="lcd_8c_source.html#l00014">lcd_send_nibble()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1002,7 +1106,7 @@ Here is the call graph for this function:</div>
 <map name="alcd_8h_a3934b2e0af4384b7647cdfc343a59b53_cgraph" id="alcd_8h_a3934b2e0af4384b7647cdfc343a59b53_cgraph">
 <area shape="rect" title="Sends a pulse to enable the LCD." alt="" coords="5,29,127,56"/>
 <area shape="poly" title=" " alt="" coords="40,30,36,21,39,11,49,5,66,3,84,5,94,12,91,16,82,10,66,8,51,10,43,14,41,20,45,28"/>
-<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Delays execution for a specified time in milliseconds." alt="" coords="175,29,252,56"/>
+<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Creates a delay for a specified time in milliseconds." alt="" coords="175,29,252,56"/>
 <area shape="poly" title=" " alt="" coords="127,40,159,40,159,45,127,45"/>
 <area shape="poly" title=" " alt="" coords="188,30,183,21,186,11,197,5,213,3,231,5,241,12,238,16,229,10,213,8,198,10,190,14,188,20,192,28"/>
 </map>
@@ -1012,30 +1116,44 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="lcd_8h_a3934b2e0af4384b7647cdfc343a59b53_icgraph.png" border="0" usemap="#alcd_8h_a3934b2e0af4384b7647cdfc343a59b53_icgraph" alt=""/></div>
 <map name="alcd_8h_a3934b2e0af4384b7647cdfc343a59b53_icgraph" id="alcd_8h_a3934b2e0af4384b7647cdfc343a59b53_icgraph">
-<area shape="rect" title="Sends a pulse to enable the LCD." alt="" coords="633,67,754,93"/>
-<area shape="poly" title=" " alt="" coords="721,54,712,48,693,45,676,47,667,52,665,57,669,65,665,67,660,58,663,48,675,42,693,40,713,43,724,49"/>
-<area shape="rect" href="lcd_8c.html#a488c7c357a54839bcd60fc874b617b61" title="Sends a nibble (4 bits) of data or command to the LCD." alt="" coords="470,67,585,93"/>
-<area shape="poly" title=" " alt="" coords="617,83,585,83,585,77,617,77"/>
-<area shape="poly" title=" " alt="" coords="554,54,545,48,527,45,511,47,503,52,501,57,505,65,500,67,495,58,499,48,510,42,528,40,547,43,557,49"/>
-<area shape="rect" href="lcd_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="Initializes the LCD, pins, and I2C communication." alt="" coords="185,29,247,56"/>
-<area shape="poly" title=" " alt="" coords="454,74,247,49,248,44,455,69"/>
-<area shape="rect" href="lcd_8c.html#a62b0ce347e78e4030bda4729362011ce" title="Sends a full byte of data or command to the LCD." alt="" coords="317,104,422,131"/>
-<area shape="poly" title=" " alt="" coords="456,100,423,108,422,102,454,95"/>
-<area shape="poly" title=" " alt="" coords="242,16,233,10,216,8,200,10,192,14,190,20,194,28,189,30,184,21,188,11,198,5,216,3,235,5,245,12"/>
-<area shape="poly" title=" " alt="" coords="326,99,268,70,245,59,247,54,270,66,328,94"/>
-<area shape="poly" title=" " alt="" coords="395,91,386,85,370,83,354,85,346,89,344,95,348,102,343,105,338,95,341,86,352,80,370,77,388,80,398,87"/>
-<area shape="rect" href="lcd_8c.html#ad235a86241458b1e7b8771688bfdaf9a" title="Clears the display data." alt="" coords="179,104,252,131"/>
-<area shape="poly" title=" " alt="" coords="302,120,253,120,253,115,302,115"/>
-<area shape="rect" href="lcd_8c.html#afa08102a314bc83e4e9825add5dcbc44" title="Prints a single character on the LCD." alt="" coords="165,179,267,205"/>
-<area shape="poly" title=" " alt="" coords="328,140,246,181,244,176,325,136"/>
-<area shape="rect" href="lcd_8c.html#a68e592603e66b23b0360f910f3356877" title="Sets the cursor to a specific position on the LCD." alt="" coords="163,253,269,280"/>
-<area shape="poly" title=" " alt="" coords="346,144,271,219,234,255,230,251,267,215,342,140"/>
-<area shape="poly" title=" " alt="" coords="242,91,233,85,216,83,200,85,192,89,190,95,194,102,189,105,184,95,188,86,198,80,216,77,235,80,245,87"/>
-<area shape="poly" title=" " alt="" coords="242,166,233,160,216,157,200,159,192,164,190,169,194,177,189,179,184,170,188,160,198,154,216,152,235,155,245,161"/>
-<area shape="rect" href="lcd_8c.html#a0725f9cf954c41cdad7a759d7303702c" title="Prints a string on the LCD." alt="" coords="5,179,115,205"/>
-<area shape="poly" title=" " alt="" coords="149,195,115,195,115,189,149,189"/>
-<area shape="poly" title=" " alt="" coords="86,166,77,160,60,157,44,159,36,164,33,169,38,177,33,179,28,170,31,160,42,154,60,152,79,155,89,161"/>
-<area shape="poly" title=" " alt="" coords="242,240,233,234,216,232,200,234,192,238,190,244,194,252,189,254,184,245,188,235,198,229,216,227,235,229,245,236"/>
+<area shape="rect" title="Sends a pulse to enable the LCD." alt="" coords="824,67,945,93"/>
+<area shape="poly" title=" " alt="" coords="913,54,903,48,885,45,868,47,858,52,856,57,861,65,856,67,851,58,854,48,866,42,885,40,905,43,915,49"/>
+<area shape="rect" href="lcd_8c.html#a488c7c357a54839bcd60fc874b617b61" title="Sends a nibble (4 bits) of data or command to the LCD." alt="" coords="662,67,776,93"/>
+<area shape="poly" title=" " alt="" coords="808,83,776,83,776,77,808,77"/>
+<area shape="poly" title=" " alt="" coords="745,54,736,48,719,45,703,47,694,52,692,57,696,65,691,67,687,58,690,48,701,42,719,40,738,43,748,49"/>
+<area shape="rect" href="lcd_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="Initializes the LCD, pins, and I2C communication." alt="" coords="378,29,440,56"/>
+<area shape="poly" title=" " alt="" coords="646,74,440,49,441,44,646,69"/>
+<area shape="rect" href="lcd_8c.html#a62b0ce347e78e4030bda4729362011ce" title="Sends a full byte of data or command to the LCD." alt="" coords="508,104,614,131"/>
+<area shape="poly" title=" " alt="" coords="647,100,614,108,613,102,646,95"/>
+<area shape="poly" title=" " alt="" coords="435,16,426,10,409,8,394,10,385,14,383,20,387,28,383,30,378,21,381,11,392,5,409,3,428,5,437,12"/>
+<area shape="poly" title=" " alt="" coords="517,99,437,59,439,54,520,94"/>
+<area shape="poly" title=" " alt="" coords="586,91,578,85,561,83,545,85,537,89,535,95,539,102,534,105,530,95,533,86,544,80,561,77,579,80,589,87"/>
+<area shape="rect" href="lcd_8c.html#ad235a86241458b1e7b8771688bfdaf9a" title="Clears the LCD display." alt="" coords="219,131,292,157"/>
+<area shape="poly" title=" " alt="" coords="493,126,293,144,292,138,493,121"/>
+<area shape="rect" href="lcd_8c.html#afa08102a314bc83e4e9825add5dcbc44" title="Prints a single character on the LCD." alt="" coords="358,205,460,232"/>
+<area shape="poly" title=" " alt="" coords="529,142,432,207,429,203,526,137"/>
+<area shape="rect" href="lcd_8c.html#a68e592603e66b23b0360f910f3356877" title="Sets the cursor to a specific position on the LCD." alt="" coords="202,56,308,83"/>
+<area shape="poly" title=" " alt="" coords="492,109,308,80,309,75,493,104"/>
+<area shape="poly" title=" " alt="" coords="281,118,272,112,255,109,240,111,231,116,229,121,233,129,229,131,224,122,227,112,238,106,255,104,274,107,284,113"/>
+<area shape="rect" href="update_8c.html#a4a7d6edcda3a07879dd8a10eb587cfa7" title="Displays measurement information on the LCD." alt="" coords="5,56,153,83"/>
+<area shape="poly" title=" " alt="" coords="213,126,152,97,122,86,124,81,154,92,216,121"/>
+<area shape="rect" href="update_8c.html#afd4650ea064c553915d8abc66f203fea" title="Displays the current speed and target setpoint on the LCD." alt="" coords="27,131,131,157"/>
+<area shape="poly" title=" " alt="" coords="203,147,131,147,131,141,203,141"/>
+<area shape="rect" href="update_8c.html#a97c262239ed05ce4dbc2e70cdf64d587" title="Records distance measurements from the ultrasonic sensor." alt="" coords="43,205,115,232"/>
+<area shape="poly" title=" " alt="" coords="209,166,113,207,111,202,207,161"/>
+<area shape="poly" title=" " alt="" coords="109,43,99,37,79,35,61,37,51,41,49,47,53,54,49,57,43,47,47,38,59,31,79,29,100,32,112,38"/>
+<area shape="poly" title=" " alt="" coords="109,118,99,112,79,109,61,111,51,116,49,121,53,129,49,132,43,122,47,112,59,106,79,104,100,107,112,113"/>
+<area shape="poly" title=" " alt="" coords="109,192,99,186,79,184,61,186,51,191,49,196,53,204,49,206,43,197,47,187,59,181,79,179,100,181,112,188"/>
+<area shape="poly" title=" " alt="" coords="435,192,426,186,409,184,394,186,385,190,383,196,387,204,383,206,378,197,381,187,392,181,409,179,428,181,437,188"/>
+<area shape="rect" href="lcd_8c.html#a0725f9cf954c41cdad7a759d7303702c" title="Prints a string on the LCD." alt="" coords="201,205,310,232"/>
+<area shape="poly" title=" " alt="" coords="342,221,310,221,310,216,342,216"/>
+<area shape="poly" title=" " alt="" coords="224,197,199,171,184,150,176,131,168,114,151,97,132,86,135,81,154,93,172,111,181,129,189,147,203,168,228,193"/>
+<area shape="poly" title=" " alt="" coords="213,200,152,172,122,160,124,155,154,167,216,196"/>
+<area shape="poly" title=" " alt="" coords="185,221,115,221,115,216,185,216"/>
+<area shape="poly" title=" " alt="" coords="281,192,272,186,255,184,240,186,231,190,229,196,233,204,229,206,224,197,227,187,238,181,255,179,274,181,284,188"/>
+<area shape="poly" title=" " alt="" coords="187,72,153,72,153,67,187,67"/>
+<area shape="poly" title=" " alt="" coords="209,92,113,133,111,128,207,87"/>
+<area shape="poly" title=" " alt="" coords="281,43,272,37,255,35,240,37,231,41,229,47,233,54,229,57,224,47,227,38,238,32,255,29,274,32,284,39"/>
 </map>
 </div>
 
@@ -1061,24 +1179,23 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Sends a full byte of data or command to the LCD. </p>
-<p>This function sends both nibbles of a byte to the LCD in 4-bit mode. It is used to send either data or commands, based on the mode parameter.</p>
+<p>Sends both nibbles of a byte to the LCD in 4-bit mode, either as data or a command.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">byte</td><td>8-bit data to send. </td></tr>
-    <tr><td class="paramname">mode</td><td>Mode for the data (0 for command, 1 for data).</td></tr>
+    <tr><td class="paramname">mode</td><td>Mode for the data (0 for command, 1 for data). </td></tr>
   </table>
   </dd>
 </dl>
-<p>Split a byte into two nibbles and send each one to the LCD </p>
 <p>Send the upper nibble</p>
 <p>Send the lower nibble</p>
 <p>Delay for LCD processing after sending the byte</p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00024">24</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00021">21</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
 
-<p class="reference">References <a class="el" href="lcd_8c_source.html#l00108">delay_ms()</a>, <a class="el" href="lcd_8c_source.html#l00024">lcd_send_byte()</a>, and <a class="el" href="lcd_8c_source.html#l00016">lcd_send_nibble()</a>.</p>
+<p class="reference">References <a class="el" href="lcd_8c_source.html#l00099">delay_ms()</a>, <a class="el" href="lcd_8c_source.html#l00021">lcd_send_byte()</a>, and <a class="el" href="lcd_8c_source.html#l00014">lcd_send_nibble()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00084">lcd_clear()</a>, <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>, <a class="el" href="lcd_8c_source.html#l00069">lcd_print_char()</a>, <a class="el" href="lcd_8c_source.html#l00024">lcd_send_byte()</a>, and <a class="el" href="lcd_8c_source.html#l00091">lcd_set_cursor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00077">lcd_clear()</a>, <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>, <a class="el" href="lcd_8c_source.html#l00064">lcd_print_char()</a>, <a class="el" href="lcd_8c_source.html#l00021">lcd_send_byte()</a>, and <a class="el" href="lcd_8c_source.html#l00083">lcd_set_cursor()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1086,7 +1203,7 @@ Here is the call graph for this function:</div>
 <map name="alcd_8h_a62b0ce347e78e4030bda4729362011ce_cgraph" id="alcd_8h_a62b0ce347e78e4030bda4729362011ce_cgraph">
 <area shape="rect" title="Sends a full byte of data or command to the LCD." alt="" coords="5,29,111,56"/>
 <area shape="poly" title=" " alt="" coords="31,30,26,21,29,11,40,5,58,3,77,5,87,12,84,16,75,10,58,8,42,10,33,15,31,20,35,28"/>
-<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Delays execution for a specified time in milliseconds." alt="" coords="490,29,568,56"/>
+<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Creates a delay for a specified time in milliseconds." alt="" coords="490,29,568,56"/>
 <area shape="poly" title=" " alt="" coords="111,33,158,28,301,22,443,28,475,31,475,37,442,33,301,27,159,33,112,38"/>
 <area shape="rect" href="lcd_8c.html#a488c7c357a54839bcd60fc874b617b61" title="Sends a nibble (4 bits) of data or command to the LCD." alt="" coords="159,67,273,93"/>
 <area shape="poly" title=" " alt="" coords="112,53,144,60,143,66,110,58"/>
@@ -1103,23 +1220,37 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="lcd_8h_a62b0ce347e78e4030bda4729362011ce_icgraph.png" border="0" usemap="#alcd_8h_a62b0ce347e78e4030bda4729362011ce_icgraph" alt=""/></div>
 <map name="alcd_8h_a62b0ce347e78e4030bda4729362011ce_icgraph" id="alcd_8h_a62b0ce347e78e4030bda4729362011ce_icgraph">
-<area shape="rect" title="Sends a full byte of data or command to the LCD." alt="" coords="317,141,422,168"/>
-<area shape="poly" title=" " alt="" coords="395,128,386,122,370,120,354,122,346,126,344,132,348,140,343,142,338,133,341,123,352,117,370,115,388,117,398,124"/>
-<area shape="rect" href="lcd_8c.html#ad235a86241458b1e7b8771688bfdaf9a" title="Clears the display data." alt="" coords="179,29,252,56"/>
-<area shape="poly" title=" " alt="" coords="343,133,308,101,268,70,248,59,250,54,270,66,312,97,346,129"/>
-<area shape="rect" href="lcd_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="Initializes the LCD, pins, and I2C communication." alt="" coords="185,104,247,131"/>
-<area shape="poly" title=" " alt="" coords="302,141,247,127,248,122,303,136"/>
-<area shape="rect" href="lcd_8c.html#afa08102a314bc83e4e9825add5dcbc44" title="Prints a single character on the LCD." alt="" coords="165,179,267,205"/>
-<area shape="poly" title=" " alt="" coords="302,174,268,182,267,177,301,168"/>
-<area shape="rect" href="lcd_8c.html#a68e592603e66b23b0360f910f3356877" title="Sets the cursor to a specific position on the LCD." alt="" coords="163,253,269,280"/>
-<area shape="poly" title=" " alt="" coords="339,179,237,255,234,251,336,175"/>
-<area shape="poly" title=" " alt="" coords="242,16,233,10,216,8,200,10,192,14,190,20,194,28,189,30,184,21,188,11,198,5,216,3,235,5,245,12"/>
-<area shape="poly" title=" " alt="" coords="242,91,233,85,216,83,200,85,192,89,190,95,194,102,189,105,184,95,188,86,198,80,216,77,235,80,245,87"/>
-<area shape="poly" title=" " alt="" coords="242,166,233,160,216,157,200,159,192,164,190,169,194,177,189,179,184,170,188,160,198,154,216,152,235,155,245,161"/>
-<area shape="rect" href="lcd_8c.html#a0725f9cf954c41cdad7a759d7303702c" title="Prints a string on the LCD." alt="" coords="5,179,115,205"/>
-<area shape="poly" title=" " alt="" coords="149,195,115,195,115,189,149,189"/>
-<area shape="poly" title=" " alt="" coords="86,166,77,160,60,157,44,159,36,164,33,169,38,177,33,179,28,170,31,160,42,154,60,152,79,155,89,161"/>
-<area shape="poly" title=" " alt="" coords="242,240,233,234,216,232,200,234,192,238,190,244,194,252,189,254,184,245,188,235,198,229,216,227,235,229,245,236"/>
+<area shape="rect" title="Sends a full byte of data or command to the LCD." alt="" coords="508,129,614,156"/>
+<area shape="poly" title=" " alt="" coords="586,116,578,110,561,108,545,110,537,114,535,120,539,128,534,130,530,121,533,111,544,105,561,103,579,105,589,112"/>
+<area shape="rect" href="lcd_8c.html#ad235a86241458b1e7b8771688bfdaf9a" title="Clears the LCD display." alt="" coords="219,179,292,205"/>
+<area shape="poly" title=" " alt="" coords="493,156,293,189,292,184,492,151"/>
+<area shape="rect" href="lcd_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="Initializes the LCD, pins, and I2C communication." alt="" coords="378,229,440,256"/>
+<area shape="poly" title=" " alt="" coords="528,167,433,231,430,227,525,163"/>
+<area shape="rect" href="lcd_8c.html#afa08102a314bc83e4e9825add5dcbc44" title="Prints a single character on the LCD." alt="" coords="358,104,460,131"/>
+<area shape="poly" title=" " alt="" coords="492,134,460,128,461,123,493,129"/>
+<area shape="rect" href="lcd_8c.html#a68e592603e66b23b0360f910f3356877" title="Sets the cursor to a specific position on the LCD." alt="" coords="202,29,308,56"/>
+<area shape="poly" title=" " alt="" coords="534,121,500,93,459,70,421,58,382,51,309,45,309,39,383,45,423,53,461,66,503,89,537,116"/>
+<area shape="poly" title=" " alt="" coords="281,166,272,160,255,157,240,159,231,164,229,169,233,177,229,179,224,170,227,160,238,154,255,152,274,155,284,161"/>
+<area shape="rect" href="update_8c.html#a4a7d6edcda3a07879dd8a10eb587cfa7" title="Displays measurement information on the LCD." alt="" coords="5,104,153,131"/>
+<area shape="poly" title=" " alt="" coords="213,174,152,145,122,134,124,129,154,140,216,169"/>
+<area shape="rect" href="update_8c.html#afd4650ea064c553915d8abc66f203fea" title="Displays the current speed and target setpoint on the LCD." alt="" coords="27,29,131,56"/>
+<area shape="poly" title=" " alt="" coords="224,170,199,144,184,123,176,104,168,87,151,70,130,58,133,53,154,66,172,84,181,102,189,120,203,141,228,167"/>
+<area shape="rect" href="update_8c.html#a97c262239ed05ce4dbc2e70cdf64d587" title="Records distance measurements from the ultrasonic sensor." alt="" coords="43,179,115,205"/>
+<area shape="poly" title=" " alt="" coords="203,195,115,195,115,189,203,189"/>
+<area shape="poly" title=" " alt="" coords="109,91,99,85,79,83,61,85,51,89,49,95,53,102,49,105,43,95,47,86,59,79,79,77,100,80,112,86"/>
+<area shape="poly" title=" " alt="" coords="109,16,99,10,79,8,61,10,51,15,49,20,53,28,49,30,43,21,47,11,59,5,79,3,100,5,112,12"/>
+<area shape="poly" title=" " alt="" coords="109,166,99,160,79,157,61,159,51,164,49,169,53,177,49,180,43,170,47,160,59,154,79,152,100,155,112,161"/>
+<area shape="poly" title=" " alt="" coords="435,216,426,210,409,208,394,210,385,214,383,220,387,228,383,230,378,221,381,211,392,205,409,203,428,205,437,212"/>
+<area shape="poly" title=" " alt="" coords="435,91,426,85,409,83,394,85,385,89,383,95,387,102,383,105,378,95,381,86,392,80,409,77,428,80,437,87"/>
+<area shape="rect" href="lcd_8c.html#a0725f9cf954c41cdad7a759d7303702c" title="Prints a string on the LCD." alt="" coords="201,104,310,131"/>
+<area shape="poly" title=" " alt="" coords="342,120,310,120,310,115,342,115"/>
+<area shape="poly" title=" " alt="" coords="185,120,153,120,153,115,185,115"/>
+<area shape="poly" title=" " alt="" coords="213,99,152,70,122,59,124,54,154,66,216,94"/>
+<area shape="poly" title=" " alt="" coords="209,140,113,181,111,176,207,135"/>
+<area shape="poly" title=" " alt="" coords="281,91,272,85,255,83,240,85,231,89,229,95,233,102,229,105,224,95,227,86,238,80,255,77,274,80,284,87"/>
+<area shape="poly" title=" " alt="" coords="209,65,113,106,111,101,207,60"/>
+<area shape="poly" title=" " alt="" coords="187,45,132,45,132,40,187,40"/>
+<area shape="poly" title=" " alt="" coords="281,16,272,10,255,8,240,10,231,14,229,20,233,28,229,30,224,21,227,11,238,5,255,3,274,5,284,12"/>
 </map>
 </div>
 
@@ -1145,23 +1276,22 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Sends a nibble (4 bits) of data or command to the LCD. </p>
-<p>This function sends the higher nibble of a byte in 4-bit mode to the LCD, typically used for initializing or sending data or commands.</p>
+<p>Sends the higher nibble of a byte in 4-bit mode, typically used for initialization or sending data.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nibble</td><td>4-bit data to send. </td></tr>
-    <tr><td class="paramname">mode</td><td>Mode for the data (0 for command, 1 for data).</td></tr>
+    <tr><td class="paramname">mode</td><td>Mode for the data (0 for command, 1 for data). </td></tr>
   </table>
   </dd>
 </dl>
-<p>Prepare a nibble to be sent to the LCD and call pulse to latch it </p>
 <p>Prepare the data: isolate the upper nibble, add mode and backlight</p>
 <p>Send the nibble via pulse</p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00016">16</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00014">14</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
 
-<p class="reference">References <a class="el" href="lcd_8h_source.html#l00067">LCD_BACKLIGHT</a>, <a class="el" href="lcd_8c_source.html#l00004">lcd_pulse_enable()</a>, and <a class="el" href="lcd_8c_source.html#l00016">lcd_send_nibble()</a>.</p>
+<p class="reference">References <a class="el" href="lcd_8h_source.html#l00107">LCD_BACKLIGHT</a>, <a class="el" href="lcd_8c_source.html#l00003">lcd_pulse_enable()</a>, and <a class="el" href="lcd_8c_source.html#l00014">lcd_send_nibble()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00032">lcd_init()</a>, <a class="el" href="lcd_8c_source.html#l00024">lcd_send_byte()</a>, and <a class="el" href="lcd_8c_source.html#l00016">lcd_send_nibble()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00028">lcd_init()</a>, <a class="el" href="lcd_8c_source.html#l00021">lcd_send_byte()</a>, and <a class="el" href="lcd_8c_source.html#l00014">lcd_send_nibble()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1172,7 +1302,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="lcd_8c.html#a3934b2e0af4384b7647cdfc343a59b53" title="Sends a pulse to enable the LCD." alt="" coords="168,29,289,56"/>
 <area shape="poly" title=" " alt="" coords="120,40,152,40,152,45,120,45"/>
 <area shape="poly" title=" " alt="" coords="203,30,198,21,201,11,212,5,228,3,246,5,256,12,253,16,244,10,228,8,213,10,205,14,203,20,207,28"/>
-<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Delays execution for a specified time in milliseconds." alt="" coords="337,29,414,56"/>
+<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Creates a delay for a specified time in milliseconds." alt="" coords="337,29,414,56"/>
 <area shape="poly" title=" " alt="" coords="289,40,321,40,321,45,289,45"/>
 <area shape="poly" title=" " alt="" coords="350,30,345,21,349,11,359,5,376,3,394,5,403,12,400,16,392,10,376,8,361,10,353,14,351,20,355,28"/>
 </map>
@@ -1182,27 +1312,41 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="lcd_8h_a488c7c357a54839bcd60fc874b617b61_icgraph.png" border="0" usemap="#alcd_8h_a488c7c357a54839bcd60fc874b617b61_icgraph" alt=""/></div>
 <map name="alcd_8h_a488c7c357a54839bcd60fc874b617b61_icgraph" id="alcd_8h_a488c7c357a54839bcd60fc874b617b61_icgraph">
-<area shape="rect" title="Sends a nibble (4 bits) of data or command to the LCD." alt="" coords="470,67,585,93"/>
-<area shape="poly" title=" " alt="" coords="554,54,545,48,527,45,511,47,503,52,501,57,505,65,500,67,495,58,499,48,510,42,528,40,547,43,557,49"/>
-<area shape="rect" href="lcd_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="Initializes the LCD, pins, and I2C communication." alt="" coords="185,29,247,56"/>
-<area shape="poly" title=" " alt="" coords="454,74,247,49,248,44,455,69"/>
-<area shape="rect" href="lcd_8c.html#a62b0ce347e78e4030bda4729362011ce" title="Sends a full byte of data or command to the LCD." alt="" coords="317,104,422,131"/>
-<area shape="poly" title=" " alt="" coords="456,100,423,108,422,102,454,95"/>
-<area shape="poly" title=" " alt="" coords="242,16,233,10,216,8,200,10,192,14,190,20,194,28,189,30,184,21,188,11,198,5,216,3,235,5,245,12"/>
-<area shape="poly" title=" " alt="" coords="326,99,268,70,245,59,247,54,270,66,328,94"/>
-<area shape="poly" title=" " alt="" coords="395,91,386,85,370,83,354,85,346,89,344,95,348,102,343,105,338,95,341,86,352,80,370,77,388,80,398,87"/>
-<area shape="rect" href="lcd_8c.html#ad235a86241458b1e7b8771688bfdaf9a" title="Clears the display data." alt="" coords="179,104,252,131"/>
-<area shape="poly" title=" " alt="" coords="302,120,253,120,253,115,302,115"/>
-<area shape="rect" href="lcd_8c.html#afa08102a314bc83e4e9825add5dcbc44" title="Prints a single character on the LCD." alt="" coords="165,179,267,205"/>
-<area shape="poly" title=" " alt="" coords="328,140,246,181,244,176,325,136"/>
-<area shape="rect" href="lcd_8c.html#a68e592603e66b23b0360f910f3356877" title="Sets the cursor to a specific position on the LCD." alt="" coords="163,253,269,280"/>
-<area shape="poly" title=" " alt="" coords="346,144,271,219,234,255,230,251,267,215,342,140"/>
-<area shape="poly" title=" " alt="" coords="242,91,233,85,216,83,200,85,192,89,190,95,194,102,189,105,184,95,188,86,198,80,216,77,235,80,245,87"/>
-<area shape="poly" title=" " alt="" coords="242,166,233,160,216,157,200,159,192,164,190,169,194,177,189,179,184,170,188,160,198,154,216,152,235,155,245,161"/>
-<area shape="rect" href="lcd_8c.html#a0725f9cf954c41cdad7a759d7303702c" title="Prints a string on the LCD." alt="" coords="5,179,115,205"/>
-<area shape="poly" title=" " alt="" coords="149,195,115,195,115,189,149,189"/>
-<area shape="poly" title=" " alt="" coords="86,166,77,160,60,157,44,159,36,164,33,169,38,177,33,179,28,170,31,160,42,154,60,152,79,155,89,161"/>
-<area shape="poly" title=" " alt="" coords="242,240,233,234,216,232,200,234,192,238,190,244,194,252,189,254,184,245,188,235,198,229,216,227,235,229,245,236"/>
+<area shape="rect" title="Sends a nibble (4 bits) of data or command to the LCD." alt="" coords="662,67,776,93"/>
+<area shape="poly" title=" " alt="" coords="745,54,736,48,719,45,703,47,694,52,692,57,696,65,691,67,687,58,690,48,701,42,719,40,738,43,748,49"/>
+<area shape="rect" href="lcd_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="Initializes the LCD, pins, and I2C communication." alt="" coords="378,29,440,56"/>
+<area shape="poly" title=" " alt="" coords="646,74,440,49,441,44,646,69"/>
+<area shape="rect" href="lcd_8c.html#a62b0ce347e78e4030bda4729362011ce" title="Sends a full byte of data or command to the LCD." alt="" coords="508,104,614,131"/>
+<area shape="poly" title=" " alt="" coords="647,100,614,108,613,102,646,95"/>
+<area shape="poly" title=" " alt="" coords="435,16,426,10,409,8,394,10,385,14,383,20,387,28,383,30,378,21,381,11,392,5,409,3,428,5,437,12"/>
+<area shape="poly" title=" " alt="" coords="517,99,437,59,439,54,520,94"/>
+<area shape="poly" title=" " alt="" coords="586,91,578,85,561,83,545,85,537,89,535,95,539,102,534,105,530,95,533,86,544,80,561,77,579,80,589,87"/>
+<area shape="rect" href="lcd_8c.html#ad235a86241458b1e7b8771688bfdaf9a" title="Clears the LCD display." alt="" coords="219,131,292,157"/>
+<area shape="poly" title=" " alt="" coords="493,126,293,144,292,138,493,121"/>
+<area shape="rect" href="lcd_8c.html#afa08102a314bc83e4e9825add5dcbc44" title="Prints a single character on the LCD." alt="" coords="358,205,460,232"/>
+<area shape="poly" title=" " alt="" coords="529,142,432,207,429,203,526,137"/>
+<area shape="rect" href="lcd_8c.html#a68e592603e66b23b0360f910f3356877" title="Sets the cursor to a specific position on the LCD." alt="" coords="202,56,308,83"/>
+<area shape="poly" title=" " alt="" coords="492,109,308,80,309,75,493,104"/>
+<area shape="poly" title=" " alt="" coords="281,118,272,112,255,109,240,111,231,116,229,121,233,129,229,131,224,122,227,112,238,106,255,104,274,107,284,113"/>
+<area shape="rect" href="update_8c.html#a4a7d6edcda3a07879dd8a10eb587cfa7" title="Displays measurement information on the LCD." alt="" coords="5,56,153,83"/>
+<area shape="poly" title=" " alt="" coords="213,126,152,97,122,86,124,81,154,92,216,121"/>
+<area shape="rect" href="update_8c.html#afd4650ea064c553915d8abc66f203fea" title="Displays the current speed and target setpoint on the LCD." alt="" coords="27,131,131,157"/>
+<area shape="poly" title=" " alt="" coords="203,147,131,147,131,141,203,141"/>
+<area shape="rect" href="update_8c.html#a97c262239ed05ce4dbc2e70cdf64d587" title="Records distance measurements from the ultrasonic sensor." alt="" coords="43,205,115,232"/>
+<area shape="poly" title=" " alt="" coords="209,166,113,207,111,202,207,161"/>
+<area shape="poly" title=" " alt="" coords="109,43,99,37,79,35,61,37,51,41,49,47,53,54,49,57,43,47,47,38,59,31,79,29,100,32,112,38"/>
+<area shape="poly" title=" " alt="" coords="109,118,99,112,79,109,61,111,51,116,49,121,53,129,49,132,43,122,47,112,59,106,79,104,100,107,112,113"/>
+<area shape="poly" title=" " alt="" coords="109,192,99,186,79,184,61,186,51,191,49,196,53,204,49,206,43,197,47,187,59,181,79,179,100,181,112,188"/>
+<area shape="poly" title=" " alt="" coords="435,192,426,186,409,184,394,186,385,190,383,196,387,204,383,206,378,197,381,187,392,181,409,179,428,181,437,188"/>
+<area shape="rect" href="lcd_8c.html#a0725f9cf954c41cdad7a759d7303702c" title="Prints a string on the LCD." alt="" coords="201,205,310,232"/>
+<area shape="poly" title=" " alt="" coords="342,221,310,221,310,216,342,216"/>
+<area shape="poly" title=" " alt="" coords="224,197,199,171,184,150,176,131,168,114,151,97,132,86,135,81,154,93,172,111,181,129,189,147,203,168,228,193"/>
+<area shape="poly" title=" " alt="" coords="213,200,152,172,122,160,124,155,154,167,216,196"/>
+<area shape="poly" title=" " alt="" coords="185,221,115,221,115,216,185,216"/>
+<area shape="poly" title=" " alt="" coords="281,192,272,186,255,184,240,186,231,190,229,196,233,204,229,206,224,197,227,187,238,181,255,179,274,181,284,188"/>
+<area shape="poly" title=" " alt="" coords="187,72,153,72,153,67,187,67"/>
+<area shape="poly" title=" " alt="" coords="209,92,113,133,111,128,207,87"/>
+<area shape="poly" title=" " alt="" coords="281,43,272,37,255,35,240,37,231,41,229,47,233,54,229,57,224,47,227,38,238,32,255,29,274,32,284,39"/>
 </map>
 </div>
 
@@ -1228,24 +1372,23 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Sets the cursor to a specific position on the LCD. </p>
-<p>This function moves the cursor to a specified row and column on a 16x2 LCD display.</p>
+<p>Positions the cursor to a specified row and column on a 16x2 LCD.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">row</td><td>The row number (0 for the first row, 1 for the second row). </td></tr>
-    <tr><td class="paramname">col</td><td>The column number (0 to 15 for a 16x2 LCD).</td></tr>
+    <tr><td class="paramname">col</td><td>The column number (0 to 15 for a 16x2 LCD). </td></tr>
   </table>
   </dd>
 </dl>
-<p>Set the cursor to a specific row and column </p>
 <p>Determine address for row 0</p>
 <p>Determine address for row 1</p>
 <p>Set DDRAM address to position cursor</p>
 
-<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00091">91</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd_8c_source.html#l00083">83</a> of file <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
 
-<p class="reference">References <a class="el" href="lcd_8c_source.html#l00024">lcd_send_byte()</a>, <a class="el" href="lcd_8c_source.html#l00091">lcd_set_cursor()</a>, and <a class="el" href="lcd_8h_source.html#l00039">LCD_SETDDRAMADDR</a>.</p>
+<p class="reference">References <a class="el" href="lcd_8c_source.html#l00021">lcd_send_byte()</a>, <a class="el" href="lcd_8c_source.html#l00083">lcd_set_cursor()</a>, and <a class="el" href="lcd_8h_source.html#l00063">LCD_SETDDRAMADDR</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lcd_8c_source.html#l00091">lcd_set_cursor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="update_8c_source.html#l00145">display_measure_info()</a>, <a class="el" href="update_8c_source.html#l00102">display_speed()</a>, and <a class="el" href="lcd_8c_source.html#l00083">lcd_set_cursor()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1256,7 +1399,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="lcd_8c.html#a62b0ce347e78e4030bda4729362011ce" title="Sends a full byte of data or command to the LCD." alt="" coords="160,29,265,56"/>
 <area shape="poly" title=" " alt="" coords="112,40,144,40,144,45,112,45"/>
 <area shape="poly" title=" " alt="" coords="186,30,181,21,184,11,195,5,212,3,231,5,241,12,238,16,229,10,212,8,197,10,188,14,186,20,190,28"/>
-<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Delays execution for a specified time in milliseconds." alt="" coords="645,29,722,56"/>
+<area shape="rect" href="lcd_8c.html#ab7cce8122024d7ba47bf10f434956de4" title="Creates a delay for a specified time in milliseconds." alt="" coords="645,29,722,56"/>
 <area shape="poly" title=" " alt="" coords="265,33,313,28,455,22,597,28,630,31,629,37,596,33,455,27,313,33,266,38"/>
 <area shape="rect" href="lcd_8c.html#a488c7c357a54839bcd60fc874b617b61" title="Sends a nibble (4 bits) of data or command to the LCD." alt="" coords="313,67,427,93"/>
 <area shape="poly" title=" " alt="" coords="266,53,298,60,297,66,265,58"/>
@@ -1273,8 +1416,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="lcd_8h_a68e592603e66b23b0360f910f3356877_icgraph.png" border="0" usemap="#alcd_8h_a68e592603e66b23b0360f910f3356877_icgraph" alt=""/></div>
 <map name="alcd_8h_a68e592603e66b23b0360f910f3356877_icgraph" id="alcd_8h_a68e592603e66b23b0360f910f3356877_icgraph">
-<area shape="rect" title="Sets the cursor to a specific position on the LCD." alt="" coords="5,29,112,56"/>
-<area shape="poly" title=" " alt="" coords="75,16,69,10,58,8,48,10,43,14,41,20,44,28,39,30,36,20,38,11,46,5,59,3,72,5,79,12"/>
+<area shape="rect" title="Sets the cursor to a specific position on the LCD." alt="" coords="201,67,307,93"/>
+<area shape="poly" title=" " alt="" coords="283,54,273,48,254,45,236,47,226,52,224,57,228,65,224,68,218,58,222,48,234,42,254,40,275,43,286,49"/>
+<area shape="rect" href="update_8c.html#a4a7d6edcda3a07879dd8a10eb587cfa7" title="Displays measurement information on the LCD." alt="" coords="5,29,153,56"/>
+<area shape="poly" title=" " alt="" coords="185,68,144,59,145,54,186,63"/>
+<area shape="rect" href="update_8c.html#afd4650ea064c553915d8abc66f203fea" title="Displays the current speed and target setpoint on the LCD." alt="" coords="27,104,131,131"/>
+<area shape="poly" title=" " alt="" coords="186,97,132,109,131,104,185,92"/>
+<area shape="poly" title=" " alt="" coords="109,16,98,10,79,8,61,10,51,15,49,20,54,28,49,30,44,21,47,11,59,5,79,3,100,5,111,12"/>
+<area shape="poly" title=" " alt="" coords="109,91,98,85,79,83,61,85,51,89,49,95,54,102,49,105,44,95,47,86,59,80,79,77,100,80,111,86"/>
 </map>
 </div>
 

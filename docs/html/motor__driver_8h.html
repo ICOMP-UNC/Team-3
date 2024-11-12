@@ -133,9 +133,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="motor__driver_8h__dep__incl.png" border="0" usemap="#ainclude_2motor__driver_8hdep" alt=""/></div>
 <map name="ainclude_2motor__driver_8hdep" id="ainclude_2motor__driver_8hdep">
-<area shape="rect" title="Motor control driver using PWM for STM32 with libopencm3." alt="" coords="5,5,155,32"/>
-<area shape="rect" href="motor__driver_8c_source.html" title=" " alt="" coords="17,80,143,107"/>
-<area shape="poly" title=" " alt="" coords="83,48,83,80,77,80,77,48"/>
+<area shape="rect" title="Motor control driver using PWM for STM32 with libopencm3." alt="" coords="117,5,266,32"/>
+<area shape="rect" href="update_8h.html" title="System update functions for speed and distance measurement." alt="" coords="5,80,122,107"/>
+<area shape="poly" title=" " alt="" coords="157,42,87,82,85,77,155,38"/>
+<area shape="rect" href="button_8c_source.html" title=" " alt="" coords="146,80,237,107"/>
+<area shape="poly" title=" " alt="" coords="194,48,194,80,189,80,189,48"/>
+<area shape="rect" href="motor__driver_8c_source.html" title=" " alt="" coords="260,80,387,107"/>
+<area shape="poly" title=" " alt="" coords="229,37,302,77,299,82,226,42"/>
+<area shape="rect" href="update_8c_source.html" title=" " alt="" coords="17,155,110,181"/>
+<area shape="poly" title=" " alt="" coords="66,122,66,154,61,154,61,122"/>
 </map>
 </div>
 </div>
@@ -144,17 +150,26 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a8e1ee46448a9d6fd89208aa48e0b1e58" id="r_a8e1ee46448a9d6fd89208aa48e0b1e58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e1ee46448a9d6fd89208aa48e0b1e58">MOTOR_PIN</a>&#160;&#160;&#160;GPIO0</td></tr>
+<tr class="memdesc:a8e1ee46448a9d6fd89208aa48e0b1e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pin used for motor control.  <br /></td></tr>
 <tr class="separator:a8e1ee46448a9d6fd89208aa48e0b1e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a2dfd2d9fbdae014f53d71a37166ef4" id="r_a3a2dfd2d9fbdae014f53d71a37166ef4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a2dfd2d9fbdae014f53d71a37166ef4">MOTOR_PORT</a>&#160;&#160;&#160;GPIOB</td></tr>
+<tr class="memdesc:a3a2dfd2d9fbdae014f53d71a37166ef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port for motor control.  <br /></td></tr>
 <tr class="separator:a3a2dfd2d9fbdae014f53d71a37166ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a814281d7d7527bdb34d92a2888a93883" id="r_a814281d7d7527bdb34d92a2888a93883"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a814281d7d7527bdb34d92a2888a93883">MOTOR_PERIOD_MS</a>&#160;&#160;&#160;50</td></tr>
+<tr class="memdesc:a814281d7d7527bdb34d92a2888a93883"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM period for motor control, specified in milliseconds.  <br /></td></tr>
 <tr class="separator:a814281d7d7527bdb34d92a2888a93883"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6228bf8e7ff39aee704a16dc05c5db1c" id="r_a6228bf8e7ff39aee704a16dc05c5db1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6228bf8e7ff39aee704a16dc05c5db1c">MOTOR_DISABLED</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a6228bf8e7ff39aee704a16dc05c5db1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Motor disabled state value.  <br /></td></tr>
 <tr class="separator:a6228bf8e7ff39aee704a16dc05c5db1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2aef692f748da52739af14b08c97880" id="r_ac2aef692f748da52739af14b08c97880"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2aef692f748da52739af14b08c97880">MOTOR_ENABLED</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ac2aef692f748da52739af14b08c97880"><td class="mdescLeft">&#160;</td><td class="mdescRight">Motor enabled state value.  <br /></td></tr>
 <tr class="separator:ac2aef692f748da52739af14b08c97880"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27f63a33c160ad028d7e6a36c3473781" id="r_a27f63a33c160ad028d7e6a36c3473781"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27f63a33c160ad028d7e6a36c3473781">MOTOR_TIMER</a>&#160;&#160;&#160;TIM3</td></tr>
+<tr class="memdesc:a27f63a33c160ad028d7e6a36c3473781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timer used for generating PWM to control the motor.  <br /></td></tr>
 <tr class="separator:a27f63a33c160ad028d7e6a36c3473781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfd84296be0f228ea63fcf9a10027ec5" id="r_acfd84296be0f228ea63fcf9a10027ec5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfd84296be0f228ea63fcf9a10027ec5">MS_TO_SEC</a>&#160;&#160;&#160;1000</td></tr>
+<tr class="memdesc:acfd84296be0f228ea63fcf9a10027ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion factor from milliseconds to seconds.  <br /></td></tr>
+<tr class="separator:acfd84296be0f228ea63fcf9a10027ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -170,6 +185,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8d3f3c8b0807d3879f832e346e86c0c2" id="r_a8d3f3c8b0807d3879f832e346e86c0c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d3f3c8b0807d3879f832e346e86c0c2">motor_enable</a> (void)</td></tr>
 <tr class="memdesc:a8d3f3c8b0807d3879f832e346e86c0c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the motor output by turning on the PWM signal.  <br /></td></tr>
 <tr class="separator:a8d3f3c8b0807d3879f832e346e86c0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6da30bd25bc8eec9f7b6c205bdc53e46" id="r_a6da30bd25bc8eec9f7b6c205bdc53e46"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6da30bd25bc8eec9f7b6c205bdc53e46">motor_get_state</a> (void)</td></tr>
+<tr class="memdesc:a6da30bd25bc8eec9f7b6c205bdc53e46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current state of the motor.  <br /></td></tr>
+<tr class="separator:a6da30bd25bc8eec9f7b6c205bdc53e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Motor control driver using PWM for STM32 with libopencm3. </p>
@@ -188,11 +206,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Motor state when disabled </p>
 
-<p class="definition">Definition at line <a class="el" href="motor__driver_8h_source.html#l00024">24</a> of file <a class="el" href="motor__driver_8h_source.html">motor_driver.h</a>.</p>
+<p>Motor disabled state value. </p>
+<p>A constant representing the motor's disabled state. </p>
 
-<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00061">motor_disable()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__driver_8h_source.html#l00040">40</a> of file <a class="el" href="motor__driver_8h_source.html">motor_driver.h</a>.</p>
 
 </div>
 </div>
@@ -207,11 +225,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Motor state when enabled </p>
 
-<p class="definition">Definition at line <a class="el" href="motor__driver_8h_source.html#l00027">27</a> of file <a class="el" href="motor__driver_8h_source.html">motor_driver.h</a>.</p>
+<p>Motor enabled state value. </p>
+<p>A constant representing the motor's enabled state. </p>
 
-<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00070">motor_enable()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__driver_8h_source.html#l00047">47</a> of file <a class="el" href="motor__driver_8h_source.html">motor_driver.h</a>.</p>
 
 </div>
 </div>
@@ -226,11 +244,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>PWM period in milliseconds for motor control </p>
 
-<p class="definition">Definition at line <a class="el" href="motor__driver_8h_source.html#l00021">21</a> of file <a class="el" href="motor__driver_8h_source.html">motor_driver.h</a>.</p>
+<p>PWM period for motor control, specified in milliseconds. </p>
+<p>Determines the frequency of the PWM signal, controlling the speed granularity. </p>
 
-<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00008">motor_init()</a>, and <a class="el" href="motor__driver_8c_source.html#l00042">motor_set_power()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__driver_8h_source.html#l00033">33</a> of file <a class="el" href="motor__driver_8h_source.html">motor_driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00005">motor_init()</a>, and <a class="el" href="motor__driver_8c_source.html#l00032">motor_set_power()</a>.</p>
 
 </div>
 </div>
@@ -245,11 +265,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>GPIO pin for the motor control output </p>
 
-<p class="definition">Definition at line <a class="el" href="motor__driver_8h_source.html#l00015">15</a> of file <a class="el" href="motor__driver_8h_source.html">motor_driver.h</a>.</p>
+<p>GPIO pin used for motor control. </p>
+<p>This pin outputs the PWM signal that controls the motor’s speed and state. </p>
 
-<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00008">motor_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__driver_8h_source.html#l00019">19</a> of file <a class="el" href="motor__driver_8h_source.html">motor_driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00005">motor_init()</a>.</p>
 
 </div>
 </div>
@@ -264,11 +286,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>GPIO port for the motor control output </p>
 
-<p class="definition">Definition at line <a class="el" href="motor__driver_8h_source.html#l00018">18</a> of file <a class="el" href="motor__driver_8h_source.html">motor_driver.h</a>.</p>
+<p>GPIO port for motor control. </p>
+<p>Defines the port associated with the motor control pin. </p>
 
-<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00008">motor_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__driver_8h_source.html#l00026">26</a> of file <a class="el" href="motor__driver_8h_source.html">motor_driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00005">motor_init()</a>.</p>
 
 </div>
 </div>
@@ -283,11 +307,34 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Timer used to generate PWM for motor control </p>
 
-<p class="definition">Definition at line <a class="el" href="motor__driver_8h_source.html#l00030">30</a> of file <a class="el" href="motor__driver_8h_source.html">motor_driver.h</a>.</p>
+<p>Timer used for generating PWM to control the motor. </p>
+<p>Specifies the hardware timer associated with PWM generation. </p>
 
-<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00061">motor_disable()</a>, <a class="el" href="motor__driver_8c_source.html#l00070">motor_enable()</a>, <a class="el" href="motor__driver_8c_source.html#l00008">motor_init()</a>, and <a class="el" href="motor__driver_8c_source.html#l00042">motor_set_power()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__driver_8h_source.html#l00054">54</a> of file <a class="el" href="motor__driver_8h_source.html">motor_driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00045">motor_disable()</a>, <a class="el" href="motor__driver_8c_source.html#l00051">motor_enable()</a>, <a class="el" href="motor__driver_8c_source.html#l00005">motor_init()</a>, and <a class="el" href="motor__driver_8c_source.html#l00032">motor_set_power()</a>.</p>
+
+</div>
+</div>
+<a id="acfd84296be0f228ea63fcf9a10027ec5" name="acfd84296be0f228ea63fcf9a10027ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfd84296be0f228ea63fcf9a10027ec5">&#9670;&#160;</a></span>MS_TO_SEC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MS_TO_SEC&#160;&#160;&#160;1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Conversion factor from milliseconds to seconds. </p>
+<p>Used to convert time periods in milliseconds to seconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="motor__driver_8h_source.html#l00061">61</a> of file <a class="el" href="motor__driver_8h_source.html">motor_driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00005">motor_init()</a>, and <a class="el" href="motor__driver_8c_source.html#l00032">motor_set_power()</a>.</p>
 
 </div>
 </div>
@@ -308,16 +355,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Disables the motor output by turning off the PWM signal. </p>
-<p>This function stops the motor by disabling the PWM output on the configured pin, setting the motor to its <code>MOTOR_DISABLED</code> state.</p>
-<p>Disable motor output and set motor state to 0 (off) </p>
-<p>Update motor state to disabled</p>
-<p>Disable PWM output</p>
+<p>This function stops the motor by disabling the PWM output on the configured pin, setting the motor to its <code>MOTOR_DISABLED</code> state. </p>
+<p>&lt; Set motor state to disabled</p>
+<p>&lt; Disable PWM output on TIM3 Channel 3</p>
 
-<p class="definition">Definition at line <a class="el" href="motor__driver_8c_source.html#l00061">61</a> of file <a class="el" href="motor__driver_8c_source.html">motor_driver.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__driver_8c_source.html#l00045">45</a> of file <a class="el" href="motor__driver_8c_source.html">motor_driver.c</a>.</p>
 
-<p class="reference">References <a class="el" href="motor__driver_8c_source.html#l00061">motor_disable()</a>, <a class="el" href="motor__driver_8h_source.html#l00024">MOTOR_DISABLED</a>, and <a class="el" href="motor__driver_8h_source.html#l00030">MOTOR_TIMER</a>.</p>
+<p class="reference">References <a class="el" href="motor__driver_8c_source.html#l00045">motor_disable()</a>, and <a class="el" href="motor__driver_8h_source.html#l00054">MOTOR_TIMER</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00061">motor_disable()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00045">motor_disable()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -355,16 +401,15 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Enables the motor output by turning on the PWM signal. </p>
-<p>This function starts the motor by enabling the PWM output on the configured pin, setting the motor to its <code>MOTOR_ENABLED</code> state.</p>
-<p>Enable motor output and set motor state to 1 (on) </p>
-<p>Update motor state to enabled</p>
-<p>Enable PWM output</p>
+<p>This function starts the motor by enabling the PWM output on the configured pin, setting the motor to its <code>MOTOR_ENABLED</code> state. </p>
+<p>&lt; Set motor state to enabled</p>
+<p>&lt; Enable PWM output on TIM3 Channel 3</p>
 
-<p class="definition">Definition at line <a class="el" href="motor__driver_8c_source.html#l00070">70</a> of file <a class="el" href="motor__driver_8c_source.html">motor_driver.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__driver_8c_source.html#l00051">51</a> of file <a class="el" href="motor__driver_8c_source.html">motor_driver.c</a>.</p>
 
-<p class="reference">References <a class="el" href="motor__driver_8c_source.html#l00070">motor_enable()</a>, <a class="el" href="motor__driver_8h_source.html#l00027">MOTOR_ENABLED</a>, and <a class="el" href="motor__driver_8h_source.html#l00030">MOTOR_TIMER</a>.</p>
+<p class="reference">References <a class="el" href="motor__driver_8c_source.html#l00051">motor_enable()</a>, and <a class="el" href="motor__driver_8h_source.html#l00054">MOTOR_TIMER</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00070">motor_enable()</a>, <a class="el" href="motor__driver_8c_source.html#l00008">motor_init()</a>, and <a class="el" href="motor__driver_8c_source.html#l00042">motor_set_power()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00051">motor_enable()</a>, and <a class="el" href="motor__driver_8c_source.html#l00005">motor_init()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -379,14 +424,57 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="motor__driver_8h_a8d3f3c8b0807d3879f832e346e86c0c2_icgraph.png" border="0" usemap="#amotor__driver_8h_a8d3f3c8b0807d3879f832e346e86c0c2_icgraph" alt=""/></div>
 <map name="amotor__driver_8h_a8d3f3c8b0807d3879f832e346e86c0c2_icgraph" id="amotor__driver_8h_a8d3f3c8b0807d3879f832e346e86c0c2_icgraph">
-<area shape="rect" title="Enables the motor output by turning on the PWM signal." alt="" coords="175,67,274,93"/>
-<area shape="poly" title=" " alt="" coords="251,54,242,48,224,45,208,47,199,52,197,57,202,65,197,67,192,58,195,48,206,42,224,40,244,43,254,49"/>
-<area shape="rect" href="motor__driver_8c.html#a151cccf0120a24d251b5ce5d878abb67" title="Initializes the motor control GPIO and timer for PWM output." alt="" coords="27,29,105,56"/>
-<area shape="poly" title=" " alt="" coords="159,67,105,54,106,49,160,62"/>
-<area shape="rect" href="motor__driver_8c.html#a13fda465d7a5854bde53087bc1489ea0" title="Sets the motor power by adjusting the PWM duty cycle." alt="" coords="5,104,127,131"/>
-<area shape="poly" title=" " alt="" coords="160,98,126,106,125,101,159,93"/>
-<area shape="poly" title=" " alt="" coords="93,16,83,10,66,8,50,10,41,15,39,20,43,28,38,30,34,21,37,11,48,5,66,3,85,5,95,12"/>
-<area shape="poly" title=" " alt="" coords="93,91,83,85,66,83,50,85,41,89,39,95,43,102,38,105,34,95,37,86,48,80,66,77,85,80,95,87"/>
+<area shape="rect" title="Enables the motor output by turning on the PWM signal." alt="" coords="132,29,231,56"/>
+<area shape="poly" title=" " alt="" coords="204,16,196,10,181,8,168,10,160,14,158,20,162,28,157,30,153,21,156,11,166,5,181,3,198,5,207,12"/>
+<area shape="rect" href="motor__driver_8c.html#a151cccf0120a24d251b5ce5d878abb67" title="Initializes the motor control GPIO and timer for PWM output." alt="" coords="5,29,84,56"/>
+<area shape="poly" title=" " alt="" coords="116,45,84,45,84,40,116,40"/>
+<area shape="poly" title=" " alt="" coords="67,16,59,10,44,8,31,10,23,14,22,20,25,28,20,30,16,21,19,11,29,5,45,3,61,5,70,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6da30bd25bc8eec9f7b6c205bdc53e46" name="a6da30bd25bc8eec9f7b6c205bdc53e46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6da30bd25bc8eec9f7b6c205bdc53e46">&#9670;&#160;</a></span>motor_get_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t motor_get_state </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the current state of the motor. </p>
+<p>Returns the motor state, indicating whether it is enabled (<code>MOTOR_ENABLED</code>) or disabled (<code>MOTOR_DISABLED</code>).</p>
+<dl class="section return"><dt>Returns</dt><dd>The current motor state (0 for disabled, 1 for enabled). </dd></dl>
+<p>&lt; Return the current motor state</p>
+
+<p class="definition">Definition at line <a class="el" href="motor__driver_8c_source.html#l00057">57</a> of file <a class="el" href="motor__driver_8c_source.html">motor_driver.c</a>.</p>
+
+<p class="reference">References <a class="el" href="motor__driver_8c_source.html#l00057">motor_get_state()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00057">motor_get_state()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="motor__driver_8h_a6da30bd25bc8eec9f7b6c205bdc53e46_cgraph.png" border="0" usemap="#amotor__driver_8h_a6da30bd25bc8eec9f7b6c205bdc53e46_cgraph" alt=""/></div>
+<map name="amotor__driver_8h_a6da30bd25bc8eec9f7b6c205bdc53e46_cgraph" id="amotor__driver_8h_a6da30bd25bc8eec9f7b6c205bdc53e46_cgraph">
+<area shape="rect" title="Retrieves the current state of the motor." alt="" coords="5,29,121,56"/>
+<area shape="poly" title=" " alt="" coords="42,30,39,20,41,11,50,5,63,3,77,5,85,12,81,16,75,10,63,8,52,10,46,14,44,20,47,28"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="motor__driver_8h_a6da30bd25bc8eec9f7b6c205bdc53e46_icgraph.png" border="0" usemap="#amotor__driver_8h_a6da30bd25bc8eec9f7b6c205bdc53e46_icgraph" alt=""/></div>
+<map name="amotor__driver_8h_a6da30bd25bc8eec9f7b6c205bdc53e46_icgraph" id="amotor__driver_8h_a6da30bd25bc8eec9f7b6c205bdc53e46_icgraph">
+<area shape="rect" title="Retrieves the current state of the motor." alt="" coords="5,29,121,56"/>
+<area shape="poly" title=" " alt="" coords="81,16,75,10,63,8,52,10,46,14,44,20,47,28,42,30,39,20,41,11,50,5,63,3,77,5,85,12"/>
 </map>
 </div>
 
@@ -408,25 +496,25 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Initializes the motor control GPIO and timer for PWM output. </p>
-<p>This function sets up the GPIO pin and timer necessary to generate a PWM signal for motor control. The timer is configured with the appropriate period and output mode to ensure smooth and precise control of the motor speed.</p>
-<p>Variable to store the motor's current state (enabled/disabled) Initialize motor settings, configure GPIO, and set up the timer in PWM mode </p>
-<p>Enables clocks for GPIOB and TIM3</p>
-<p>Set GPIO mode for the motor pin to alternate function with push-pull at 50 MHz</p>
-<p>Configure TIM3 for up-counting mode and enable auto-reload</p>
-<p>Set prescaler to make the timer tick at 1 MHz</p>
-<p>Set the timer period to match the desired motor PWM period in milliseconds</p>
-<p>Configure PWM output capture on the motor pin</p>
-<p>Disable output before setting up</p>
-<p>Set PWM mode 1 on the output</p>
-<p>Set initial duty cycle to 1%</p>
-<p>Enable motor output</p>
-<p>Start the timer</p>
+<p>This function sets up the GPIO pin and timer necessary to generate a PWM signal for motor control. The timer is configured with the appropriate period and output mode to ensure smooth and precise control of the motor speed. </p>
+<p>&lt; Enable clock for GPIOB</p>
+<p>&lt; Enable clock for TIM3</p>
+<p>&lt; Set MOTOR_PIN as 50 MHz alternate function push-pull output</p>
+<p>&lt; Configure TIMER in up-counting mode with auto-reload</p>
+<p>&lt; Enable preload for the timer</p>
+<p>&lt; Set prescaler to 72-1 for a 1 MHz tick frequency</p>
+<p>&lt; Set PWM period based on MOTOR_PERIOD_MS</p>
+<p>&lt; Disable output compare on TIM3 Channel 3</p>
+<p>&lt; Set output compare mode to PWM1 on TIM3 Channel 3</p>
+<p>&lt; Set duty cycle to 1%</p>
+<p>&lt; Enable motor output</p>
+<p>&lt; Start the timer counter</p>
 
-<p class="definition">Definition at line <a class="el" href="motor__driver_8c_source.html#l00008">8</a> of file <a class="el" href="motor__driver_8c_source.html">motor_driver.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__driver_8c_source.html#l00005">5</a> of file <a class="el" href="motor__driver_8c_source.html">motor_driver.c</a>.</p>
 
-<p class="reference">References <a class="el" href="motor__driver_8c_source.html#l00070">motor_enable()</a>, <a class="el" href="motor__driver_8c_source.html#l00008">motor_init()</a>, <a class="el" href="motor__driver_8h_source.html#l00021">MOTOR_PERIOD_MS</a>, <a class="el" href="motor__driver_8h_source.html#l00015">MOTOR_PIN</a>, <a class="el" href="motor__driver_8h_source.html#l00018">MOTOR_PORT</a>, and <a class="el" href="motor__driver_8h_source.html#l00030">MOTOR_TIMER</a>.</p>
+<p class="reference">References <a class="el" href="motor__driver_8c_source.html#l00051">motor_enable()</a>, <a class="el" href="motor__driver_8c_source.html#l00005">motor_init()</a>, <a class="el" href="motor__driver_8h_source.html#l00033">MOTOR_PERIOD_MS</a>, <a class="el" href="motor__driver_8h_source.html#l00019">MOTOR_PIN</a>, <a class="el" href="motor__driver_8h_source.html#l00026">MOTOR_PORT</a>, <a class="el" href="motor__driver_8h_source.html#l00054">MOTOR_TIMER</a>, and <a class="el" href="motor__driver_8h_source.html#l00061">MS_TO_SEC</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00008">motor_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00005">motor_init()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -470,30 +558,26 @@ Here is the caller graph for this function:</div>
 <p>This function adjusts the PWM duty cycle to control the motor power output. The power is set as a percentage, where 0% turns the motor off and 100% sets it to maximum power.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">percentage</td><td>Power level as a percentage (0 to 100).</td></tr>
+    <tr><td class="paramname">percentage</td><td>Power level as a percentage (0 to 100). </td></tr>
   </table>
   </dd>
 </dl>
-<p>Set motor power as a percentage (0-100), enabling the motor if it is not active </p>
-<p>Enable the motor if it is currently disabled</p>
-<p>Limit the power percentage to a maximum of 100</p>
-<p>Set the output capture value for the given percentage to adjust duty cycle</p>
+<p>&lt; Set power only if the motor is enabled</p>
+<p>&lt; Cap percentage at 100 to avoid exceeding maximum duty cycle</p>
+<p>&lt; Update duty cycle based on specified percentage</p>
 
-<p class="definition">Definition at line <a class="el" href="motor__driver_8c_source.html#l00042">42</a> of file <a class="el" href="motor__driver_8c_source.html">motor_driver.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__driver_8c_source.html#l00032">32</a> of file <a class="el" href="motor__driver_8c_source.html">motor_driver.c</a>.</p>
 
-<p class="reference">References <a class="el" href="motor__driver_8c_source.html#l00070">motor_enable()</a>, <a class="el" href="motor__driver_8h_source.html#l00021">MOTOR_PERIOD_MS</a>, <a class="el" href="motor__driver_8c_source.html#l00042">motor_set_power()</a>, and <a class="el" href="motor__driver_8h_source.html#l00030">MOTOR_TIMER</a>.</p>
+<p class="reference">References <a class="el" href="motor__driver_8h_source.html#l00033">MOTOR_PERIOD_MS</a>, <a class="el" href="motor__driver_8c_source.html#l00032">motor_set_power()</a>, <a class="el" href="motor__driver_8h_source.html#l00054">MOTOR_TIMER</a>, and <a class="el" href="motor__driver_8h_source.html#l00061">MS_TO_SEC</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00042">motor_set_power()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motor__driver_8c_source.html#l00032">motor_set_power()</a>, and <a class="el" href="update_8c_source.html#l00137">upt_pid()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="motor__driver_8h_a13fda465d7a5854bde53087bc1489ea0_cgraph.png" border="0" usemap="#amotor__driver_8h_a13fda465d7a5854bde53087bc1489ea0_cgraph" alt=""/></div>
 <map name="amotor__driver_8h_a13fda465d7a5854bde53087bc1489ea0_cgraph" id="amotor__driver_8h_a13fda465d7a5854bde53087bc1489ea0_cgraph">
 <area shape="rect" title="Sets the motor power by adjusting the PWM duty cycle." alt="" coords="5,29,127,56"/>
-<area shape="poly" title=" " alt="" coords="38,30,34,21,37,11,48,5,66,3,85,5,95,12,93,16,83,10,66,8,50,10,41,15,39,20,43,28"/>
-<area shape="rect" href="motor__driver_8c.html#a149b45f994fa6dc14d9cc6948185f1b2" title="Enables the motor output by turning on the PWM signal." alt="" coords="175,29,274,56"/>
-<area shape="poly" title=" " alt="" coords="127,40,159,40,159,45,127,45"/>
-<area shape="poly" title=" " alt="" coords="197,30,192,21,195,11,206,5,224,3,244,5,254,12,251,16,242,10,224,8,208,10,199,15,197,20,202,28"/>
+<area shape="poly" title=" " alt="" coords="44,30,41,20,43,11,52,5,66,3,81,5,89,12,86,16,79,10,66,8,54,10,48,14,46,20,49,28"/>
 </map>
 </div>
 <div class="dynheader">
@@ -501,8 +585,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="motor__driver_8h_a13fda465d7a5854bde53087bc1489ea0_icgraph.png" border="0" usemap="#amotor__driver_8h_a13fda465d7a5854bde53087bc1489ea0_icgraph" alt=""/></div>
 <map name="amotor__driver_8h_a13fda465d7a5854bde53087bc1489ea0_icgraph" id="amotor__driver_8h_a13fda465d7a5854bde53087bc1489ea0_icgraph">
-<area shape="rect" title="Sets the motor power by adjusting the PWM duty cycle." alt="" coords="5,29,127,56"/>
-<area shape="poly" title=" " alt="" coords="86,16,79,10,66,8,54,10,48,14,46,20,49,28,44,30,41,20,43,11,52,5,66,3,81,5,89,12"/>
+<area shape="rect" title="Sets the motor power by adjusting the PWM duty cycle." alt="" coords="117,29,238,56"/>
+<area shape="poly" title=" " alt="" coords="201,16,193,10,177,8,163,10,156,14,154,20,157,28,153,30,148,21,151,11,161,5,177,3,195,5,204,12"/>
+<area shape="rect" href="update_8c.html#a57d33dd3d6141c6e02e8669ab489f8c0" title="Updates the PID controller for motor speed control." alt="" coords="5,29,69,56"/>
+<area shape="poly" title=" " alt="" coords="101,45,69,45,69,40,101,40"/>
+<area shape="poly" title=" " alt="" coords="60,16,52,10,37,8,23,10,15,14,13,20,17,28,12,30,8,21,11,11,21,5,37,3,54,5,63,12"/>
 </map>
 </div>
 

@@ -1,9 +1,12 @@
 var hc__sr04_8h =
 [
+    [ "DELAY_10US", "hc__sr04_8h.html#a7ef552a60444f8e30ab012976fe61cc4", null ],
     [ "ECHO_PIN", "hc__sr04_8h.html#acea96cea4a13b6cb38e57a86788adf90", null ],
     [ "HCSR04_PORT", "hc__sr04_8h.html#a579786f61b59b44da579a25e424fa2be", null ],
     [ "HCSR04_TIMER", "hc__sr04_8h.html#ab608652eee9da3cc2376a98ccbea0ff7", null ],
+    [ "MAX_CAP_DISTANCE", "hc__sr04_8h.html#ad1523e806dc56ef51b42d8595d57af78", null ],
     [ "MHZ_DIVISOR", "hc__sr04_8h.html#a324a42c4c04b834b2318e0553367abdf", null ],
+    [ "MIN_CAP_DISTANCE", "hc__sr04_8h.html#a5ed3e0a87baeea44b4c93175c298f200", null ],
     [ "SOUND_SPEED_DIVISOR", "hc__sr04_8h.html#a41e303049e3340673700cb5b67d69045", null ],
     [ "TRIG_PIN", "hc__sr04_8h.html#a8eab89acd7dcb0e77e7b00d1749022a6", null ],
     [ "hcsr04_get_distance", "hc__sr04_8h.html#a16a50cc10ebfa3c146e1b506cf3bcbee", null ],

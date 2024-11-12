@@ -2,9 +2,6 @@
 
 static volatile uint16_t potBuff[N_DATA]; /** Buffer to store ADC readings for the potentiometer */
 
-/**
- * Initialize the potentiometer ADC and DMA setup
- */
 void pot_init(void)
 {
     /** Enable peripheral clocks for GPIOB, ADC1, and DMA1 */
@@ -56,9 +53,6 @@ void pot_init(void)
     adc_start_conversion_regular(ADC1);                          /** Start the ADC conversions */
 }
 
-/**
- * Get the potentiometer value by averaging the ADC buffer values
- */
 float pot_get_value(void)
 {
     uint32_t ac = 0; /** Accumulator for averaging buffer values */
