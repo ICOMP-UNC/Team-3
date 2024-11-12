@@ -25,6 +25,9 @@
 /** @brief Sample time interval in milliseconds for PID updates. */
 #define PID_RATE 50
 
+/** @brief Sample time interval in milliseconds for updating the display. */
+#define DISPLAY_RATE 500
+
 /** @brief Sample time interval in milliseconds for object distance measurements. */
 #define MEASUREMENT_RATE 70
 
@@ -33,9 +36,6 @@
 
 /** @brief Threshold distance for measurement evaluation in [cm] */
 #define MEASUREMENT_TRHS 10
-
-/** @brief Sample time interval in milliseconds for updating the display. */
-#define DISPLAY_RATE 200
 
 /**
  * @brief Maximum revolutions per minute (RPM) for the motor.
@@ -54,16 +54,6 @@
 void update_init(void);
 
 /**
- * @brief Retrieves the current system time in milliseconds.
- *
- * This function returns the current SysTick counter value, which can be used
- * to track elapsed time within the system.
- *
- * @return Current system time in milliseconds.
- */
-uint32_t get_system_time_ms(void);
-
-/**
  * @brief Calculates the average of recorded measurements.
  *
  * This function iterates through the measurement buffer and calculates the
@@ -73,3 +63,12 @@ uint32_t get_system_time_ms(void);
  * @return The average distance measurement.
  */
 float get_measurement_prom(void);
+
+
+void display_speed(void);
+
+void display_measurement(void);
+
+void measure(void);
+
+void upt_pid(void);

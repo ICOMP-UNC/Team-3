@@ -1,11 +1,12 @@
-#include "../include/exti.h"
-#include "../include/hc_sr04.h"
+#include "../include/button.h"
 #include "../include/motor_driver.h"
+#include "libopencm3/cm3/systick.h"
 
-volatile static uint8_t object_flag = 0;    //This Flag is used to display object data
-volatile static uint8_t stop_flag = 0;      //This Flag is used externaly to display Data (update)
+static volatile uint8_t object_flag = 0; // This Flag is used to display object data
+static volatile uint8_t stop_flag = 0;   // This Flag is used externaly to display Data (update)
+static volatile uint32_t last_exti10_time, last_exti11_time;
 
-void button_setup(void)
+void button_init(void)
 {
     rcc_periph_clock_enable(RCC_AFIO);
     rcc_periph_clock_enable(RCC_GPIOB);
@@ -17,7 +18,7 @@ void button_setup(void)
     gpio_set_mode(CONTROL_BUTTON_PORT, GPIO_MODE_INPUT, GPIO_CNF_INPUT_PULL_UPDOWN, CONTROL_BUTTON_PIN);
 
     // Configuración de prioridad y habilitación en NVIC
-    nvic_set_priority(NVIC_EXTI15_10_IRQ, 0);   //Máx
+    nvic_set_priority(NVIC_EXTI15_10_IRQ, 0); // Máx
     nvic_enable_irq(NVIC_EXTI15_10_IRQ);
 
     // Configurar EXTI10 (PB10)
@@ -34,30 +35,46 @@ void button_setup(void)
 
 void exti15_10_isr(void)
 {
-    // Manejo de EXTI10 (PB10 - STOP_BUTTON)
-    if (exti_get_flag_status(EXTI10)) {
-        exti_reset_request(EXTI10);
-        //Unbounce Logic
+    uint32_t current_time = systick_get_value();
+    // STOP_BUTTON Handler
+    if (exti_get_flag_status(EXTI10))
+    {
+        // Unbounce Logic
+        if ((current_time - last_exti10_time) > DEBOUNCE_DELAY)
+        {
+            exti_reset_request(EXTI10);
+            last_exti10_time = current_time;
 
-        stop_flag != stop_flag;
-        //Stop-Start the motor as fast as possible
-        if (stop_flag) {
-            motor_disable();
-        } else {
-            motor_enable();
+            stop_flag != stop_flag;
+            // Stop-Start the motor as fast as possible
+            if (stop_flag)
+            {
+                motor_disable();
+            }
+            else
+            {
+                motor_enable();
+            }
         }
     }
 
-    // Manejo de EXTI11 (PB11 - CONTROL_BUTTON)
-    if (exti_get_flag_status(EXTI11)) {
-        exti_reset_request(EXTI11);
-        //Unbounce Logic
-
-        // Si el pin está bajo, lee distancia
-        if (!gpio_get(CONTROL_BUTTON_PORT, CONTROL_BUTTON_PIN)) {
-            object_flag = 1;
-        } else {
-            object_flag = 0;
+    // CONTROL_BUTTON Handler
+    if (exti_get_flag_status(EXTI11))
+    {
+        // Unbounce Logic
+        if ((current_time - last_exti11_time) > DEBOUNCE_DELAY)
+        {
+            exti_reset_request(EXTI11);
+            last_exti11_time = current_time;
+            //
+            if (!gpio_get(CONTROL_BUTTON_PORT, CONTROL_BUTTON_PIN))
+            {
+                object_flag = 1;
+            }
+            else
+            {
+                object_flag = 0;
+            }
         }
     }
 }

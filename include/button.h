@@ -2,7 +2,6 @@
 #include "libopencm3/stm32/rcc.h"
 #include "libopencm3/stm32/gpio.h"
 #include "libopencm3/cm3/nvic.h"
-#include "update.h"
 
 #define STOP_BUTTON_PORT GPIOB
 #define STOP_BUTTON_PIN GPIO10
@@ -11,7 +10,7 @@
 
 #define DEBOUNCE_DELAY 50  //Delay for Unbounce in [ms]
 
-void button_setup(void);
+void button_init(void);
 
 uint8_t button_get_stop_flag(void);
 

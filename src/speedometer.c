@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "speedometer.h"
 
 static volatile uint16_t turns[2]; /** Variable to store the number of encoder turns */
@@ -69,9 +70,4 @@ float speedometer_getRPM(void)
 float speedometer_getRAD_S(void)
 {
     return (float)(abs(turns[1] - turns[0]) * CONSTANT_TO_RAD_S); /** Convert turns to rad/s */
-}
-
-uint16_t abs(int16_t num)
-{
-    return (num < 0) ? -num : num;
 }

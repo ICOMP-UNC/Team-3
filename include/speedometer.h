@@ -96,15 +96,3 @@ float speedometer_getRPM(void);
  * @return The current speed in radians per second (rad/s).
  */
 float speedometer_getRAD_S(void);
-
-/**
- * @brief Calculates the absolute value of an integer.
- *
- * This utility function returns the absolute value of an input integer.
- * It is used in speed calculations to ensure non-negative values for
- * rotational speed and distance calculations.
- *
- * @param num Input integer value.
- * @return Absolute value of the input integer.
- */
-uint16_t abs(int16_t num);

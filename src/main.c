@@ -1,12 +1,4 @@
-#include "exti.h"
-#include "hc_sr04.h"
-#include "lcd.h"
-#include "motor_driver.h"
-#include "pid.h"
-#include "setpoint.h"
-#include "speedometer.h"
 #include "update.h"
-#include "utils.h"
 
 #define TRUE  1
 #define FALSE 0
@@ -15,19 +7,18 @@
 
 void systemInit(void);
 
-static float speed = 0;
 PID_Controller c;
 
 int main(void)
 {
     systemInit();
-    exti_setup();
-    lcd_init();
+    speedometer_init();
     hcsr04_init();
     pot_init();
+    lcd_init();
     motor_init();
-    speedometer_init();
     update_init();
+    button_init();
 
     c.kd = 0.0006;
     c.ki = 0.00126;
@@ -35,7 +26,7 @@ int main(void)
     c.setpoint = MAX_RPM;
 
     pid_init(&c);
-    float set;
+
     while (TRUE)
     {
         ;
