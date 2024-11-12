@@ -107,6 +107,9 @@ More information inside the [INSTALL](INSTALL.md) file
 
 ### **Alfonso Mouton**:
 - **Head Developer**: leads project design and system architecture.
+- I like to get cheap things and fix them.
+- I'm currently working on IOT stuff.
+- Also i'm a photographer.
 
 ### **Nicolais Seia**:
 - **Developer and Documentation Specialist**: I helped develop the code for this project and my main role was to document the code and the develop process from start to finish.
