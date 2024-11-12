@@ -34,10 +34,11 @@
 /** @brief Number of samples taken for each distance measurement average. */
 #define N_MEASUREMENT 10
 
-/** @brief Threshold distance for measurement evaluation in [cm] */
+/** @brief Threshold distance for measurement evaluation in [cm]. */
 #define MEASUREMENT_TRHS 10
 
-#define DELAY3_S 13000000
+/** @brief Duration in milliseconds to display the measurement result. */
+#define MEASUREMENT_DISPLAY_TIME 3000
 
 /**
  * @brief Maximum revolutions per minute (RPM) for the motor.
@@ -66,13 +67,38 @@ void update_init(void);
  */
 float get_measurement_prom(void);
 
-
+/**
+ * @brief Displays the current speed and target setpoint on the LCD.
+ *
+ * Clears the LCD screen and shows the RPM of the motor along with the desired
+ * setpoint, updating the display with the latest values.
+ */
 void display_speed(void);
 
-void display_percentage(void);
-
+/**
+ * @brief Records distance measurements from the ultrasonic sensor.
+ *
+ * This function performs distance measurements using the ultrasonic sensor,
+ * stores the results in a buffer, and determines if the measurement meets
+ * the pass/fail threshold.
+ */
 void measure(void);
 
+/**
+ * @brief Displays measurement information on the LCD.
+ *
+ * Depending on whether a full set of measurements has been completed, this
+ * function will either display the measurement percentage or the average
+ * distance value. Used to provide feedback on object height or measurement
+ * completion.
+ */
 void display_measure_info(void);
 
+/**
+ * @brief Updates the PID controller for motor speed control.
+ *
+ * Retrieves the current potentiometer value for the setpoint, obtains the
+ * current RPM from the speedometer, and adjusts motor power output based on
+ * the PID controller's calculations.
+ */
 void upt_pid(void);
