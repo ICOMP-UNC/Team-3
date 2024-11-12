@@ -68,11 +68,8 @@ void sys_tick_handler(void)
                 response__display_count = 0;
                 if (showing_measure_flag) // Display Measurement
                 {
-                    if (remaining_measure_dtime > 0)
-                    {
-                        remaining_measure_dtime--;
-                    }
-                    else
+                    remaining_measure_dtime--;
+                    if (remaining_measure_dtime == 0)
                     {
                         showing_measure_flag = 0;
                         remaining_measure_dtime = MEASUREMENT_DISPLAY_TIME;

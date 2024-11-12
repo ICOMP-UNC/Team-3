@@ -37,8 +37,8 @@
 /** @brief Threshold distance for measurement evaluation in [cm]. */
 #define MEASUREMENT_TRHS 10
 
-/** @brief Duration in milliseconds to display the measurement result. */
-#define MEASUREMENT_DISPLAY_TIME 3000
+/** @brief Duration in DISPLAY_RATE units (3 seconds) */
+#define MEASUREMENT_DISPLAY_TIME 6
 
 /**
  * @brief Maximum revolutions per minute (RPM) for the motor.
