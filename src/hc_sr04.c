@@ -21,8 +21,8 @@ void hcsr04_init(void)
     gpio_set_mode(HCSR04_PORT, GPIO_MODE_INPUT, GPIO_CNF_INPUT_FLOAT, ECHO_PIN);
 
     /**
-    * Configure TIM4 for input capture on channel 4, detecting both rising and falling edges
-    */
+     * Configure TIM4 for input capture on channel 4, detecting both rising and falling edges
+     */
     /** Set up TIM4 Channel 4 to capture on the rising edge */
     timer_ic_set_input(TIM4, TIM_IC4, TIM_IC_IN_TI4);    /** Map TIM4 CH4 to GPIOB9 */
     timer_ic_set_polarity(TIM4, TIM_IC4, TIM_IC_RISING); /** Rising edge for CH4 */
@@ -47,7 +47,7 @@ void hcsr04_init(void)
  */
 void hcsr04_trigger(void)
 {
-    gpio_set(HCSR04_PORT, TRIG_PIN);                /** Set TRIG_PIN high to start the pulse */
+    gpio_set(HCSR04_PORT, TRIG_PIN);          /** Set TRIG_PIN high to start the pulse */
     for (volatile uint8_t i = 0; i < 32; i++) /** Delay for approximately 10 µs */
     {
         __asm__("nop"); /** No-operation for precise timing */
@@ -82,11 +82,10 @@ void tim4_isr(void)
  */
 float hcsr04_get_distance(void)
 {
-    hcsr04_trigger(); /** Start a new measurement by triggering the sensor */
-    uint32_t timeout = 0xFFFF; // Set a timeout limit
-    while (!conversion_flag  && --timeout)
-        ;                /** Wait until the measurement is complete */
-    if(!timeout)
+    hcsr04_trigger();                      /** Start a new measurement by triggering the sensor */
+    uint32_t timeout = 0xFFFF;             // Set a timeout limit
+    while (!conversion_flag && --timeout); /** Wait until the measurement is complete */
+    if (!timeout)
     {
         return -1.0f;
     }

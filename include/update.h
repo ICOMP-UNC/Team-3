@@ -1,4 +1,13 @@
-#include <libopencm3/cm3/systick.h>
+/**
+ * @file update.h
+ * @brief System update functions for speed and distance measurement.
+ *
+ * This file contains functions for initializing the SysTick timer, handling
+ * periodic system updates (such as PID updates, LCD display updates, and distance measurements),
+ * and calculating the average distance measurement.
+ */
+
+#include "button.h"
 #include "hc_sr04.h"
 #include "lcd.h"
 #include "motor_driver.h"
@@ -6,14 +15,29 @@
 #include "setpoint.h"
 #include "speedometer.h"
 #include "utils.h"
+#include <libopencm3/cm3/systick.h>
 
 /**
- * @brief Number of ticks for a 50 ms interval at a system clock of 72 MHz.
- *
- * This value is calculated based on a system clock of 72 MHz. With each tick
- * representing 1/72,000,000 seconds, 3,600,000 ticks are required for a delay of 50 ms.
+ * @brief Number of ticks for a 1 ms interval at a system clock of 72 MHz.
  */
-#define TICKS_FOR_50MS 3600000
+#define TICKS_FOR_MS 72000
+
+/** @brief Sample time interval in milliseconds for PID updates. */
+#define PID_RATE 50
+
+/** @brief Sample time interval in milliseconds for updating the display. */
+#define DISPLAY_RATE 500
+
+/** @brief Sample time interval in milliseconds for object distance measurements. */
+#define MEASUREMENT_RATE 120
+
+/** @brief Number of samples taken for each distance measurement average. */
+#define N_MEASUREMENT 10
+
+/** @brief Threshold distance for measurement evaluation in [cm] */
+#define MEASUREMENT_TRHS 10
+
+#define DELAY3_S 13000000
 
 /**
  * @brief Maximum revolutions per minute (RPM) for the motor.
@@ -24,10 +48,31 @@
 #define MAX_RPM 6500
 
 /**
- * @brief Configures SysTick to trigger an interrupt every 50 ms.
+ * @brief Initializes the SysTick timer for system timing.
  *
- * This function sets up the SysTick timer to use the system clock (AHB) as
- * its source and sets the reload value to generate an interrupt every 50 ms.
- * At a system clock of 72 MHz, this corresponds to a reload value of 3,600,000.
+ * Sets the reload value for generating an interrupt every millisecond, selects
+ * the AHB clock as the source, and enables both the counter and the interrupt.
  */
-void systick_init(void);
+void update_init(void);
+
+/**
+ * @brief Calculates the average of recorded measurements.
+ *
+ * This function iterates through the measurement buffer and calculates the
+ * average distance. Used primarily for processing distance measurements from
+ * the sensor.
+ *
+ * @return The average distance measurement.
+ */
+float get_measurement_prom(void);
+
+
+void display_speed(void);
+
+void display_percentage(void);
+
+void measure(void);
+
+void display_measure_info(void);
+
+void upt_pid(void);

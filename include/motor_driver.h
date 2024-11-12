@@ -65,4 +65,4 @@ void motor_disable(void);
  */
 void motor_enable(void);
 
-uint8_t get_motor_state();
+uint8_t motor_get_state(void);

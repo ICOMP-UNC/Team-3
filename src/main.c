@@ -3,21 +3,22 @@
 #define TRUE  1
 #define FALSE 0
 
-PID_Controller c;
+#define MAX_RPM 6500
 
-/** Functions Prototypes */
 void systemInit(void);
+
+PID_Controller c;
 
 int main(void)
 {
     systemInit();
-    exti_setup();
-    lcd_init();
+    speedometer_init();
     hcsr04_init();
     pot_init();
+    lcd_init();
     motor_init();
-    speedometer_init();
-    systick_init();
+    update_init();
+    button_init();
 
     c.kd = 0.0006;
     c.ki = 0.00126;
@@ -25,6 +26,7 @@ int main(void)
     c.setpoint = MAX_RPM;
 
     pid_init(&c);
+
     while (TRUE)
     {
         ;

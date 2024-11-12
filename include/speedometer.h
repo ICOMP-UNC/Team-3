@@ -15,34 +15,54 @@
 #include <libopencm3/stm32/rcc.h>
 #include <libopencm3/stm32/timer.h>
 
-/** High pulse count for one full rotation, defines encoder resolution. */
+/**
+ * @brief High pulse count for one full rotation, defines encoder resolution.
+ */
 #define PULSES_1TURN TIM_IC_PSC_8
 
-/** GPIO pin connected to the speedometer sensor. */
+/**
+ * @brief GPIO pin connected to the speedometer sensor.
+ */
 #define SPEEDOMETER_PIN GPIO0
 
-/** GPIO port connected to the speedometer sensor. */
+/**
+ * @brief GPIO port connected to the speedometer sensor.
+ */
 #define SPEEDOMETER_PORT GPIOA
 
-/** Timer used to measure intervals in milliseconds for speed calculation. */
+/**
+ * @brief Timer used to measure intervals in milliseconds for speed calculation.
+ */
 #define TENMS_TIMER TIM1
 
-/** Timer configured as an encoder timer for measuring rotational speed. */
+/**
+ * @brief Timer configured as an encoder timer for measuring rotational speed.
+ */
 #define ENCODER_TIMER TIM2
 
-/** DMA channel used for transferring data in speedometer operations. */
+/**
+ * @brief DMA channel used for transferring data in speedometer operations.
+ */
 #define DMA_CH DMA_CHANNEL2
 
-/** Prescaler value for generating a 600 ms interval, used with TENMS_TIMER. */
+/**
+ * @brief Prescaler value for generating a 600 ms interval, used with TENMS_TIMER.
+ */
 #define MS_PS 719
 
-/** Timer update interval for measuring rotation, set to 600 ms. */
+/**
+ * @brief Timer update interval for measuring rotation, set to 600 ms.
+ */
 #define MS_INTERVAL 59999
 
-/** Constant to convert encoder counts to radian per second (rad/s). */
+/**
+ * @brief Constant to convert encoder counts to radian per second (rad/s).
+ */
 #define CONSTANT_TO_RAD_S 1.309
 
-/** Constant to convert encoder counts to revolutions per minute (RPM). */
+/**
+ * @brief Constant to convert encoder counts to revolutions per minute (RPM).
+ */
 #define CONSTANT_TO_RPM 12.5
 
 /**
@@ -76,6 +96,3 @@ float speedometer_getRPM(void);
  * @return The current speed in radians per second (rad/s).
  */
 float speedometer_getRAD_S(void);
-
-
-uint16_t abs(int16_t num);
