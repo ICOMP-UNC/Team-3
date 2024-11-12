@@ -106,7 +106,7 @@ void lcd_set_cursor(uint8_t row, uint8_t col)
 /** Create a delay in milliseconds */
 void delay_ms(uint32_t ms)
 {
-    for (uint32_t i = 0; i < ms * 8000; i++)
+    for (uint32_t i = 0; i < ms * TICKS_TO_MS; i++)
     {
         __asm__("nop"); /** No-operation loop to create delay */
     }
