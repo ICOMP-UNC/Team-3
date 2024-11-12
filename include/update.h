@@ -29,13 +29,15 @@
 #define DISPLAY_RATE 500
 
 /** @brief Sample time interval in milliseconds for object distance measurements. */
-#define MEASUREMENT_RATE 70
+#define MEASUREMENT_RATE 120
 
 /** @brief Number of samples taken for each distance measurement average. */
 #define N_MEASUREMENT 10
 
 /** @brief Threshold distance for measurement evaluation in [cm] */
 #define MEASUREMENT_TRHS 10
+
+#define DELAY3_S 13000000
 
 /**
  * @brief Maximum revolutions per minute (RPM) for the motor.
@@ -67,8 +69,10 @@ float get_measurement_prom(void);
 
 void display_speed(void);
 
-void display_measurement(void);
+void display_percentage(void);
 
 void measure(void);
+
+void display_measure_info(void);
 
 void upt_pid(void);

@@ -8,10 +8,12 @@
 #define CONTROL_BUTTON_PORT GPIOB
 #define CONTROL_BUTTON_PIN GPIO11
 
-#define DEBOUNCE_DELAY 50  //Delay for Unbounce in [ms]
+#define DEBOUNCE_DELAY 200  //Delay for Unbounce in [ms]
 
 void button_init(void);
 
 uint8_t button_get_stop_flag(void);
 
 uint8_t button_get_object_flag(void);
+
+void button_set_object_flag(uint8_t boolean);
