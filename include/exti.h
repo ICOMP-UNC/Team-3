@@ -10,8 +10,6 @@
 
 #define HEIGHT_THRESHOLD 10
 
-void exti_setup();
+void exti_setup(void);
 
-void exti15_10_isr();
-
-uint8_t get_item_height();
+uint8_t get_item_height(void);

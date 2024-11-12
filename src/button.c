@@ -1,5 +1,5 @@
-#include "../include/button.h"
-#include "../include/motor_driver.h"
+#include "button.h"
+#include "motor_driver.h"
 #include "libopencm3/cm3/systick.h"
 
 static volatile uint8_t object_flag = 0; // This Flag is used to display object data

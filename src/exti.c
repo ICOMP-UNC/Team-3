@@ -4,7 +4,7 @@
 
 uint8_t flag_item_height = 0;
 
-void exti_setup()
+void exti_setup(void)
 {
     rcc_periph_clock_enable(RCC_AFIO);
     rcc_periph_clock_enable(RCC_GPIOB);
@@ -20,7 +20,7 @@ void exti_setup()
     nvic_enable_irq(NVIC_EXTI15_10_IRQ);
 
     // Configurar EXTI10 (PB10)
-    exti_select_source(EXTI10, STOP_BUTTON_PORT);  
+    exti_select_source(EXTI10, STOP_BUTTON_PORT);
     exti_set_trigger(EXTI10, EXTI_TRIGGER_RISING); // Cambiar a EXTI_TRIGGER_BOTH si quieres ambas detecciones
 
     // Configurar EXTI11 (PB11)
@@ -36,7 +36,7 @@ void exti15_10_isr(void)
     // Manejo de EXTI10 (PB10 - STOP_BUTTON)
     if (exti_get_flag_status(EXTI10)) {
         exti_reset_request(EXTI10);
-        if (get_motor_state()) {
+        if (motor_get_state()) {
             motor_disable();
         } else {
             motor_enable();
@@ -62,7 +62,7 @@ void exti15_10_isr(void)
     }
 }
 
-uint8_t get_item_height()
+uint8_t get_item_height(void)
 {
     return flag_item_height;
 }
