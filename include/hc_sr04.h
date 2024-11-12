@@ -1,5 +1,5 @@
 /**
- * @file hcsr04.h
+ * @file hc_sr04.h
  * @brief Ultrasonic sensor HC-SR04 driver for STM32 using libopencm3.
  *
  * This file contains the functions necessary to initialize and retrieve
@@ -11,11 +11,27 @@
 #include "libopencm3/stm32/rcc.h"
 #include "libopencm3/stm32/timer.h"
 
-#define TRIG_PIN GPIO8 /**< Trigger pin for the HC-SR04 */
-#define ECHO_PIN GPIO9 /**< Echo pin for the HC-SR04 */
+/** Trigger pin for the HC-SR04 ultrasonic sensor */
+#define TRIG_PIN GPIO8
 
-#define HCSR04_PORT  GPIOB
+/** Echo pin for the HC-SR04 ultrasonic sensor */
+#define ECHO_PIN GPIO9
+
+/** GPIO port used for the HC-SR04 pins */
+#define HCSR04_PORT GPIOB
+
+/** Timer used to capture echo signal duration */
 #define HCSR04_TIMER TIM4
+
+/** Divisor to convert MHz to Hz, used for timing calculations */
+#define MHZ_DIVISOR 1000000
+
+/**
+ * Speed of sound in air converted for sensor use.
+ * Value derived from (343 m/s) divided by 2 (for round trip)
+ * and converted to cm/µs for calculations.
+ */
+#define SOUND_SPEED_DIVISOR 116
 
 /**
  * @brief Initializes the pins and timers needed for the HC-SR04.
@@ -48,8 +64,9 @@ float hcsr04_get_distance(void);
  * @brief Applies saturation to the distance values to avoid out-of-range results.
  *
  * This function ensures that the distance values remain within a reasonable range,
- * discarding any outlier or extreme values.
+ * discarding any outlier or extreme values. Distances are constrained to a
+ * minimum and maximum allowable range for accurate readings.
  *
  * @return The corrected distance value after applying saturation.
  */
-float Saturation(void);
+float saturation(void);

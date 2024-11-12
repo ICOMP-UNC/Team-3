@@ -1,8 +1,8 @@
 #include "../include/pid.h"
 
 PID_Controller pid;
-float prev_error; /**< Previous error (for derivative calculation) */
-float integral;   /**< Accumulated integral */
+static float prev_error; /**< Previous error (for derivative calculation) */
+static float integral;   /**< Accumulated integral */
 
 void pid_init(PID_Controller* control)
 {

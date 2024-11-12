@@ -28,13 +28,12 @@ void motor_init()
 
 void motor_set_power(uint8_t percentage)
 {
-    if(!motor_state)
+    //Sets power only if the motor is enabled
+    if(motor_state)
     {
-        motor_enable();
-        motor_state = 1;
+        if(percentage > 100) percentage = 100;
+        timer_set_oc_value(MOTOR_TIMER, TIM_OC3, (MOTOR_PERIOD_MS*1000*percentage)/100);
     }
-    if(percentage > 100) percentage = 100;
-    timer_set_oc_value(MOTOR_TIMER, TIM_OC3, (MOTOR_PERIOD_MS*1000*percentage)/100);
 }
 
 void motor_disable()
@@ -47,4 +46,9 @@ void motor_enable()
 {
     motor_state = 1;
     timer_enable_oc_output(MOTOR_TIMER, TIM_OC3);
+}
+
+uint8_t motor_get_state()
+{
+    return motor_state;
 }
