@@ -51,9 +51,9 @@ void exti15_10_isr(void)
         // Debounce Logic for EXTI10
         if ((current_time - last_exti10_time) > DEBOUNCE_DELAY) /**< Debounce check to filter button noise. */
         {
-            exti_reset_request(EXTI10); /**< Clear EXTI10 interrupt flag. */
+            exti_reset_request(EXTI10);      /**< Clear EXTI10 interrupt flag. */
             last_exti10_time = current_time; /**< Update last recorded time for EXTI10. */
-            object_flag = 1; /**< Set object_flag to indicate an object detection event. */
+            object_flag = 1;                 /**< Set object_flag to indicate an object detection event. */
         }
     }
 }
