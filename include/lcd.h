@@ -76,11 +76,11 @@
 #define LCD_RS 0B00000001
 
 /**
- * @brief Initializes the LCD, pins, and I2C communication.
+ * @brief Initializes the LCD, Pins and I2C1 comunication
  *
  * This function configures the LCD for 4-bit mode, 2-line display,
- * and enables the backlight if required. It also sets up the peripheral clock,
- * I2C setup, and any other initial settings required for normal operation.
+ * and enables the backlight if required, also sets the peripheral clock,
+ * i2c setup and any other initial settings required for normal operation
  */
 void lcd_init(void);
 
@@ -137,17 +137,17 @@ void lcd_print_char(char c);
 void lcd_print_string(const char* str);
 
 /**
- * @brief Clears the display data.
+ * @brief Clears display data
  *
- * This function clears any characters on the LCD screen and
- * sets the cursor position to the home position.
+ * This function clears anything appearing on the screen and
+ * sets the cursor position to home.
  */
 void lcd_clear(void);
 
 /**
  * @brief Sets the cursor to a specific position on the LCD.
  *
- * This function moves the cursor to a specified row and column
+ * This function sets the cursor to a specified row and column
  * on a 16x2 LCD display.
  *
  * @param row The row number (0 for the first row, 1 for the second row).
@@ -156,7 +156,7 @@ void lcd_clear(void);
 void lcd_set_cursor(uint8_t row, uint8_t col);
 
 /**
- * @brief Delays execution for a specified time in milliseconds.
+ * @brief Does a delay for a specified time in milliseconds.
  *
  * This function introduces a delay by performing a software loop, which
  * is useful for timing-sensitive operations on the LCD.

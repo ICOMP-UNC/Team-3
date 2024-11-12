@@ -12,7 +12,7 @@ void lcd_pulse_enable(uint8_t data)
     delay_ms(1);                                          /** Small delay to allow the LCD to process */
 }
 
-/** Prepare a nibble to be sent to the LCD and call pulse to latch it */
+// Send a nibble to the LCD via PCF8574
 void lcd_send_nibble(uint8_t nibble, uint8_t mode)
 {
     uint8_t data = (nibble & 0xF0) | mode |
@@ -20,7 +20,7 @@ void lcd_send_nibble(uint8_t nibble, uint8_t mode)
     lcd_pulse_enable(data);       /** Send the nibble via pulse */
 }
 
-/** Split a byte into two nibbles and send each one to the LCD */
+// Send a command or data byte to the LCD
 void lcd_send_byte(uint8_t byte, uint8_t mode)
 {
     lcd_send_nibble(byte & 0xF0, mode);        /** Send the upper nibble */
@@ -65,10 +65,10 @@ void lcd_init(void)
     delay_ms(2);                                        /** Delay for display clear */
 }
 
-/** Send a single character to the LCD */
+// Print a single character
 void lcd_print_char(char c)
 {
-    lcd_send_byte(c, LCD_RS); /** Send character byte with RS (register select) high for data mode */
+    lcd_send_byte(c, LCD_RS);
 }
 
 /** Send a null-terminated string to the LCD */
@@ -76,7 +76,7 @@ void lcd_print_string(const char* str)
 {
     while (*str) /** Loop through the string until null character */
     {
-        lcd_print_char(*str++); /** Print each character and move to the next */
+        lcd_print_char(*str++);
     }
 }
 
@@ -87,7 +87,6 @@ void lcd_clear(void)
     delay_ms(1);                        /** Delay to allow LCD to process clear command */
 }
 
-/** Set the cursor to a specific row and column */
 void lcd_set_cursor(uint8_t row, uint8_t col)
 {
     uint8_t address;
