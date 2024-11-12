@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include "speedometer.h"
+#include <stdlib.h>
 
 static volatile uint16_t turns[2]; /** Variable to store the number of encoder turns */
 

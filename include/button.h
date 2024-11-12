@@ -9,10 +9,10 @@
  * button presses, ensuring reliable detection of button states.
  */
 
-#include "libopencm3/stm32/exti.h"
-#include "libopencm3/stm32/rcc.h"
-#include "libopencm3/stm32/gpio.h"
 #include "libopencm3/cm3/nvic.h"
+#include "libopencm3/stm32/exti.h"
+#include "libopencm3/stm32/gpio.h"
+#include "libopencm3/stm32/rcc.h"
 
 /**
  * @brief GPIO port for the STOP button.
@@ -40,7 +40,7 @@
  * Defines the delay duration for debounce logic to filter out
  * noise from mechanical button presses.
  */
-#define DEBOUNCE_DELAY 200  // Delay for debounce in [ms]
+#define DEBOUNCE_DELAY 200 // Delay for debounce in [ms]
 
 /**
  * @brief Initializes the buttons on specific GPIO pins with EXTI.
@@ -92,4 +92,4 @@ void button_set_object_flag(uint8_t boolean);
  * @param last_time Pointer to the last recorded time for the interrupt line.
  * @return 1 if the debounce delay has passed and the interrupt is valid, 0 otherwise.
  */
-static inline int debounce(uint32_t current_time, uint32_t *last_time);
+static inline int debounce(uint32_t current_time, uint32_t* last_time);
