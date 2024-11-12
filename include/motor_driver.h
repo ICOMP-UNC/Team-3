@@ -11,23 +11,54 @@
 #include "libopencm3/stm32/rcc.h"
 #include "libopencm3/stm32/timer.h"
 
-/** GPIO pin for the motor control output */
+/**
+ * @brief GPIO pin used for motor control.
+ *
+ * This pin outputs the PWM signal that controls the motor’s speed and state.
+ */
 #define MOTOR_PIN GPIO0
 
-/** GPIO port for the motor control output */
+/**
+ * @brief GPIO port for motor control.
+ *
+ * Defines the port associated with the motor control pin.
+ */
 #define MOTOR_PORT GPIOB
 
-/** PWM period in milliseconds for motor control */
+/**
+ * @brief PWM period for motor control, specified in milliseconds.
+ *
+ * Determines the frequency of the PWM signal, controlling the speed granularity.
+ */
 #define MOTOR_PERIOD_MS 50
 
-/** Motor state when disabled */
+/**
+ * @brief Motor disabled state value.
+ *
+ * A constant representing the motor's disabled state.
+ */
 #define MOTOR_DISABLED 0
 
-/** Motor state when enabled */
+/**
+ * @brief Motor enabled state value.
+ *
+ * A constant representing the motor's enabled state.
+ */
 #define MOTOR_ENABLED 1
 
-/** Timer used to generate PWM for motor control */
+/**
+ * @brief Timer used for generating PWM to control the motor.
+ *
+ * Specifies the hardware timer associated with PWM generation.
+ */
 #define MOTOR_TIMER TIM3
+
+/**
+ * @brief Conversion factor from milliseconds to seconds.
+ *
+ * Used to convert time periods in milliseconds to seconds.
+ */
+#define MS_TO_SEC 1000
 
 /**
  * @brief Initializes the motor control GPIO and timer for PWM output.
@@ -65,4 +96,12 @@ void motor_disable(void);
  */
 void motor_enable(void);
 
+/**
+ * @brief Retrieves the current state of the motor.
+ *
+ * Returns the motor state, indicating whether it is enabled (`MOTOR_ENABLED`)
+ * or disabled (`MOTOR_DISABLED`).
+ *
+ * @return The current motor state (0 for disabled, 1 for enabled).
+ */
 uint8_t motor_get_state(void);

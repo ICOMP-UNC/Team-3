@@ -4,9 +4,6 @@ static volatile uint32_t times[2];           /** Array to store the timer values
 static volatile float distance = 0;          /** Distance in centimeters */
 static volatile uint8_t conversion_flag = 0; /** Flag to indicate completion of distance measurement */
 
-/**
- * Initialize the HC-SR04 ultrasonic sensor by configuring GPIO, timer, and interrupts
- */
 void hcsr04_init(void)
 {
     /** Enable clocks for GPIOB and TIM4 */
@@ -40,9 +37,6 @@ void hcsr04_init(void)
     nvic_enable_irq(NVIC_TIM4_IRQ); /** Enable NVIC interrupt for TIM4 */
 }
 
-/**
- * Trigger the HC-SR04 sensor by sending a 10 µs pulse on TRIG_PIN
- */
 void hcsr04_trigger(void)
 {
     gpio_set(HCSR04_PORT, TRIG_PIN);                  /** Set TRIG_PIN high to start the pulse */
@@ -53,9 +47,6 @@ void hcsr04_trigger(void)
     gpio_clear(HCSR04_PORT, TRIG_PIN); /** Set TRIG_PIN low to end the pulse */
 }
 
-/**
- * TIM4 interrupt service routine to capture echo signal times and calculate distance
- */
 void tim4_isr(void)
 {
     /** Check if the rising edge capture flag is set */
@@ -74,9 +65,6 @@ void tim4_isr(void)
     }
 }
 
-/**
- * Trigger a measurement and return the calculated distance in cm
- */
 float hcsr04_get_distance(void)
 {
     hcsr04_trigger();          /** Start a new measurement by triggering the sensor */
@@ -90,10 +78,6 @@ float hcsr04_get_distance(void)
     return saturation(); /** Return the measured distance with saturation applied */
 }
 
-/**
- * Apply saturation limits to the distance measurement
- * @return Distance capped between 2 cm and 400 cm
- */
 float saturation(void)
 {
     if (distance > MAX_CAP_DISTANCE)

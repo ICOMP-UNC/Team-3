@@ -1,6 +1,5 @@
 #include "lcd.h"
 
-/** Set the EN line high to latch the command, then set it low */
 void lcd_pulse_enable(uint8_t data)
 {
     uint8_t d = data | LCD_EN;                            /** Set the EN bit high */
@@ -12,7 +11,6 @@ void lcd_pulse_enable(uint8_t data)
     delay_ms(1);                                          /** Small delay to allow the LCD to process */
 }
 
-// Send a nibble to the LCD via PCF8574
 void lcd_send_nibble(uint8_t nibble, uint8_t mode)
 {
     uint8_t data = (nibble & 0xF0) | mode |
@@ -20,7 +18,6 @@ void lcd_send_nibble(uint8_t nibble, uint8_t mode)
     lcd_pulse_enable(data);       /** Send the nibble via pulse */
 }
 
-// Send a command or data byte to the LCD
 void lcd_send_byte(uint8_t byte, uint8_t mode)
 {
     lcd_send_nibble(byte & 0xF0, mode);        /** Send the upper nibble */
@@ -28,7 +25,6 @@ void lcd_send_byte(uint8_t byte, uint8_t mode)
     delay_ms(2);                               /** Delay for LCD processing after sending the byte */
 }
 
-/** Initialize the LCD by setting up the I2C, configuring the LCD mode, and clearing the display */
 void lcd_init(void)
 {
     rcc_periph_clock_enable(RCC_GPIOB); /** Enable GPIOB clock for I2C */
@@ -65,13 +61,11 @@ void lcd_init(void)
     delay_ms(2);                                        /** Delay for display clear */
 }
 
-// Print a single character
 void lcd_print_char(char c)
 {
     lcd_send_byte(c, LCD_RS);
 }
 
-/** Send a null-terminated string to the LCD */
 void lcd_print_string(const char* str)
 {
     while (*str) /** Loop through the string until null character */
@@ -80,7 +74,6 @@ void lcd_print_string(const char* str)
     }
 }
 
-/** Clear the LCD display */
 void lcd_clear(void)
 {
     lcd_send_byte(LCD_CLEARDISPLAY, 0); /** Send clear display command */
@@ -103,7 +96,6 @@ void lcd_set_cursor(uint8_t row, uint8_t col)
     lcd_send_byte(LCD_SETDDRAMADDR | address, 0); /** Set DDRAM address to position cursor */
 }
 
-/** Create a delay in milliseconds */
 void delay_ms(uint32_t ms)
 {
     for (uint32_t i = 0; i < ms * TICKS_TO_MS; i++)

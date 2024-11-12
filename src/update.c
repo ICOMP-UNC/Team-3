@@ -24,13 +24,6 @@ void update_init(void)
     systick_interrupt_enable();                     /**< Enable SysTick interrupt. */
 }
 
-/**
- * @brief SysTick interrupt handler.
- *
- * Updates PID control, performs distance measurements, and updates the LCD display
- * based on defined response rates. The handler handles various system events based on
- * timing counters and flag conditions.
- */
 void sys_tick_handler(void)
 {
     systick_get_countflag(); /**< Clears the interrupt flag by reading the count flag. */
