@@ -10,13 +10,28 @@
 
 #include <stdint.h>
 
-/** Maximum output value for the PID controller. */
+/**
+ * @brief Maximum output value for the PID controller.
+ *
+ * Sets the upper bound for the controller’s output, typically representing
+ * 100% power or the maximum allowable effect of the controller on the system.
+ */
 #define MAX_PID_OUTPUT 100
 
-/** Minimum output value for the PID controller. */
+/**
+ * @brief Minimum output value for the PID controller.
+ *
+ * Defines the lower bound for the controller's output, usually representing
+ * 0% power or the minimum effect of the controller.
+ */
 #define MIN_PID_OUTPUT 0
 
-/** Maximum allowable accumulated error for the integral term to prevent windup. */
+/**
+ * @brief Maximum allowable accumulated error for the integral term to prevent windup.
+ *
+ * Caps the accumulated error in the integral term to prevent excessive overshoot,
+ * a condition known as integral windup.
+ */
 #define MAX_INTEGRAL_ERROR 30000.0
 
 /**
