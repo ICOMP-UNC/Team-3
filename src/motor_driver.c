@@ -72,3 +72,8 @@ void motor_enable()
     motor_state = MOTOR_ENABLED;                  /** Update motor state to enabled */
     timer_enable_oc_output(MOTOR_TIMER, TIM_OC3); /** Enable PWM output */
 }
+
+uint8_t get_motor_state()
+{
+    return motor_state;
+}

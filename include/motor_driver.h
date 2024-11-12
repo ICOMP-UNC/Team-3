@@ -64,3 +64,5 @@ void motor_disable(void);
  * setting the motor to its `MOTOR_ENABLED` state.
  */
 void motor_enable(void);
+
+uint8_t get_motor_state();

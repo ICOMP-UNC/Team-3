@@ -11,8 +11,9 @@ void systemInit(void);
 int main(void)
 {
     systemInit();
+    exti_setup();
     lcd_init();
-    // hcsr04_init();
+    hcsr04_init();
     pot_init();
     motor_init();
     speedometer_init();
