@@ -1,5 +1,5 @@
 /**
- * @file pot.h
+ * @file setpoint.h
  * @brief Potentiometer module for ADC with DMA on STM32.
  *
  * This module initializes an ADC to read values from a potentiometer using DMA.
