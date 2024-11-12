@@ -3,28 +3,43 @@
 stateDiagram-v2
     [*] --> Init : Power On
 
-    WFO : Waiting for Object
+    Init : Initializing System
     Init --> WFO : System Initialization Complete
 
-    Measure : Measure Object
-    WFO --> Measure : Object Detected
+    WFO : Waiting for Object
+    WFO --> Measure : Object Detected (Triggered by CONTROL_BUTTON)
 
-    Avg : Get Average Height
-    Measure --> Avg : Measured Height 10 times
+    Measure : Measure Object Height
+    Measure --> Avg : Take 10 Height Measurements
 
-    LCD : Display Height in LCD 1st Line 
-    Avg --> LCD : Computed Average Height
+    Avg : Calculate Average Height
+    Avg --> LCD : Display Average Height on LCD (1st Line)
 
-    LCDPass : Display "PASS" for 3s on LCD 2nd Line
+    LCDPass : Display "PASS" on LCD for 3s
+    LCDReject : Display "REJECTED" on LCD (2nd Line)
+
+    LCD : Determine Object Status
     LCD --> LCDPass : Height < Limit
+    LCD --> Stop : Height >= Limit
 
     Stop : Stopping Motor
-    LCDReject : Display "REJECTED" on LCD 2nd Line
-    LCD --> Stop : Height >= Limit
-    Stop --> LCDReject : Motor Stopped
+    Stop --> LCDReject : Display "REJECTED" on LCD 2nd Line, Motor Stopped
 
-    Refresh : Clear 1st Line LCD
-    LCDPass --> Refresh : Object Advanced past sensor
+    Refresh : Clear LCD and Reset
+    LCDPass --> Refresh : Object Passed Sensor
     LCDReject --> Refresh : Object Removed
-    Refresh --> WFO : 1st Line cleared
+    Refresh --> WFO : LCD Cleared, Ready for Next Object
+
+    %% Additional Branches for User Input and System Control
+    WFO --> Stopped : STOP_BUTTON Pressed
+    Measure --> Stopped : STOP_BUTTON Pressed
+    LCDPass --> Stopped : STOP_BUTTON Pressed
+    Stopped --> WFO : CONTROL_BUTTON Pressed to Restart System
+
+    %% System Update and PID Control
+    WFO --> Update : Periodic Update (Triggered by SysTick Every 50ms)
+    Update : Update System State
+    Update --> upt_pid : Perform PID Calculation for Motor Speed
+    upt_pid --> MotorAdjust : Adjust Motor Power via PWM
+    MotorAdjust --> WFO : Return to Waiting State
 ```
