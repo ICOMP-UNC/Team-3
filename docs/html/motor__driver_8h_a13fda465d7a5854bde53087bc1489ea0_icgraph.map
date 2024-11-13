@@ -1,7 +1,0 @@
-<map id="motor_set_power" name="motor_set_power">
-<area shape="rect" id="Node000001" title="Sets the motor power by adjusting the PWM duty cycle." alt="" coords="117,29,238,56"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="201,16,193,10,177,8,163,10,156,14,154,20,157,28,153,30,148,21,151,11,161,5,177,3,195,5,204,12"/>
-<area shape="rect" id="Node000002" href="$update_8c.html#a57d33dd3d6141c6e02e8669ab489f8c0" title="Updates the PID controller for motor speed control." alt="" coords="5,29,69,56"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="101,45,69,45,69,40,101,40"/>
-<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="60,16,52,10,37,8,23,10,15,14,13,20,17,28,12,30,8,21,11,11,21,5,37,3,54,5,63,12"/>
-</map>

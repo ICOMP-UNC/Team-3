@@ -1,7 +1,0 @@
-<map id="motor_init" name="motor_init">
-<area shape="rect" id="Node000001" title="Initializes the motor control GPIO and timer for PWM output." alt="" coords="5,29,84,56"/>
-<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="20,30,16,21,19,11,29,5,45,3,61,5,70,12,67,16,59,10,44,8,31,10,23,14,22,20,25,28"/>
-<area shape="rect" id="Node000002" href="$motor__driver_8c.html#a149b45f994fa6dc14d9cc6948185f1b2" title="Enables the motor output by turning on the PWM signal." alt="" coords="132,29,231,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,40,116,40,116,45,84,45"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="157,30,153,21,156,11,166,5,181,3,198,5,207,12,204,16,196,10,181,8,168,10,160,14,158,20,162,28"/>
-</map>

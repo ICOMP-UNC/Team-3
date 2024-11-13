@@ -1,7 +1,0 @@
-<map id="pid_setpoint" name="pid_setpoint">
-<area shape="rect" id="Node000001" title="Sets the desired setpoint for the PID controller." alt="" coords="117,29,208,56"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="183,16,176,10,162,8,150,10,143,14,142,20,145,28,140,30,136,21,139,11,148,5,162,3,178,5,186,12"/>
-<area shape="rect" id="Node000002" href="$update_8c.html#a57d33dd3d6141c6e02e8669ab489f8c0" title="Updates the PID controller for motor speed control." alt="" coords="5,29,69,56"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="101,45,69,45,69,40,101,40"/>
-<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="57,16,50,10,37,8,24,10,18,14,16,20,20,28,15,30,11,21,14,11,23,5,37,3,53,5,61,12"/>
-</map>

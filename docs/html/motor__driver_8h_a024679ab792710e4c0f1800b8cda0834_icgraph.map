@@ -1,4 +1,0 @@
-<map id="motor_disable" name="motor_disable">
-<area shape="rect" id="Node000001" title="Disables the motor output by turning off the PWM signal." alt="" coords="5,29,108,56"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="73,16,67,10,56,8,47,10,41,14,40,20,43,28,38,30,35,20,37,11,44,5,57,3,69,5,76,12"/>
-</map>
