@@ -2,6 +2,12 @@
 
 Welcome to the Controllable-Speed Conveyor Belt project! This project leverages the STM32F103C8T6 Bluepill microcontroller and the libopencm3 library to create an advanced conveyor belt system with adjustable speed and height-based object detection. The system stops the conveyor if an object exceeds a defined height limit and uses a PID controller to adjust the belt's speed smoothly, accommodating different weights and perturbations. This project is built using PlatformIO.
 
+## 📽️ Video Preview
+
+<a href="https://www.youtube.com/watch?v=Oym1SDomOgo">
+  <img src="https://i9.ytimg.com/vi_webp/Oym1SDomOgo/mqdefault.webp?v=6737a8db&sqp=CMDQ3rkG&rs=AOn4CLCH6HJOSHFFPpPNzxJqCckOM89WXA" alt="Video Preview" width="400">
+</a>
+
 ## 🚀 Features
 
 - **Controllable Speed**: Adjust the conveyor belt speed using a potentiometer.
