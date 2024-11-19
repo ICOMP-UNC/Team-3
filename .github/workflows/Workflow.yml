@@ -1,0 +1,46 @@
+name: QA Workflow
+
+on:
+  workflow_dispatch:
+  pull_request:
+    # Pull request events
+    types: [synchronize, opened, reopened, ready_for_review]
+  push:
+    # Push events
+    branches:
+      - main
+      - develop
+
+jobs:
+  QAFlow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.platformio/.cache
+          key: ${{ runner.os }}-pio-${{ hashFiles('**/platformio.ini') }}
+
+      - name: Install dependencies
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: doxygen gcovr lcov cppcheck graphviz clang-format
+          version: 1.0
+      
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install PlatformIO Core
+        run: pip install --upgrade platformio
+
+      - name: Run style check
+        uses: ./.github/actions/style
+
+      - name: Run documentation check
+        uses: ./.github/actions/document
+
+      - name: Build PlatformIO Project
+        run: pio run
