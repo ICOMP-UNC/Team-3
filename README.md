@@ -4,9 +4,7 @@ Welcome to the Controllable-Speed Conveyor Belt project! This project leverages 
 
 ## 📽️ Video Preview
 
-<a href="https://www.youtube.com/watch?v=Oym1SDomOgo">
-  <img src="https://i9.ytimg.com/vi_webp/Oym1SDomOgo/mqdefault.webp?v=6737a8db&sqp=CMDQ3rkG&rs=AOn4CLCH6HJOSHFFPpPNzxJqCckOM89WXA" alt="Video Preview" width="400">
-</a>
+[LINK](https://youtu.be/Oym1SDomOgo?si=46vYRRN1y3FHePHn)
 
 ## 🚀 Features
 
@@ -26,6 +24,7 @@ Welcome to the Controllable-Speed Conveyor Belt project! This project leverages 
   - **GPIO**: Ultrasonic sensor and button interfacing.
   - **Timers**: Utilized for PWM generation, timing, and EXTI-based interrupts.
   - **I2C**: LCD communication through the PCF8574 I2C expander.
+  - **UART**: Serial Communication protocol that allows transmission and reception between 2 devices, this microcontroller being one of them.
 
 - **Ultrasonic Sensor**: HC-SR04 for height detection.
 - **LCD**: 16x2 LCD with PCF8574 I2C expander for easy I2C communication.
@@ -99,6 +98,7 @@ For detailed and more readable documentation, open the `docs/html/index.html` fi
 - `include/setpoint.h`: Potentiometer module for reading speed setpoints using ADC with DMA.
 - `include/button.h`: Handles EXTI-based button and switch interrupts with debouncing logic.
 - `include/utils.h`: Utility functions, including a floating-point to string converter for display purposes.
+- `include/uart.h`: UART communication functions, implementing a way to change PID values while the system is executing.
 - `include/update.h`: **System update management functions** that provide periodic control for:
   - **PID adjustments**: Ensures that motor power is continually adapted based on the PID feedback loop.
   - **Height measurement**: Triggers object height detection and averages measurements to determine if the object meets the threshold.
