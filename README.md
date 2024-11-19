@@ -5,7 +5,7 @@ Welcome to the Controllable-Speed Conveyor Belt project! This project leverages 
 ## 📽️ Video Preview
 
 <a href="https://www.youtube.com/watch?v=Oym1SDomOgo">
-  <img src="https://img.youtube.com/vi/Oym1SDomOgo/maxresdefault.jpg" alt="Video Preview" width="400">
+  <img src="https://i.ytimg.com/an_webp/Oym1SDomOgo/mqdefault_6s.webp?du=3000&sqp=CPbe77kG&rs=AOn4CLDFe6ycw0YIKwdbIBJDtmVvdQGPyg" alt="Video Preview" width="400">
 </a>
 
 ## 🚀 Features
