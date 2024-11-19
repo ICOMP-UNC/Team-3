@@ -3,7 +3,10 @@
 #define TRUE  1
 #define FALSE 0
 
-#define MAX_RPM 6500
+#define MAX_RPM              6500
+#define INITIAL_DERIVATIVE   0.0006;
+#define INITIAL_INTEGRAL     0.00126;
+#define INITIAL_PROPORTIONAL 0.0013;
 
 void systemInit(void);
 
@@ -20,9 +23,9 @@ int main(void)
     update_init();
     button_init();
 
-    c.kd = 0.0006;
-    c.ki = 0.00126;
-    c.kp = 0.0013;
+    c.kd = INITIAL_DERIVATIVE;
+    c.ki = INITIAL_INTEGRAL;
+    c.kp = INITIAL_PROPORTIONAL;
     c.setpoint = MAX_RPM;
 
     pid_init(&c);
